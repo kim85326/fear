@@ -1,0 +1,57 @@
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url("./home_background.png") no-repeat center;
+    background-size: cover;
+}
+
+.home .sound {
+    position: absolute;
+    bottom: 45%;
+    right: 4%;
+}
+
+.slogan-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+.slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+.mountains {
+    position: absolute;
+    left: -6%;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.fear-city {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 25%;
+    z-index: 9;
+}
+
+.rabbit-city {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    width: 25%;
+    z-index: 9;
+}
+
+.rabbit-city:hover {
+    z-index: 11;
+}
