@@ -2,24 +2,38 @@ import * as React from "react";
 import "../static/closeMenuButton.css";
 
 interface ICloseMenuButtonProps {
-  closeMenu: () => void;
   isOpen: boolean;
+  isClosing: boolean;
+  closeMenu: () => void;
 }
 
-class CloseMenuButton extends React.Component<ICloseMenuButtonProps> {
+interface ICloseMenuButtonState {
+  isActive: boolean;
+}
+
+class CloseMenuButton extends React.Component<
+  ICloseMenuButtonProps,
+  ICloseMenuButtonState
+> {
+  public constructor(props: ICloseMenuButtonProps) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   public render() {
     return (
       <svg
+        id="close-menu-button"
         className={`menu-button close-menu-button ${
-          this.props.isOpen ? "active" : ""
-        }`}
+          this.props.isOpen ? "show" : ""
+        }  ${this.props.isClosing ? "isClosing" : ""}`}
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         x="0px"
         y="0px"
         viewBox="0 0 99.2 98.4"
       >
-        <a onClick={this.props.closeMenu}>
+        <a onClick={this.handleClick}>
           <g id="圖層_1">
             <path
               className="st29"
@@ -41,6 +55,10 @@ class CloseMenuButton extends React.Component<ICloseMenuButtonProps> {
         </a>
       </svg>
     );
+  }
+
+  private handleClick() {
+    this.props.closeMenu();
   }
 }
 

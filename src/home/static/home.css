@@ -12,46 +12,166 @@ body {
     right: 4%;
 }
 
-.slogan-background {
+.logo-background {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
+    width: 50%;
+}
+
+.logo {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 9.5%;
+    animation-name: logo-show;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes logo-show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .slogan {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20%;
+    height: 3.1%;
+    animation-name: slogan-show;
+    animation-delay: 1.2s;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes slogan-show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .mountains {
     position: absolute;
-    left: -6%;
+    left: 0%;
     bottom: 0;
     width: 100%;
     z-index: 10;
+    pointer-events: none;
 }
 
-.fear-city {
+.arrow {
     position: absolute;
-    top: 25%;
-    left: 10%;
+    left: 19.5%;
+    top: 10%;
+    height: 11.5%;
+    z-index: 12;
+    animation-name: arrow-show, arrow-move;
+    animation-duration: 2s, 1s;
+    animation-timing-function: ease-out, ease-out;
+    animation-iteration-count: 1, infinite;
+}
+
+@keyframes arrow-show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes arrow-move {
+    0% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.city-wrapper {
+    position: absolute;
     width: 25%;
     z-index: 9;
 }
 
-.rabbit-city {
+.city-wrapper:hover {
+    z-index: 11;
+}
+
+.city-wrapper:hover .city {
+    transform: scale(1.02);
+}
+
+.city-dialog {
     position: absolute;
+    width: 0%;
+    pointer-events: none;
+}
+
+.city-dialog.isShowing {
+    width: 30%;
+    animation-name: city-dialog-show;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    transition-timing-function: ease-out;
+}
+
+.city-dialog.isHiding {
+    width: 0;
+    animation-name: city-dialog-hide;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    transition-timing-function: ease-out;
+}
+
+@keyframes city-dialog-show {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 30%;
+    }
+}
+
+@keyframes city-dialog-hide {
+    0% {
+        width: 30%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+.fear-city-wrapper {
+    top: 28%;
+    left: 10%;
+}
+
+.rabbit-city-wrapper {
     top: 40%;
     right: 10%;
-    width: 25%;
-    z-index: 9;
 }
 
-.rabbit-city:hover {
-    z-index: 11;
+.fear-city-dialog {
+    transform: translate(0, -100%);
+}
+
+.rabbit-city-dialog {
+    transform: translate(-100%, -100%);
 }

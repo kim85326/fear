@@ -1,229 +1,210 @@
 .mountains .st0 {
-    fill: #F0C7A7;
+    display: none;
 }
 
 .mountains .st1 {
-    fill: url(#SVGID_1_);
+    display: inline;
 }
 
 .mountains .st2 {
-    fill: #9ECA74;
+    fill: #F0C7A7;
 }
 
 .mountains .st3 {
-    fill: none;
-    stroke: #78974E;
-    stroke-miterlimit: 10;
+    fill: url(#後草叢_1_);
 }
 
 .mountains .st4 {
-    fill: none;
-    stroke: #9ECA74;
-    stroke-miterlimit: 10;
+    fill: #9ECA74;
 }
 
 .mountains .st5 {
-    fill: none;
-    stroke: #B9DBC1;
-    stroke-miterlimit: 10;
+    fill: url(#中草叢_1_);
 }
 
 .mountains .st6 {
-    fill: url(#SVGID_2_);
-}
-
-.mountains .st7 {
-    fill: #EB977D;
-}
-
-.mountains .st8 {
     fill: #728D6E;
 }
 
-.mountains .st9 {
-    fill: url(#SVGID_3_);
-}
-
-.mountains .st10 {
-    fill: #84725E;
-}
-
-.mountains .st11 {
+.mountains .st7 {
+    display: inline;
     fill: #DBEFFA;
 }
 
-.mountains .st12 {
-    fill: #E8E5DA;
-}
-
-.mountains .st13 {
-    fill: url(#SVGID_4_);
-}
-
-.mountains .st14 {
-    fill: url(#SVGID_5_);
-}
-
-.mountains .st15 {
-    fill: #B9C8D7;
-}
-
-.mountains .st16 {
-    fill: #9FCDA0;
-}
-
-.mountains .st17 {
-    fill: #FFFFFF;
-    stroke: #000000;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st18 {
-    fill: #EBAD97;
-}
-
-.mountains .st19 {
+.mountains .st8 {
     fill: #A1B5C9;
 }
 
-.mountains .st20 {
-    fill: none;
-    stroke: #B9C8D7;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st21 {
-    fill: #CCE2D9;
-}
-
-.mountains .st22 {
-    fill: none;
-    stroke: #E2AA8B;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st23 {
-    fill: url(#SVGID_6_);
-}
-
-.mountains .st24 {
-    fill: none;
-    stroke: #B9C8D7;
-    stroke-width: 0.8762;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st25 {
+.mountains .st9 {
     fill: #C8C4C5;
 }
 
-.mountains .st26 {
-    fill: none;
-    stroke: #E8E5DA;
-    stroke-width: 0.8762;
-    stroke-miterlimit: 10;
+.mountains .st10 {
+    fill: #EB977D;
 }
 
-.mountains .st27 {
-    fill: #F7CB2F;
+.mountains .st11 {
+    fill: url(#前草_1_);
 }
 
-.mountains .st28 {
+.mountains .st12 {
+    fill: #84725E;
+}
+
+.mountains .st13 {
     fill: #E9E6E6;
 }
 
-.mountains .st29 {
+.mountains .st14 {
     fill: #958C84;
 }
 
-.mountains .st30 {
+.mountains .st15 {
     fill: #CDCACB;
 }
 
-.mountains .st31 {
-    fill: #E7E3E3;
+.mountains .st16 {
+    fill: url(#藍到黃_1_);
 }
 
-.mountains .st32 {
-    fill: url(#SVGID_7_);
+.mountains .st17 {
+    fill: #B9C8D7;
 }
 
-.mountains .st33 {
-    fill: url(#SVGID_8_);
+.mountains .st18 {
+    fill: url(#前山_2_);
 }
 
-.mountains .st34 {
-    fill: url(#SVGID_9_);
+.mountains .st19 {
+    fill: url(#前石_2_);
 }
 
-.mountains .st35 {
-    fill: url(#SVGID_10_);
+.mountains .st20 {
+    display: inline;
+    fill: #EBAD97;
 }
 
-.mountains .st36 {
-    fill: url(#SVGID_11_);
-}
-
-.mountains .st37 {
-    fill: url(#SVGID_12_);
-}
-
-.mountains .st38 {
+.mountains .st21 {
+    display: inline;
     fill: #5D87C0;
 }
 
-.mountains .st39 {
-    fill: #A2A2A3;
-}
-
-.mountains .st40 {
-    fill: #A3B0BD;
-}
-
-.mountains .st41 {
-    fill: #2E4874;
-}
-
-.mountains .st42 {
-    fill: #D3D0D0;
-}
-
-.mountains .st43 {
-    fill: #A4B7C0;
-}
-
-.mountains .st44 {
+.mountains .st22 {
     fill: #94A5AE;
 }
 
+.mountains .st23 {
+    fill: #A2A2A3;
+}
+
+.mountains .st24 {
+    fill: #D3D0D0;
+}
+
+.mountains .st25 {
+    fill: #A4B7C0;
+}
+
+.mountains .st26 {
+    fill: #E7E3E3;
+}
+
+.mountains .st27 {
+    fill: #A3B0BD;
+}
+
+.mountains .st28 {
+    fill: #2E4874;
+}
+
+.mountains .st29 {
+    fill: #F7CB2F;
+}
+
+.mountains .st30 {
+    fill: #E8E5DA;
+}
+
+.mountains .st31 {
+    fill: url(#SVGID_1_);
+}
+
+.mountains .st32 {
+    display: inline;
+    fill: #F7CB2F;
+}
+
+.mountains .st33 {
+    fill: #F1C1A6;
+}
+
+.mountains .st34 {
+    fill: #7DA745;
+}
+
+.mountains .st35 {
+    fill: #A5C654;
+}
+
+.mountains .st36 {
+    display: inline;
+    fill: #FCF8ED;
+}
+
+.mountains .st37 {
+    fill: #FCF8ED;
+}
+
+.mountains .st38 {
+    fill: #DA663B;
+}
+
+.mountains .st39 {
+    fill: #E2AA8B;
+}
+
+.mountains .st40 {
+    fill: #8A8077;
+}
+
+.mountains .st41 {
+    fill: #F17752;
+}
+
+.mountains .st42 {
+    fill: #A9B7C4;
+}
+
+.mountains .st43 {
+    fill: #E98C6F;
+}
+
+.mountains .st44 {
+    fill: #EEB290;
+}
+
 .mountains .st45 {
-    fill: #7A6A56;
+    fill: #9BA7B3;
 }
 
 .mountains .st46 {
-    fill: #2E4874;
-    stroke: #E7E3E3;
-    stroke-miterlimit: 10;
+    fill: #94C465;
 }
 
 .mountains .st47 {
-    fill: none;
-    stroke: #E7E3E3;
-    stroke-miterlimit: 10;
+    fill: #507346;
 }
 
 .mountains .st48 {
-    fill: url(#SVGID_13_);
+    fill: url(#SVGID_2_);
 }
 
 .mountains .st49 {
-    fill: #B9DBC1;
+    fill: #9FCDA0;
 }
 
 .mountains .st50 {
-    fill: #63815C;
+    fill: #CCE2D9;
 }
 
 .mountains .st51 {
@@ -231,124 +212,99 @@
 }
 
 .mountains .st52 {
-    fill: url(#SVGID_14_);
+    fill: #63815C;
 }
 
 .mountains .st53 {
-    fill: none;
-    stroke: #E8E5DA;
-    stroke-miterlimit: 10;
+    fill: url(#SVGID_3_);
 }
 
 .mountains .st54 {
-    fill: url(#SVGID_15_);
+    fill: url(#SVGID_4_);
 }
 
 .mountains .st55 {
-    fill: #7DA078;
+    fill: #6C9785;
 }
 
 .mountains .st56 {
+    display: inline;
     fill: none;
-    stroke: #CCE2D9;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    stroke: #B9C8D7;
     stroke-miterlimit: 10;
 }
 
 .mountains .st57 {
-    fill: url(#SVGID_16_);
+    display: inline;
+    fill: none;
+    stroke: #B9C8D7;
+    stroke-width: 0.8762;
+    stroke-miterlimit: 10;
 }
 
 .mountains .st58 {
+    display: inline;
     fill: none;
-    stroke: #6C9785;
+    stroke: #E8E5DA;
+    stroke-width: 0.8762;
     stroke-miterlimit: 10;
 }
 
 .mountains .st59 {
-    fill: #E2AA8B;
+    display: inline;
+    fill: none;
+    stroke: #78974E;
+    stroke-miterlimit: 10;
 }
 
 .mountains .st60 {
-    fill: #6C9785;
+    display: inline;
+    fill: none;
+    stroke: #9ECA74;
+    stroke-miterlimit: 10;
 }
 
 .mountains .st61 {
+    display: inline;
     fill: none;
-    stroke: #7A534A;
+    stroke: #B9DBC1;
     stroke-miterlimit: 10;
 }
 
 .mountains .st62 {
-    fill: url(#SVGID_17_);
+    display: inline;
+    fill: none;
+    stroke: #E2AA8B;
+    stroke-miterlimit: 10;
 }
 
 .mountains .st63 {
+    display: inline;
     fill: none;
-    stroke: #63815C;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    stroke: #E7E3E3;
+    stroke-width: 0.5;
     stroke-miterlimit: 10;
 }
 
 .mountains .st64 {
-    fill: #7DA745;
-}
-
-.mountains .st65 {
-    fill: #F1C1A6;
-}
-
-.mountains .st66 {
-    fill: #A5C654;
-}
-
-.mountains .st67 {
-    fill: #FCF8ED;
-}
-
-.mountains .st68 {
-    fill: #A9B7C4;
-}
-
-.mountains .st69 {
-    fill: #DA663B;
-}
-
-.mountains .st70 {
-    fill: #94C465;
-}
-
-.mountains .st71 {
-    fill: #FFFFFF;
-    stroke: #231815;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    display: inline;
+    fill: none;
+    stroke: #E7E3E3;
     stroke-miterlimit: 10;
 }
 
-.mountains .st72 {
-    fill: #F17752;
+.mountains .st65 {
+    display: inline;
+    fill: #E7E3E3;
 }
 
-.mountains .st73 {
-    fill: #E98C6F;
-}
-
-.mountains .st74 {
-    fill: #EEB290;
-}
-
-.mountains .st75 {
-    fill: #9BA7B3;
-}
-
-.mountains .st76 {
+.mountains .st66 {
+    display: inline;
     fill: #6B4036;
 }
 
-.mountains .st77 {
+.mountains .st67 {
+    display: inline;
     fill: none;
     stroke: #6B4036;
     stroke-linecap: round;
@@ -356,17 +312,15 @@
     stroke-miterlimit: 10;
 }
 
-.mountains .st78 {
-    fill: #507346;
-}
-
-.mountains .st79 {
+.mountains .st68 {
+    display: inline;
     fill: none;
     stroke: #698C3B;
     stroke-miterlimit: 10;
 }
 
-.mountains .st80 {
+.mountains .st69 {
+    display: inline;
     fill: none;
     stroke: #E2AA8B;
     stroke-linecap: round;
@@ -374,15 +328,40 @@
     stroke-miterlimit: 10;
 }
 
-.mountains .st81 {
-    fill: #8A8077;
+.mountains .st70 {
+    display: inline;
+    fill: none;
+    stroke: #E8E5DA;
+    stroke-miterlimit: 10;
 }
 
-.mountains .st82 {
-    fill: url(#SVGID_18_);
+.mountains .st71 {
+    display: inline;
+    fill: none;
+    stroke: #7A534A;
+    stroke-miterlimit: 10;
 }
 
-.mountains .st83 {
+.mountains .st72 {
+    display: inline;
+    fill: none;
+    stroke: #CCE2D9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.mountains .st73 {
+    display: inline;
+    fill: none;
+    stroke: #63815C;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.mountains .st74 {
+    display: inline;
     fill: none;
     stroke: #E8E5DA;
     stroke-linecap: round;
@@ -390,130 +369,22 @@
     stroke-miterlimit: 10;
 }
 
-.mountains .st84 {
+.mountains .st75 {
+    fill: #7DA078;
+}
+
+.mountains .st76 {
+    fill: url(#SVGID_5_);
+}
+
+.mountains .st77 {
+    fill: url(#SVGID_6_);
+}
+
+.mountains .st78 {
     fill: #74966F;
 }
 
-.mountains .st85 {
-    fill: url(#SVGID_19_);
-}
-
-.mountains .st86 {
-    fill: url(#SVGID_20_);
-}
-
-.mountains .st87 {
-    fill: url(#SVGID_21_);
-}
-
-.mountains .st88 {
-    fill: url(#SVGID_22_);
-}
-
-.mountains .st89 {
-    fill: url(#SVGID_23_);
-}
-
-.mountains .st90 {
-    fill: url(#SVGID_24_);
-}
-
-.mountains .st91 {
-    fill: url(#SVGID_25_);
-}
-
-.mountains .st92 {
-    fill: url(#SVGID_26_);
-}
-
-.mountains .st93 {
-    fill: url(#SVGID_27_);
-}
-
-.mountains .st94 {
-    fill: url(#SVGID_28_);
-}
-
-.mountains .st95 {
-    fill: url(#SVGID_29_);
-}
-
-.mountains .st96 {
-    fill: url(#SVGID_30_);
-}
-
-.mountains .st97 {
-    fill: none;
-    stroke: #000000;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st98 {
-    fill: none;
-    stroke: #84725E;
-    stroke-width: 4.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st99 {
-    fill: #FCF8ED;
-    stroke: #FCF8ED;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st100 {
-    fill: none;
-    stroke: #EBAD97;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st101 {
-    fill: none;
-    stroke: #FCF8ED;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st102 {
-    fill: #606060;
-}
-
-.mountains .st103 {
-    opacity: 0.5;
-    fill: #FFFFFF;
-}
-
-.mountains .st104 {
-    fill: none;
-    stroke: #000000;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st105 {
-    fill: none;
-    stroke: #231815;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st106 {
-    fill: none;
-    stroke: #231815;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st107 {
-    fill: none;
-    stroke: #E60012;
-    stroke-miterlimit: 10;
-}
-
-.mountains .st108 {
-    fill: #E60012;
+.mountains .st79 {
+    fill: #B9DBC1;
 }

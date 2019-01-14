@@ -2,21 +2,32 @@ import * as React from "react";
 import "../static/openMenuButton.css";
 
 interface IOpenMenuButtonProps {
+  isOpening: boolean;
+  isOpen: boolean;
   openMenu: () => void;
 }
 
 class OpenMenuButton extends React.Component<IOpenMenuButtonProps> {
+  public constructor(props: IOpenMenuButtonProps) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   public render() {
     return (
       <svg
-        className="menu-button open-menu-button"
+        id="open-menu-button"
+        className={`menu-button open-menu-button
+        ${this.props.isOpening ? "isOpening" : ""}
+        ${!this.props.isOpen ? "show" : ""}
+        `}
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         x="0px"
         y="0px"
         viewBox="0 0 99.2 98.4"
       >
-        <a onClick={this.props.openMenu}>
+        <a onClick={this.handleClick}>
           <g id="圖層_1">
             <path
               className="st29"
@@ -39,6 +50,10 @@ class OpenMenuButton extends React.Component<IOpenMenuButtonProps> {
         </a>
       </svg>
     );
+  }
+
+  private handleClick() {
+    this.props.openMenu();
   }
 }
 

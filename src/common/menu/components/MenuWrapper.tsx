@@ -5,25 +5,38 @@ import OpenMenuButton from "./OpenMenuButton";
 import CloseMenuButton from "./CloseMenuButton";
 
 interface IMenuWrapperProps {
+  isOpening: boolean;
+  isOpen: boolean;
+  isClosing: boolean;
   openMenu: () => void;
   closeMenu: () => void;
-  isOpen: boolean;
 }
 
 class MenuWrapper extends React.Component<IMenuWrapperProps> {
   constructor(props: IMenuWrapperProps) {
     super(props);
   }
+
   public render() {
     return (
       <div className="menu-wrapper">
-        <OpenMenuButton openMenu={this.props.openMenu} />
+        <OpenMenuButton
+          isOpening={this.props.isOpening}
+          isOpen={this.props.isOpen}
+          openMenu={this.props.openMenu}
+        />
         {this.props.isOpen ? <div className="menu-mask" /> : null}
         <CloseMenuButton
-          closeMenu={this.props.closeMenu}
           isOpen={this.props.isOpen}
+          isClosing={this.props.isClosing}
+          closeMenu={this.props.closeMenu}
         />
-        <Menu isOpen={this.props.isOpen} closeMenu={this.props.closeMenu} />
+        <Menu
+          isOpening={this.props.isOpening}
+          isOpen={this.props.isOpen}
+          isClosing={this.props.isClosing}
+          closeMenu={this.props.closeMenu}
+        />
       </div>
     );
   }

@@ -2,3 +2,51 @@
     z-index: 50;
     width: 7%;
 }
+
+.sound:hover {
+    transform: scale(1.02);
+}
+
+
+/* 音樂開的樣式 */
+
+.sound .st31 {
+    fill: #E7E3E3;
+}
+
+.sound .st78 {
+    fill: none;
+    stroke: #84725E;
+    stroke-width: 2.2229;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.sound .st79 {
+    fill: #84725E;
+    stroke: #84725E;
+    stroke-width: 2.2229;
+    stroke-miterlimit: 10;
+}
+
+
+/* 音樂關的樣式 */
+
+.sound .st36 {
+    fill: #E7E3E3;
+}
+
+.sound .st82 {
+    fill: none;
+    stroke: #B3B3B3;
+    stroke-width: 2.223;
+    stroke-miterlimit: 10;
+}
+
+.sound .st83 {
+    fill: #B3B3B3;
+    stroke: #B3B3B3;
+    stroke-width: 2.223;
+    stroke-miterlimit: 10;
+}
