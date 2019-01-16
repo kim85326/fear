@@ -1,0 +1,277 @@
+.storyA {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F0C7A7;
+    overflow: hidden;
+}
+
+.storyA .sound {
+    position: absolute;
+    bottom: 15%;
+    right: 16.86%;
+}
+
+.boy {
+    width: 14%;
+    position: absolute;
+    bottom: 12.4%;
+    right: 75.83%;
+    z-index: 2;
+}
+
+.rabbit {
+    width: 18.76%;
+    position: absolute;
+    bottom: 12.6%;
+    right: 56.3%;
+    z-index: 2;
+}
+
+.grass {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.dialogG,
+.dialogH,
+.dialogI {
+    display: none;
+    position: absolute;
+}
+
+.dialogG {
+    width: 17.97%;
+    bottom: 90.6%;
+    right: 31.71%;
+}
+
+.dialogH {
+    width: 16.95%;
+    bottom: 71.27%;
+    right: 13.05%;
+}
+
+.dialogI {
+    width: 17.97%;
+    bottom: 56.54%;
+    right: 31.71%;
+}
+
+.dialogG.show,
+.dialogH.show,
+.dialogI.show {
+    display: block;
+}
+
+.dialogG-text,
+.dialogG-background,
+.dialogH-text,
+.dialogH-background,
+.dialogI-text,
+.dialogI-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.dialogG-text,
+.dialogH-text,
+.dialogI-text {
+    z-index: 3;
+    display: none;
+}
+
+.dialogG-text.show,
+.dialogH-text.show,
+.dialogI-text.show {
+    display: block;
+}
+
+.dialogG-background,
+.dialogH-background,
+.dialogI-background {
+    z-index: 2;
+}
+
+.dialogG-background.isShowing,
+.dialogH-background.isShowing,
+.dialogI-background.isShowing {
+    animation-name: dialogGHI-background-show;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes dialogGHI-background-show {
+    0% {
+        transform: scale(0.5);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.dialogG-background.isHiding,
+.dialogH-background.isHiding,
+.dialogI-background.isHiding {
+    animation-name: dialogGHI-background-hide-scale, dialogGHI-background-hide-opacity;
+    animation-duration: 0.8s, 0.3s;
+    animation-delay: 0s, 0.5s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-fill-mode: forwards, forwards;
+}
+
+@keyframes dialogGHI-background-hide-scale {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(0.95);
+    }
+}
+
+@keyframes dialogGHI-background-hide-opacity {
+    0% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.reply-rabbit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    display: none;
+}
+
+.reply-rabbit.show {
+    display: block;
+    animation-name: reply-rabbit-button-show;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+.reply-rabbit-button {
+    cursor: pointer;
+}
+
+@keyframes reply-rabbit-button-show {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.dot {
+    animation: dot-wave 2s linear infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.dot:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.dot:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+@keyframes dot-wave {
+    0%,
+    60%,
+    100% {
+        transform: initial;
+    }
+    30% {
+        transform: translateY(-5px);
+    }
+}
+
+.buttonB,
+.buttonC {
+    display: none;
+    position: absolute;
+    width: 22.55%;
+    right: 26.71%;
+}
+
+.buttonB.show,
+.buttonC.show {
+    display: block;
+}
+
+.buttonB {
+    bottom: 90.6%;
+}
+
+.buttonC {
+    bottom: 56.54%;
+}
+
+.buttonB-text,
+.buttonB-background,
+.buttonC-text,
+.buttonC-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.buttonB-text,
+.buttonC-text {
+    z-index: 3;
+    display: none;
+}
+
+.buttonB-text.show,
+.buttonC-text.show {
+    display: block;
+}
+
+.buttonB-background.isShowing,
+.buttonC-background.isShowing {
+    animation-name: buttonBC-background-show;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes buttonBC-background-show {
+    0% {
+        transform: scale(0.5);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
