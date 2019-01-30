@@ -27,7 +27,6 @@ class DialogJ extends React.Component<IDialogJProps, IDialogJState> {
   public componentWillReceiveProps(nextProps: IDialogJProps) {
     // 當 props 改變，且顯示對話框時
     if (nextProps.isShowDialog && !this.props.isShowDialog) {
-      console.log("dialogJ componentWillReceiveProps");
       // 顯示對話框背景
       this.showDialogBackground();
 
@@ -54,7 +53,6 @@ class DialogJ extends React.Component<IDialogJProps, IDialogJState> {
   }
 
   public render() {
-    console.log(this.state.isShowingDialogBackground);
     return (
       <div className={`dialogJ ${this.state.isShowDialog ? "show" : ""}`}>
         <DialogJText isShowDialogText={this.state.isShowDialogText} />
