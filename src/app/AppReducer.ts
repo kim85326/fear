@@ -6,6 +6,11 @@ import storyBReducer, { IStoryBState } from "src/storyB/StoryBReducer";
 import infoDialogReducer, {
   IInfoDialogState
 } from "src/infoDialog/InfoDialogReducer";
+import fearCityReducer, { IFearCityState } from "src/fearCity/FearCityReducer";
+import leadingStoryDialogReducer, {
+  ILeadingStoryDialogState
+} from "src/leadingStoryDialog/LeadingStoryDialogReducer";
+import virusReducer, { IVirusState } from "src/virus/virusReducer";
 
 export interface IAppState {
   answers: IAnswersState;
@@ -13,6 +18,9 @@ export interface IAppState {
   storyAState: IStoryAState;
   storyBState: IStoryBState;
   infoDialogState: IInfoDialogState;
+  fearCityState: IFearCityState;
+  leadingStoryDialogState: ILeadingStoryDialogState;
+  virusState: IVirusState;
 }
 
 const AppReducer = combineReducers({
@@ -20,7 +28,10 @@ const AppReducer = combineReducers({
   menuState: menuReducer,
   storyAState: storyAReducer,
   storyBState: storyBReducer,
-  infoDialogState: infoDialogReducer
+  infoDialogState: infoDialogReducer,
+  fearCityState: fearCityReducer,
+  leadingStoryDialogState: leadingStoryDialogReducer,
+  virusState: virusReducer
 });
 
 export default AppReducer;

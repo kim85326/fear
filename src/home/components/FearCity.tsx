@@ -1,6 +1,7 @@
 import * as React from "react";
 import "../static/fearCity.css";
 import FearCityDialog from "./FearCityDialog";
+import { Link } from "react-router-dom";
 
 interface IFearCityState {
   isShowingDialog: boolean;
@@ -34,7 +35,8 @@ class FearCity extends React.Component<{}, IFearCityState> {
           y="0px"
           viewBox="0 0 511.5 402.6"
         >
-          <a
+          <Link
+            to="/fearCity"
             onMouseMove={this.onMouseMoveHandler}
             onMouseEnter={this.onMouseEnterHandler}
             onMouseLeave={this.onMouseLeaveHandler}
@@ -444,7 +446,7 @@ class FearCity extends React.Component<{}, IFearCityState> {
 		c9.4,3.6,16.1-0.4,28.7,3.3c14,4.1,19.3,13.5,23.1,21.7"
               />
             </g>
-          </a>
+          </Link>
         </svg>
         <FearCityDialog
           isShowingDialog={this.state.isShowingDialog}
