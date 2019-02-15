@@ -1,0 +1,323 @@
+.fearCity {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("./fear_city_background.png") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.fearCity .sound {
+  position: absolute;
+  bottom: 25%;
+  left: 5%;
+}
+
+.buttonA {
+  display: none;
+  position: absolute;
+  bottom: 15.7%;
+  right: 5.41%;
+  width: 12.74%;
+  z-index: 10;
+}
+
+.buttonA.show {
+  display: block;
+  animation-name: buttonD-shake;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: center center;
+}
+
+.buttonA.show:hover {
+  animation-play-state: paused;
+}
+
+@keyframes buttonA-shake {
+  20% {
+    transform: rotate3d(0, 0, 1, 10deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.buttonA-text,
+.buttonA-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.buttonA-text {
+  z-index: 3;
+  display: none;
+}
+
+.buttonA-text.show {
+  display: block;
+}
+
+.buttonA-background.isShowing {
+  animation-name: buttonA-background-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonA-background-show {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.left-wall {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 83%;
+  pointer-events: none;
+}
+
+.right-wall {
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 51%;
+}
+
+.personA {
+  z-index: 3;
+  position: absolute;
+  top: 21.77%;
+  right: 45%;
+  width: 10.8%;
+}
+
+.dialogC {
+  z-index: 7;
+  display: none;
+  position: absolute;
+  top: 11.44%;
+  right: 54.34%;
+  width: 11.81%;
+}
+
+.dialogC.show {
+  display: block;
+}
+
+.dialogC-text,
+.dialogC-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dialogC-text {
+  z-index: 3;
+  display: none;
+}
+
+.dialogC-text.show {
+  display: block;
+}
+
+.dialogC-background {
+  z-index: 2;
+}
+
+.dialogC-background.isShowing {
+  animation-name: dialogC-background-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes dialogC-background-show {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dialogC-background.isHiding {
+  animation-name: dialogC-background-hide;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogC-background-hide {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.personB-wrapper {
+  z-index: 6;
+  position: absolute;
+  top: 29.75%;
+  right: 23.34%;
+  width: 12.5%;
+}
+
+.personC-wrapper {
+  z-index: 6;
+  position: absolute;
+  top: 79.51%;
+  right: 42.51%;
+  width: 9.61%;
+}
+
+.personD-wrapper {
+  z-index: 6;
+  position: absolute;
+  top: 33.36%;
+  left: 17%;
+  width: 13.6%;
+}
+
+.dialogD,
+.dialogE,
+.dialogF {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  transform: translate(0, 100%);
+}
+
+.dialogD {
+  width: 63.84%;
+}
+
+.dialogE {
+  width: 82.51%;
+}
+
+.dialogF {
+  width: 58.3%;
+}
+
+.dialogD.show,
+.dialogE.show,
+.dialogF.show {
+  display: block;
+}
+
+.dialogD-text,
+.dialogD-background,
+.dialogE-text,
+.dialogE-background,
+.dialogF-text,
+.dialogF-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dialogD-text,
+.dialogE-text,
+.dialogF-text {
+  z-index: 3;
+  display: none;
+}
+
+.dialogD-text.show,
+.dialogE-text.show,
+.dialogF-text.show {
+  display: block;
+}
+
+.dialogD-background,
+.dialogE-background,
+.dialogF-background {
+  z-index: 2;
+}
+
+.dialogD-background.isShowing,
+.dialogE-background.isShowing,
+.dialogF-background.isShowing {
+  animation-name: dialogDEF-background-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes dialogDEF-background-show {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dialogD-background.isHiding,
+.dialogE-background.isHiding,
+.dialogF-background.isHiding {
+  animation-name: dialogDEF-background-hide;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogDEF-background-hide {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
