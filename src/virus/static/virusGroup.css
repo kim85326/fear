@@ -1,0 +1,73 @@
+.virus-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.virus {
+  position: absolute;
+  z-index: 200;
+  animation-name: virus-move;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.virus:hover {
+  animation-play-state: paused;
+}
+
+@keyframes virus-move {
+  from {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+
+.virusA {
+  top: 34.67%;
+  right: 52.26%;
+  width: 28.02%;
+}
+
+.virusB {
+  bottom: 7.73%;
+  right: 87.42%;
+  width: 8.38%;
+}
+
+.virusC {
+  top: 16.8%;
+  right: 81.74%;
+  width: 18.26%;
+}
+
+.virusD {
+  top: 4.39%;
+  right: 70.65%;
+  width: 8.59%;
+}
+
+.virusE {
+  top: 26.25%;
+  right: 18.38%;
+  width: 21.77%;
+}
+
+.virusF {
+  top: 0%;
+  right: 0%;
+  width: 18.64%;
+}
+
+.virusG {
+  bottom: 0%;
+  right: 0%;
+  width: 21.97%;
+}

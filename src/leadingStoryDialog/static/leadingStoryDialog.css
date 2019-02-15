@@ -1,0 +1,83 @@
+.leading-story-dialog-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.leading-story-dialog-mask {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0f;
+  opacity: 0.8;
+}
+
+.close-leading-story-dialog-button {
+  z-index: 102;
+  position: absolute;
+  top: 65.83%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4.99%;
+  animation: leading-story-dialog-show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.leading-story-dialog {
+  z-index: 101;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44.63%;
+  animation: leading-story-dialog-show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes leading-story-dialog-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dot {
+  animation: dot-wave 2s linear infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.dot:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.dot:nth-child(5) {
+  animation-delay: 1.6s;
+}
+
+@keyframes dot-wave {
+  0%,
+  60%,
+  100% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
