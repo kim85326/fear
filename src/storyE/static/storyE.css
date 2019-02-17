@@ -1,0 +1,184 @@
+.storyE {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("./storyE_background.png") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.storyE .sound {
+  position: absolute;
+  bottom: 23.62%;
+  right: 7.65%;
+}
+
+.patternG {
+  z-index: 5;
+  position: absolute;
+  top: 68.85%;
+  right: 76%;
+  width: 2.38%;
+  animation-name: patternG-move;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.patternG:hover {
+  animation-play-state: paused;
+}
+
+@keyframes patternG-move {
+  from {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+
+.boyF {
+  position: absolute;
+  top: 16.8%;
+  right: 41.78%;
+  width: 14.34%;
+  z-index: 2;
+}
+
+.patternH {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 11.4%;
+  right: 43.39%;
+  /* width: 1.81%; */
+  width: 2.8%;
+  z-index: 4;
+}
+
+.patternH.show {
+  visibility: visible;
+  animation-name: patternH-show-opacity, patternH-show-scale;
+  animation-duration: 1s, 1s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-fill-mode: forwards, forwards;
+}
+
+@keyframes patternH-show-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes patternH-show-scale {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.carrots {
+  position: absolute;
+  top: 51.44%;
+  right: 18.38%;
+  width: 59.3%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.questionC {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.questionC-mask {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0f;
+  opacity: 0.8;
+}
+
+.buttonH,
+.buttonI {
+  display: none;
+  position: absolute;
+  width: 22.55%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 101;
+}
+
+.buttonH.show,
+.buttonI.show {
+  display: block;
+}
+
+.buttonH {
+  top: 32.84%;
+}
+
+.buttonI {
+  top: 53.98%;
+}
+
+.buttonH-text,
+.buttonH-background,
+.buttonI-text,
+.buttonI-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.buttonH-text,
+.buttonI-text {
+  z-index: 102;
+  display: none;
+}
+
+.buttonH-text.show,
+.buttonI-text.show {
+  display: block;
+}
+
+.buttonH-background.isShowing,
+.buttonI-background.isShowing {
+  animation-name: buttonHI-background-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes buttonHI-background-show {
+  0% {
+    transform: scale(0.5);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
