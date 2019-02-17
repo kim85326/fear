@@ -9,7 +9,7 @@ import Rabbit from "./Rabbit";
 import DialogG from "./DialogG";
 import DialogH from "./DialogH";
 import DialogI from "./DialogI";
-import ConnectedButtonBC from "../containers/ButtonBCContainer";
+import ConnectedQuestionA from "../containers/QuestionAContainer";
 
 interface IStoryAProps {
   isLoading: boolean;
@@ -33,7 +33,7 @@ class StoryA extends React.Component<IStoryAProps> {
         <DialogG isShowDialog={this.props.isShowDialogG} />
         <DialogH isShowDialog={this.props.isShowDialogH} />
         <DialogI isShowDialog={this.props.isShowDialogI} />
-        <ConnectedButtonBC />
+        <ConnectedQuestionA />
         <Grass />
       </div>
     );

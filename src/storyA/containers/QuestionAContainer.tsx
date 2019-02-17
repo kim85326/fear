@@ -10,22 +10,22 @@ import {
 } from "../StoryAAction";
 import { setAnswerAAction } from "src/answer/AnswersAction";
 
-interface IButtonBCContainerProps extends IButtonBCStateProps {
+interface IQuestionAContainerProps extends IQuestionAStateProps {
   dispatch: Dispatch;
 }
 
-interface IButtonBCStateProps {
+interface IQuestionAStateProps {
   isShowButtonB: boolean;
   isShowButtonC: boolean;
 }
 
-const mapStateToProps = (state: IAppState): IButtonBCStateProps => ({
+const mapStateToProps = (state: IAppState): IQuestionAStateProps => ({
   isShowButtonB: state.storyAState.isShowButtonB,
   isShowButtonC: state.storyAState.isShowButtonC
 });
 
-class ButtonBCContainer extends React.Component<IButtonBCContainerProps> {
-  constructor(props: IButtonBCContainerProps) {
+class QuestionAContainer extends React.Component<IQuestionAContainerProps> {
+  constructor(props: IQuestionAContainerProps) {
     super(props);
   }
 
@@ -51,6 +51,6 @@ class ButtonBCContainer extends React.Component<IButtonBCContainerProps> {
   }
 }
 
-const ConnectedButtonBC = connect(mapStateToProps)(ButtonBCContainer);
+const ConnectedQuestionA = connect(mapStateToProps)(QuestionAContainer);
 
-export default ConnectedButtonBC;
+export default ConnectedQuestionA;
