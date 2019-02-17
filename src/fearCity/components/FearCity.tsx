@@ -11,6 +11,8 @@ import PersonB from "./PersonB";
 import PersonC from "./PersonC";
 import PersonD from "./PersonD";
 import DialogC from "./DialogC";
+import Stairs from "./Stairs";
+import Windows from "./Windows";
 
 interface IFearCityProps {
   isShowDialogC: boolean;
@@ -26,6 +28,8 @@ class FearCity extends React.Component<IFearCityProps> {
   public render() {
     return (
       <div className="fearCity">
+        <Windows />
+        <Stairs />
         <ConnectedMenuWrapper />
         <Sound src={soundSrc} />
         <ConnectedButtonA />

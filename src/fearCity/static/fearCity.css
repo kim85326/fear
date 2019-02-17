@@ -2,8 +2,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url("./fear_city_background.png") no-repeat center;
-  background-size: cover;
+  background-color: #2e4874;
   overflow: hidden;
 }
 
@@ -11,6 +10,22 @@
   position: absolute;
   bottom: 25%;
   left: 5%;
+}
+
+.windows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.stairs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
 }
 
 .buttonA {
@@ -66,7 +81,7 @@
 }
 
 .buttonA-text {
-  z-index: 3;
+  z-index: 5;
   display: none;
 }
 
@@ -96,7 +111,7 @@
 }
 
 .left-wall {
-  z-index: 5;
+  z-index: 6;
   position: absolute;
   top: 0;
   left: 0;
@@ -105,7 +120,7 @@
 }
 
 .right-wall {
-  z-index: 4;
+  z-index: 5;
   position: absolute;
   top: 0;
   right: 0;
@@ -113,7 +128,7 @@
 }
 
 .personA {
-  z-index: 3;
+  z-index: 4;
   position: absolute;
   top: 21.77%;
   right: 45%;
@@ -196,7 +211,7 @@
 }
 
 .personB-wrapper {
-  z-index: 6;
+  z-index: 7;
   position: absolute;
   top: 29.75%;
   right: 23.34%;
@@ -204,7 +219,7 @@
 }
 
 .personC-wrapper {
-  z-index: 6;
+  z-index: 7;
   position: absolute;
   top: 79.51%;
   right: 42.51%;
@@ -212,7 +227,7 @@
 }
 
 .personD-wrapper {
-  z-index: 6;
+  z-index: 7;
   position: absolute;
   top: 33.36%;
   left: 17%;
