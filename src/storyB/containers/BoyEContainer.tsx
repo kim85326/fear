@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import BoyE from "../components/BoyE";
 import { setIsShowButtonDAction } from "../StoryBActions";
-import { openInfoDialogAction } from "../../infoDialog/InfoDialogActions";
+import { openInfoDialogAAction } from "../../infoDialogA/InfoDialogAActions";
 import { IAppState } from "src/app/AppReducer";
 
 interface IBoyEContainerProps extends IBoyEStateProps {
@@ -15,7 +15,7 @@ interface IBoyEStateProps {
 }
 
 const mapStateToProps = (state: IAppState): IBoyEStateProps => ({
-  isShowingInfoDialog: state.infoDialogState.isShowing
+  isShowingInfoDialog: state.infoDialogAState.isShowing
 });
 
 class BoyEContainer extends React.Component<IBoyEContainerProps> {
@@ -30,7 +30,7 @@ class BoyEContainer extends React.Component<IBoyEContainerProps> {
 
   private handleClick() {
     this.props.dispatch(setIsShowButtonDAction(true));
-    this.props.dispatch(openInfoDialogAction());
+    this.props.dispatch(openInfoDialogAAction());
   }
 }
 

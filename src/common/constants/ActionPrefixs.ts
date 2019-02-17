@@ -3,8 +3,11 @@ export enum ActionPrefixs {
   menu = "menu",
   storyA = "storyA",
   storyB = "storyB",
-  infoDialog = "infoDialog",
+  infoDialogA = "infoDialogA",
   fearCity = "fearCity",
   leadingStoryDialog = "leadingStoryDialog",
-  virus = "virus"
+  virus = "virus",
+  storyDDialog = "storyDDialog",
+  storyE = "storyE",
+  infoDialogC = "infoDialogC"
 }

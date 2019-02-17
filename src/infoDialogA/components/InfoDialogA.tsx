@@ -1,28 +1,31 @@
 import * as React from "react";
 import "../static/infoDialog.css";
-import CloseInfoDialogButton from "./CloseInfoDialogButton";
-import InfoDialogPicture from "./InfoDialogPicture";
+import CloseInfoDialogAButton from "./CloseInfoDialogAButton";
+import InfoDialogAPicture from "./InfoDialogAPicture";
 
-interface IInfoDialogProps {
+interface IInfoDialogAProps {
   isShow: boolean;
   isShowing: boolean;
   isHiding: boolean;
   handleClick: () => void;
 }
 
-interface IInfoDialogState {
+interface IInfoDialogAState {
   isShowDialogText: boolean;
 }
 
-class InfoDialog extends React.Component<IInfoDialogProps, IInfoDialogState> {
-  constructor(props: IInfoDialogProps) {
+class InfoDialogA extends React.Component<
+  IInfoDialogAProps,
+  IInfoDialogAState
+> {
+  constructor(props: IInfoDialogAProps) {
     super(props);
     this.state = {
       isShowDialogText: false
     };
   }
 
-  public componentWillReceiveProps(nextProps: IInfoDialogProps) {
+  public componentWillReceiveProps(nextProps: IInfoDialogAProps) {
     // props 要求顯示對話框時
     if (nextProps.isShowing && !this.props.isShowing) {
       // 1 秒後顯示對話框的文字
@@ -61,7 +64,7 @@ class InfoDialog extends React.Component<IInfoDialogProps, IInfoDialogState> {
           <div className="info-dialog-title">恐懼是什麼？</div>
           <div className="info-dialog-content">
             <div className="info-dialog-content-item">
-              <InfoDialogPicture />
+              <InfoDialogAPicture />
             </div>
             <div className="info-dialog-content-item">
               <div
@@ -93,7 +96,7 @@ class InfoDialog extends React.Component<IInfoDialogProps, IInfoDialogState> {
             </div>
           </div>
         </div>
-        <CloseInfoDialogButton
+        <CloseInfoDialogAButton
           isHiding={this.props.isHiding}
           handleClick={this.props.handleClick}
         />
@@ -102,4 +105,4 @@ class InfoDialog extends React.Component<IInfoDialogProps, IInfoDialogState> {
   }
 }
 
-export default InfoDialog;
+export default InfoDialogA;

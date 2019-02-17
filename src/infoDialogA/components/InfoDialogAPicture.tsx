@@ -1,6 +1,6 @@
 import * as React from "react";
 
-class InfoDialogPicture extends React.Component {
+class InfoDialogAPicture extends React.Component {
   constructor(props: {}) {
     super(props);
   }
@@ -21,4 +21,4 @@ class InfoDialogPicture extends React.Component {
   }
 }
 
-export default InfoDialogPicture;
+export default InfoDialogAPicture;

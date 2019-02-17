@@ -5,7 +5,8 @@ import Contact from "../../contact/Contact";
 import Home from "../../home/components/Home";
 import ConnectedStoryA from "src/storyA/containers/StoryAContainer";
 import ConnectedStoryB from "src/storyB/containers/StoryBContainer";
-import ConnectedFearCity from 'src/fearCity/containers/FearCityContainer';
+import ConnectedFearCity from "src/fearCity/containers/FearCityContainer";
+import ConnectedStoryE from "src/storyE/containers/StoryEContainer";
 
 class App extends React.Component {
   public render() {
@@ -16,6 +17,7 @@ class App extends React.Component {
           <Route path="/storyA" component={ConnectedStoryA} />
           <Route path="/storyB" component={ConnectedStoryB} />
           <Route path="/fearCity" component={ConnectedFearCity} />
+          <Route path="/storyE" component={ConnectedStoryE} />
           <Route path="/contact" component={Contact} />
         </div>
       </Router>

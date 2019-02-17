@@ -9,7 +9,7 @@ import {
   setIsShowDialogJAction
 } from "../StoryBActions";
 import backgroundImage from "../static/storyB_background.png";
-import ConnectedInfoDialog from "src/infoDialog/containers/InfoDialogContainer";
+import ConnectedInfoDialogA from "src/infoDialogA/containers/InfoDialogAContainer";
 
 interface IStoryBContainerProps extends IStoryBStateProps {
   dispatch: Dispatch;
@@ -73,7 +73,7 @@ class StoryBContainer extends React.Component<IStoryBContainerProps> {
           isShowPatternF={this.props.isShowPatternF}
           isShowButtonD={this.props.isShowButtonD}
         />
-        <ConnectedInfoDialog />
+        <ConnectedInfoDialogA />
       </>
     );
   }
