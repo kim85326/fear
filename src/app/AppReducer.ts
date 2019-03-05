@@ -18,6 +18,7 @@ import storyEReducer, { IStoryEState } from "src/storyE/StoryEReducer";
 import infoDialogCReducer, {
   IInfoDialogCState
 } from "src/infoDialogC/InfoDialogCReducer";
+import endingReducer, { IEndingState } from "src/ending/EndingReducer";
 
 export interface IAppState {
   answers: IAnswersState;
@@ -31,6 +32,7 @@ export interface IAppState {
   storyDDialogState: IStoryDDialogState;
   storyEState: IStoryEState;
   infoDialogCState: IInfoDialogCState;
+  endingState: IEndingState;
 }
 
 const AppReducer = combineReducers({
@@ -44,7 +46,8 @@ const AppReducer = combineReducers({
   virusState: virusReducer,
   storyDDialogState: storyDDialogReducer,
   storyEState: storyEReducer,
-  infoDialogCState: infoDialogCReducer
+  infoDialogCState: infoDialogCReducer,
+  endingState: endingReducer
 });
 
 export default AppReducer;

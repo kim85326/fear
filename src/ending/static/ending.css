@@ -1,0 +1,97 @@
+.ending {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #f0c7a7;
+  background-size: cover;
+  overflow: hidden;
+  /* min-width: 1440px; */
+  /* min-height: 688px; */
+}
+
+.ending .sound {
+  position: absolute;
+  top: 6.74%;
+  right: 10.55%;
+}
+
+.ending-content {
+  position: absolute;
+  top: 17.6%;
+  right: 20.27%;
+  width: 69.26%;
+}
+
+.ending-content img {
+  width: 100%;
+}
+
+.buttonJ,
+.buttonK {
+  display: none;
+  position: absolute;
+  width: 12.74%;
+}
+
+.buttonJ {
+  bottom: 30%;
+  right: 5.41%;
+}
+
+.buttonK {
+  bottom: 20%;
+  right: 5.41%;
+}
+
+.buttonJ.show,
+.buttonK.show {
+  display: block;
+}
+
+.buttonJ.show:hover,
+.buttonK.show:hover {
+  opacity: 0.7;
+}
+
+.buttonJ-text,
+.buttonJ-background,
+.buttonK-text,
+.buttonK-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.buttonJ-text,
+.buttonK-text {
+  z-index: 3;
+  display: none;
+}
+
+.buttonJ-text.show,
+.buttonK-text.show {
+  display: block;
+}
+
+.buttonJ-background.isShowing,
+.buttonK-background.isShowing {
+  animation-name: buttonJK-background-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonJK-background-show {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
