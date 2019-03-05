@@ -1,7 +1,9 @@
 import * as React from "react";
 import DialogD from "./DialogD";
+import PersonBWhiteBorder from "./PersonBWhiteBorder";
 
 interface IPersonBState {
+  isHover: boolean;
   isShowingDialog: boolean;
   isHidingDialog: boolean;
   dialogX: number;
@@ -12,6 +14,7 @@ class PersonB extends React.Component<{}, IPersonBState> {
   constructor(props: {}) {
     super(props);
     this.state = {
+      isHover: false,
       isShowingDialog: false,
       isHidingDialog: false,
       dialogX: 0,
@@ -33,6 +36,7 @@ class PersonB extends React.Component<{}, IPersonBState> {
           y="0px"
           viewBox="0 0 258.5 474.167"
         >
+          {this.state.isHover ? <PersonBWhiteBorder /> : null}}
           <a
             onMouseMove={this.onMouseMoveHandler}
             onMouseEnter={this.onMouseEnterHandler}
@@ -248,6 +252,7 @@ class PersonB extends React.Component<{}, IPersonBState> {
 
   private onMouseEnterHandler(event: React.MouseEvent<HTMLElement>): void {
     this.setState({
+      isHover: true,
       isShowingDialog: true,
       isHidingDialog: false
     });
@@ -262,6 +267,7 @@ class PersonB extends React.Component<{}, IPersonBState> {
 
   private onMouseLeaveHandler(event: React.MouseEvent<HTMLElement>) {
     this.setState({
+      isHover: false,
       isShowingDialog: false,
       isHidingDialog: true
     });

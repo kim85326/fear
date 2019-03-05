@@ -30,8 +30,7 @@ class PersonA extends React.Component<IPersonAProps, IPersonAState> {
         y="0px"
         viewBox="0 0 200 401.917"
       >
-        <PersonAWhiteBorder/>
-        {/* {this.state.isHover ? <PersonAWhiteBorder /> : null}} */}
+        {this.state.isHover ? <PersonAWhiteBorder /> : null}}
         <a
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
