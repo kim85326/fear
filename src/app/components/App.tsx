@@ -7,6 +7,7 @@ import ConnectedStoryA from "src/storyA/containers/StoryAContainer";
 import ConnectedStoryB from "src/storyB/containers/StoryBContainer";
 import ConnectedFearCity from "src/fearCity/containers/FearCityContainer";
 import ConnectedStoryE from "src/storyE/containers/StoryEContainer";
+import SumbitFear from "src/submitFear/components/SubmitFear";
 
 class App extends React.Component {
   public render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Route path="/storyB" component={ConnectedStoryB} />
           <Route path="/fearCity" component={ConnectedFearCity} />
           <Route path="/storyE" component={ConnectedStoryE} />
+          <Route path="/submitFear" component={SumbitFear} />
           <Route path="/contact" component={Contact} />
         </div>
       </Router>
