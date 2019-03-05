@@ -88,12 +88,14 @@
   animation-name: menu-show;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
 .menu.isClosing {
   animation-name: menu-hide;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes menu-show {
