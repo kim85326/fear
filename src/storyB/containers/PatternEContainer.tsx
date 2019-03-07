@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import PatternE from "../components/PatternE";
+import { openInfoDialogAAction } from "../../infoDialogA/InfoDialogAActions";
 
 interface IPatternEContainerProps {
   dispatch: Dispatch;
@@ -10,6 +11,7 @@ interface IPatternEContainerProps {
 class PatternEContainer extends React.Component<IPatternEContainerProps> {
   constructor(props: IPatternEContainerProps) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   public render() {
@@ -17,7 +19,7 @@ class PatternEContainer extends React.Component<IPatternEContainerProps> {
   }
 
   private handleClick() {
-    alert("123");
+    this.props.dispatch(openInfoDialogAAction());
   }
 }
 

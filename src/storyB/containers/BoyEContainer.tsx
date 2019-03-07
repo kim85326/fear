@@ -3,20 +3,10 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import BoyE from "../components/BoyE";
 import { setIsShowButtonDAction } from "../StoryBActions";
-import { openInfoDialogAAction } from "../../infoDialogA/InfoDialogAActions";
-import { IAppState } from "src/app/AppReducer";
 
-interface IBoyEContainerProps extends IBoyEStateProps {
+interface IBoyEContainerProps {
   dispatch: Dispatch;
 }
-
-interface IBoyEStateProps {
-  isShowingInfoDialog: boolean;
-}
-
-const mapStateToProps = (state: IAppState): IBoyEStateProps => ({
-  isShowingInfoDialog: state.infoDialogAState.isShowing
-});
 
 class BoyEContainer extends React.Component<IBoyEContainerProps> {
   constructor(props: IBoyEContainerProps) {
@@ -30,10 +20,10 @@ class BoyEContainer extends React.Component<IBoyEContainerProps> {
 
   private handleClick() {
     this.props.dispatch(setIsShowButtonDAction(true));
-    this.props.dispatch(openInfoDialogAAction());
+    alert("第9頁");
   }
 }
 
-const ConnectedBoyE = connect(mapStateToProps)(BoyEContainer);
+const ConnectedBoyE = connect()(BoyEContainer);
 
 export default ConnectedBoyE;
