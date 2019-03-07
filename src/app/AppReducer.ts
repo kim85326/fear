@@ -19,13 +19,19 @@ import infoDialogCReducer, {
   IInfoDialogCState
 } from "src/infoDialogC/InfoDialogCReducer";
 import endingReducer, { IEndingState } from "src/ending/EndingReducer";
+import infoDialogBReducer, {
+  IInfoDialogBState
+} from "src/infoDialogB/InfoDialogBReducer";
+import storyCReducer, { IStoryCState } from 'src/storyC/StoryCReducer';
 
 export interface IAppState {
   answers: IAnswersState;
   menuState: IMenuState;
   storyAState: IStoryAState;
   storyBState: IStoryBState;
+  storyCState: IStoryCState;
   infoDialogAState: IInfoDialogAState;
+  infoDialogBState: IInfoDialogBState;
   fearCityState: IFearCityState;
   leadingStoryDialogState: ILeadingStoryDialogState;
   virusState: IVirusState;
@@ -40,7 +46,9 @@ const AppReducer = combineReducers({
   menuState: menuReducer,
   storyAState: storyAReducer,
   storyBState: storyBReducer,
+  storyCState: storyCReducer,
   infoDialogAState: infoDialogAReducer,
+  infoDialogBState: infoDialogBReducer,
   fearCityState: fearCityReducer,
   leadingStoryDialogState: leadingStoryDialogReducer,
   virusState: virusReducer,
