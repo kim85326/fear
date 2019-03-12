@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import BoyE from "../components/BoyE";
 import { setIsShowButtonDAction } from "../StoryBActions";
+import { openOriginalPaintingDialogAction } from "src/originalPaintingDialog/OriginalPaintingDialogActions";
 
 interface IBoyEContainerProps {
   dispatch: Dispatch;
@@ -20,7 +21,7 @@ class BoyEContainer extends React.Component<IBoyEContainerProps> {
 
   private handleClick() {
     this.props.dispatch(setIsShowButtonDAction(true));
-    alert("第9頁");
+    this.props.dispatch(openOriginalPaintingDialogAction());
   }
 }
 

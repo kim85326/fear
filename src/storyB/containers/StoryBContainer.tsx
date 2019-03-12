@@ -10,6 +10,7 @@ import {
 } from "../StoryBActions";
 import backgroundImage from "../static/storyB_background.png";
 import ConnectedInfoDialogA from "src/infoDialogA/containers/InfoDialogAContainer";
+import ConnectedOriginalPaintingDialog from "src/originalPaintingDialog/containers/OriginalPaintingDialogContainer";
 
 interface IStoryBContainerProps extends IStoryBStateProps {
   dispatch: Dispatch;
@@ -74,6 +75,7 @@ class StoryBContainer extends React.Component<IStoryBContainerProps> {
           isShowButtonD={this.props.isShowButtonD}
         />
         <ConnectedInfoDialogA />
+        <ConnectedOriginalPaintingDialog />
       </>
     );
   }

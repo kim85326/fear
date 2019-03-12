@@ -6,6 +6,7 @@ export enum ActionPrefixs {
   storyC = "storyC",
   infoDialogA = "infoDialogA",
   infoDialogB = "infoDialogB",
+  originalPaintingDialog = "originalPaintingDialog",
   fearCity = "fearCity",
   leadingStoryDialog = "leadingStoryDialog",
   virus = "virus",

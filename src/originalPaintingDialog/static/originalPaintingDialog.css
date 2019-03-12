@@ -1,0 +1,115 @@
+.original-painting-dialog-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.original-painting-dialog-wrapper.isShow {
+  display: block;
+}
+
+.original-painting-dialog-mask {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3c3732;
+  opacity: 0.7;
+}
+
+.close-original-painting-dialog-button {
+  z-index: 102;
+  position: absolute;
+  top: 8.67%;
+  right: 7.1%;
+  width: 3.43%;
+}
+
+.close-original-painting-dialog-button:hover {
+  animation-name: close-original-painting-dialog-button-hover;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes close-original-painting-dialog-button-hover {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.close-original-painting-dialog-button.isHiding {
+  animation-name: close-original-painting-dialog-button-isHiding-scale;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes close-original-painting-dialog-button-isHiding-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.original-painting-dialog {
+  z-index: 101;
+  position: absolute;
+  bottom: -625px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 625px;
+  height: 625px;
+}
+
+.original-painting-dialog.isShowing {
+  animation-name: original-painting-dialog-wrapper-isShowing;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes original-painting-dialog-wrapper-isShowing {
+  0% {
+    bottom: -625px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+.original-painting-dialog.isHiding {
+  animation-name: original-painting-dialog-wrapper-isHiding;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes original-painting-dialog-wrapper-isHiding {
+  0% {
+    bottom: 0;
+  }
+
+  100% {
+    bottom: -625px;
+  }
+}
+
+.original-painting-dialog-picture {
+  width: 100%;
+  height: 100%;
+}
