@@ -43,8 +43,8 @@
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 52.57%;
-  right: 64.99%;
+  top: 57%;
+  right: 68%;
   width: 2.44%;
   z-index: 9;
 }
@@ -139,7 +139,7 @@
 
 .well {
   position: absolute;
-  bottom: 0%;
+  top: 49.5%;
   right: 58.48%;
   width: 23.6%;
   z-index: 8;
