@@ -5,8 +5,8 @@
   background: url("./submit_fear_background.png") no-repeat center;
   background-size: cover;
   overflow: hidden;
-  /* min-width: 1440px; */
-  /* min-height: 688px; */
+  min-width: 1440px;
+  min-height: 688px;
 }
 
 .submit-fear .sound {
