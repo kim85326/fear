@@ -1,180 +1,182 @@
 .home {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background: url("./home_background.png") no-repeat center;
-    background-size: cover;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("./home_background.png") no-repeat center;
+  background-size: cover;
+  min-width: 1440px;
+  min-height: 688px;
 }
 
 .home .sound {
-    position: absolute;
-    bottom: 45%;
-    right: 4%;
+  position: absolute;
+  bottom: 45%;
+  right: 4%;
 }
 
 .logo-background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
 }
 
 .logo {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 9.5%;
-    animation-name: logo-show;
-    animation-delay: 1s;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 9.5%;
+  animation-name: logo-show;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 @keyframes logo-show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .slogan {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 3.1%;
-    animation-name: slogan-show;
-    animation-delay: 1.2s;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 3.1%;
+  animation-name: slogan-show;
+  animation-delay: 1.2s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 @keyframes slogan-show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .mountains {
-    position: absolute;
-    left: 0%;
-    bottom: 0;
-    width: 100%;
-    z-index: 10;
-    pointer-events: none;
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .arrow {
-    position: absolute;
-    left: 19.5%;
-    top: 6%;
-    height: 11.5%;
-    z-index: 12;
-    animation-name: arrow-show, arrow-move;
-    animation-duration: 2s, 3s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-iteration-count: 1, infinite;
+  position: absolute;
+  left: 19.5%;
+  top: 6%;
+  height: 11.5%;
+  z-index: 12;
+  animation-name: arrow-show, arrow-move;
+  animation-duration: 2s, 3s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-iteration-count: 1, infinite;
 }
 
 @keyframes arrow-show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes arrow-move {
-    0% {
-        transform: translateY(0);
-        opacity: 0.8;
-    }
-    40% {
-        transform: translateY(40px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 0.8;
-    }
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translateY(40px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
 }
 
 .city-wrapper {
-    position: absolute;
-    width: 25%;
-    z-index: 9;
+  position: absolute;
+  width: 25%;
+  z-index: 9;
 }
 
 .city-wrapper:hover {
-    z-index: 11;
+  z-index: 11;
 }
 
 .city-wrapper:hover .city {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .city-dialog {
-    position: absolute;
-    width: 0%;
-    pointer-events: none;
+  position: absolute;
+  width: 0%;
+  pointer-events: none;
 }
 
 .city-dialog.isShowing {
-    width: 30%;
-    animation-name: city-dialog-show;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    transition-timing-function: ease-out;
+  width: 30%;
+  animation-name: city-dialog-show;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  transition-timing-function: ease-out;
 }
 
 .city-dialog.isHiding {
-    width: 0;
-    animation-name: city-dialog-hide;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    transition-timing-function: ease-out;
+  width: 0;
+  animation-name: city-dialog-hide;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  transition-timing-function: ease-out;
 }
 
 @keyframes city-dialog-show {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 30%;
-    }
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 30%;
+  }
 }
 
 @keyframes city-dialog-hide {
-    0% {
-        width: 30%;
-    }
-    100% {
-        width: 0%;
-    }
+  0% {
+    width: 30%;
+  }
+  100% {
+    width: 0%;
+  }
 }
 
 .fear-city-wrapper {
-    top: 28%;
-    left: 10%;
+  top: 28%;
+  left: 10%;
 }
 
 .rabbit-city-wrapper {
-    top: 40%;
-    right: 10%;
+  top: 40%;
+  right: 10%;
 }
 
 .fear-city-dialog {
-    transform: translate(0, -100%);
+  transform: translate(0, -100%);
 }
 
 .rabbit-city-dialog {
-    transform: translate(-100%, -100%);
+  transform: translate(-100%, -100%);
 }

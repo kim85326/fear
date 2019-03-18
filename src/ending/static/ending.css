@@ -5,8 +5,8 @@
   background: #f0c7a7;
   background-size: cover;
   overflow: hidden;
-  /* min-width: 1440px; */
-  /* min-height: 688px; */
+  min-width: 1440px;
+  min-height: 688px;
 }
 
 .ending .sound {

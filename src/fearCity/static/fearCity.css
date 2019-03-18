@@ -4,6 +4,8 @@
   height: 100vh;
   background-color: #2e4874;
   overflow: hidden;
+  min-width: 1440px;
+  min-height: 688px;
 }
 
 .fearCity .sound {
