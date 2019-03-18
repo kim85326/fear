@@ -32,12 +32,12 @@ class FearCityContainer extends React.Component<IFearCityContainerProps> {
 
   constructor(props: IFearCityContainerProps) {
     super(props);
-  }
-
-  public componentDidMount() {
     this.handleImageLoaded = this.handleImageLoaded.bind(this);
     this.showDialogC = this.showDialogC.bind(this);
     this.hideDialogC = this.hideDialogC.bind(this);
+  }
+
+  public componentDidMount() {
     this.image.src = backgroundImage;
     this.image.onload = this.handleImageLoaded;
   }

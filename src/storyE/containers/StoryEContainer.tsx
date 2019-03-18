@@ -33,10 +33,10 @@ class StoryEContainer extends React.Component<IStoryEContainerProps> {
 
   constructor(props: IStoryEContainerProps) {
     super(props);
+    this.handleImageLoaded = this.handleImageLoaded.bind(this);
   }
 
   public componentDidMount() {
-    this.handleImageLoaded = this.handleImageLoaded.bind(this);
     this.image.src = backgroundImage;
     this.image.onload = this.handleImageLoaded;
     this.props.dispatch(showAllVirusAction());

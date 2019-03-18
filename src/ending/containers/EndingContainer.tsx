@@ -29,10 +29,10 @@ class EndingContainer extends React.Component<IEndingContainerProps> {
 
   constructor(props: IEndingContainerProps) {
     super(props);
+    this.handleImageLoaded = this.handleImageLoaded.bind(this);
   }
 
   public componentDidMount() {
-    this.handleImageLoaded = this.handleImageLoaded.bind(this);
     this.image.src = endingContentImage;
     this.image.onload = this.handleImageLoaded;
   }
