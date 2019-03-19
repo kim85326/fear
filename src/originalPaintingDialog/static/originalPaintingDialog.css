@@ -70,11 +70,10 @@
 .original-painting-dialog {
   z-index: 101;
   position: absolute;
-  bottom: -625px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 625px;
-  height: 625px;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
 }
 
 .original-painting-dialog.isShowing {
@@ -86,11 +85,11 @@
 
 @keyframes original-painting-dialog-wrapper-isShowing {
   0% {
-    bottom: -625px;
+    height: 50%;
   }
 
   100% {
-    bottom: 0;
+    height: 90%;
   }
 }
 
@@ -103,11 +102,11 @@
 
 @keyframes original-painting-dialog-wrapper-isHiding {
   0% {
-    bottom: 0;
+    height: 90%;
   }
 
   100% {
-    bottom: -625px;
+    height: 50%;
   }
 }
 
