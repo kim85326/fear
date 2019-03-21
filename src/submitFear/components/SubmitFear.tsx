@@ -8,6 +8,7 @@ import SubmitButton from "./SubmitButton";
 import SmallAnswer from "./SmallAnswer";
 import MediumAnswer from "./MediumAnswer";
 import LargeAnswer from "./LargeAnswer";
+import { convertToGeometricShape } from "../convertToGeometricShape";
 
 // Initialize Firebase
 import * as firebase from "firebase";
@@ -57,8 +58,6 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
         <Sound src={soundSrc} />
         {this.getLabelDom()}
         {this.getInputDom()}
-        <ResetButton handleClick={this.handleReset} />
-        <SubmitButton handleClick={this.handleSubmit} />
         <SmallAnswer isActive={this.getAnswerIsActive("smallAnswer")}>
           {this.convertToAnswerCharDoms(this.state.smallAnswer)}
         </SmallAnswer>
@@ -107,25 +106,33 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
   }
 
   private getInputDom(): React.ReactNode {
-    return (
-      <div className="answer-input-wrapper">
-        <input
-          type="text"
-          className="answer-input"
-          placeholder="說出來會舒服點，試著寫下你害怕的東西吧。"
-          onChange={this.handleChangeTempAnswer}
-          value={this.state.tempAnswer}
-          maxLength={15}
-        />
-        <div className="answer-count">
-          (
-          {this.state.tempAnswer.length < 15
-            ? this.state.tempAnswer.length
-            : 15}
-          /15)
-        </div>
-      </div>
-    );
+    if (!this.state.isActive) {
+      return (
+        <>
+          <div className="answer-input-wrapper">
+            <input
+              type="text"
+              className="answer-input"
+              placeholder="說出來會舒服點，試著寫下你害怕的東西吧。"
+              onChange={this.handleChangeTempAnswer}
+              value={this.state.tempAnswer}
+              maxLength={15}
+            />
+            <div className="answer-count">
+              (
+              {this.state.tempAnswer.length < 15
+                ? this.state.tempAnswer.length
+                : 15}
+              /15)
+            </div>
+          </div>
+          <ResetButton handleClick={this.handleReset} />
+          <SubmitButton handleClick={this.handleSubmit} />
+        </>
+      );
+    } else {
+      return <div>紅蘿蔔</div>;
+    }
   }
 
   private handleChangeTempAnswer(
@@ -168,16 +175,15 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
     });
 
     this.setState({
-      [sizeAnswer]: answer,
       tempAnswer: "",
       isActive: sizeAnswer
-    } as Pick<ISumbitFearState, keyof ISumbitFearState>);
+    });
 
     setTimeout(() => {
       this.setState({
-        isActive: null
-      });
-    }, 2000);
+        [sizeAnswer]: answer
+      } as Pick<ISumbitFearState, keyof ISumbitFearState>);
+    }, 100);
   }
 
   private convertToAnswerCharDoms(answer: string): React.ReactNode {
@@ -189,23 +195,22 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
 
     for (const key of Object.keys(answer)) {
       const char = answer[key];
-      charDom.push(<div key={key}>{this.convertToGeometricShape(char)}</div>);
+      charDom.push(
+        <svg
+          key={key}
+          className="char"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          viewBox="0 0 53 53"
+        >
+          {convertToGeometricShape(char)}
+        </svg>
+      );
     }
 
     return charDom;
-  }
-
-  private convertToGeometricShape(char: string): React.ReactNode {
-    switch (char) {
-      case "我":
-        return <div>a</div>;
-
-      case "你":
-        return <div>b</div>;
-
-      default:
-        return <div>z</div>;
-    }
   }
 }
 

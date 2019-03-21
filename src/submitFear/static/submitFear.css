@@ -103,22 +103,18 @@
   }
 }
 
-.answer.active {
+.answer.active path {
   animation: answer-active 2s ease-in-out;
+  fill: #f0bc29;
 }
 
 @keyframes answer-active {
   0% {
-    transform: scale3d(0.5, 0.5, 0.5) rotate(0deg) translateX(10px) rotate(0deg);
-  }
-
-  80% {
-    transform: scale3d(1.05, 1.05, 1.05) rotate(288deg) translateX(10px)
-      rotate(-288deg);
+    fill: #e57452;
   }
 
   100% {
-    transform: scale3d(1, 1, 1) rotate(360deg) translateX(10px) rotate(-360deg);
+    fill: #f0bc29;
   }
 }
 
@@ -146,11 +142,46 @@
 
 .answer-content {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.small-answer .answer-content {
+  width: 70%;
+  height: 70%;
+}
+
+.medium-answer .answer-content {
+  width: 75%;
+  height: 50%;
+}
+
+.large-answer .answer-content {
+  width: 60%;
+  height: 70%;
+}
+
+.char {
+  flex: 0 0 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+
+/* .char path {
+  transition: all 0.3s linear;
+} */
+
+.answer-mask {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
