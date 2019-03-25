@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import Well from "../components/Well";
 import { setIsShowButtonEAction } from "../StoryCActions";
+import { openAdventureStoryAction } from "src/adventureStory/AdventureStoryActions";
 
 interface IWellContainerProps {
   dispatch: Dispatch;
@@ -20,7 +21,7 @@ class WellContainer extends React.Component<IWellContainerProps> {
 
   private handleClick() {
     this.props.dispatch(setIsShowButtonEAction(true));
-    alert("第11頁");
+    this.props.dispatch(openAdventureStoryAction());
   }
 }
 

@@ -10,6 +10,7 @@ import {
 } from "../StoryCActions";
 import backgroundImage from "../static/storyC_background.png";
 import ConnectedInfoDialogB from "src/infoDialogB/containers/InfoDialogBContainer";
+import ConnectedAdventureStory from "src/adventureStory/containers/AdventureStoryContainer";
 
 interface IStoryCContainerProps extends IStoryCStateProps {
   dispatch: Dispatch;
@@ -74,6 +75,7 @@ class StoryCContainer extends React.Component<IStoryCContainerProps> {
           isShowButtonE={this.props.isShowButtonE}
         />
         <ConnectedInfoDialogB />
+        <ConnectedAdventureStory />
       </>
     );
   }

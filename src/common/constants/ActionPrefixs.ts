@@ -4,6 +4,7 @@ export enum ActionPrefixs {
   storyA = "storyA",
   storyB = "storyB",
   storyC = "storyC",
+  adventureStory = "adventureStory",
   infoDialogA = "infoDialogA",
   infoDialogB = "infoDialogB",
   originalPaintingDialog = "originalPaintingDialog",

@@ -1,0 +1,270 @@
+.adventureStory {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 1440px;
+  min-height: 688px;
+  overflow: hidden;
+  background-color: #fbf7e9;
+  z-index: 100;
+}
+
+.close-adventureStory-button {
+  z-index: 52;
+  position: absolute;
+  top: 8.67%;
+  right: 7.1%;
+  width: 3.43%;
+}
+
+.close-adventureStory-button:hover {
+  animation-name: close-adventureStory-button-hover;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes close-adventureStory-button-hover {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.close-adventureStory-button.isHiding {
+  animation-name: close-adventureStory-button-isHiding-scale;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes close-adventureStory-button-isHiding-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.move-left-button,
+.move-right-button {
+  position: absolute;
+  /* top: 42.43%; */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.91%;
+  z-index: 20;
+}
+
+.move-left-button {
+  left: 4.17%;
+}
+
+.move-right-button {
+  right: 4.17%;
+}
+
+.adventureStory-img-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.adventureStory-img-wrapper::before,
+.adventureStory-img-wrapper::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.adventureStory-img-wrapper::before {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.adventureStory-img-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.adventureStory-img {
+  width: 3000px;
+  height: 450px;
+  user-select: none;
+  position: absolute;
+  top: 0;
+}
+
+.eason-think {
+  position: absolute;
+  bottom: 8.21%;
+  right: 27.07%;
+  width: 7.43%;
+  z-index: 5;
+  display: none;
+  cursor: pointer;
+}
+
+.eason-think.show {
+  display: block;
+  animation-name: eason-think-button-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes eason-think-button-show {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dot {
+  animation: dot-wave 2s linear infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.dot:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.dot:nth-child(5) {
+  animation-delay: 1.6s;
+}
+
+.dot:nth-child(6) {
+  animation-delay: 2s;
+}
+
+.dot:nth-child(7) {
+  animation-delay: 2.4s;
+}
+
+@keyframes dot-wave {
+  0%,
+  60%,
+  100% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+.questionB {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.questionB-mask {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0f;
+  opacity: 0.8;
+}
+
+.buttonF,
+.buttonG {
+  display: none;
+  position: absolute;
+  width: 22.55%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 101;
+}
+
+.buttonF.show,
+.buttonG.show {
+  display: block;
+}
+
+.buttonF {
+  top: 32.84%;
+}
+
+.buttonG {
+  top: 53.98%;
+}
+
+.buttonF-text,
+.buttonF-background,
+.buttonG-text,
+.buttonG-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.buttonF-text,
+.buttonG-text {
+  z-index: 102;
+  display: none;
+}
+
+.buttonF-text.show,
+.buttonG-text.show {
+  display: block;
+}
+
+.buttonF-background.isShowing,
+.buttonG-background.isShowing {
+  animation-name: buttonFG-background-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes buttonFG-background-show {
+  0% {
+    transform: scale(0.5);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

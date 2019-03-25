@@ -3,11 +3,13 @@ import { AnswersActionType } from "./AnswersAction";
 
 export interface IAnswersState {
   answerA: boolean | null;
+  answerB: boolean | null;
   answerC: boolean | null;
 }
 
 const defaultAnswersState = {
   answerA: null,
+  answerB: null,
   answerC: null
 };
 
@@ -20,6 +22,12 @@ const answersReducer = (
       return {
         ...state,
         answerA: action.answer
+      };
+
+    case AnswersActionType.SET_ANSWER_B:
+      return {
+        ...state,
+        answerB: action.answer
       };
 
     case AnswersActionType.SET_ANSWER_C:

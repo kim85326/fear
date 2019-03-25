@@ -49,6 +49,7 @@
   right: 68%;
   width: 2.44%;
   z-index: 9;
+  pointer-events: none;
 }
 
 .patternJ.show {
