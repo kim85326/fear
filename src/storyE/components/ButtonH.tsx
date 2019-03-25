@@ -51,7 +51,7 @@ class ButtonH extends React.Component<IButtonHProps, IButtonHState> {
   public render() {
     return (
       <Link
-        to="/end"
+        to="/ending"
         className={`buttonH ${this.state.isShowButton ? "show" : ""}`}
         onClick={this.props.handleClick}
         onMouseEnter={this.changeBackgroundColor.bind(this, "#8A8077")}
