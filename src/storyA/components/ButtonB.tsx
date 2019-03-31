@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import ButtonBText from "./ButtonBText";
 
 interface IButtonBProps {
@@ -50,8 +49,7 @@ class ButtonB extends React.Component<IButtonBProps, IButtonBState> {
 
   public render() {
     return (
-      <Link
-        to="/storyB"
+      <a
         className={`buttonB ${this.state.isShowButton ? "show" : ""}`}
         onClick={this.props.handleClick}
         onMouseEnter={this.changeBackgroundColor.bind(this, "#8A8077")}
@@ -75,7 +73,7 @@ class ButtonB extends React.Component<IButtonBProps, IButtonBState> {
 	c6.074,0,11,4.925,11,11v117.383C433.006,134.458,428.081,139.383,422.006,139.383"
           />
         </svg>
-      </Link>
+      </a>
     );
   }
 

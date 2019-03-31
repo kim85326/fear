@@ -1,6 +1,7 @@
 export enum ActionPrefixs {
   answer = "answer",
   menu = "menu",
+  storys = "storys",
   storyA = "storyA",
   storyB = "storyB",
   storyC = "storyC",

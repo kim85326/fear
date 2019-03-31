@@ -29,10 +29,12 @@ import originalPaintingDialogReducer, {
 import adventureStoryReducer, {
   IAdventureStoryState
 } from "src/adventureStory/AdventureStoryReducer";
+import storysReducer, { IStorysState } from "src/storys/StorysReducer";
 
 export interface IAppState {
   answers: IAnswersState;
   menuState: IMenuState;
+  storysState: IStorysState;
   storyAState: IStoryAState;
   storyBState: IStoryBState;
   storyCState: IStoryCState;
@@ -52,6 +54,7 @@ export interface IAppState {
 const AppReducer = combineReducers({
   answers: answersReducer,
   menuState: menuReducer,
+  storysState: storysReducer,
   storyAState: storyAReducer,
   storyBState: storyBReducer,
   storyCState: storyCReducer,
