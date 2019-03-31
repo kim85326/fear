@@ -33,7 +33,7 @@ class ButtonJ extends React.Component<IButtonJProps, IButtonJState> {
       setTimeout(() => {
         this.setState({ isShowButtonText: true });
       }, 500);
-    }
+    } 
   }
 
   public render() {

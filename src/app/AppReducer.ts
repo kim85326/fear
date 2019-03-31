@@ -32,7 +32,7 @@ import adventureStoryReducer, {
 import storysReducer, { IStorysState } from "src/storys/StorysReducer";
 
 export interface IAppState {
-  answers: IAnswersState;
+  answersState: IAnswersState;
   menuState: IMenuState;
   storysState: IStorysState;
   storyAState: IStoryAState;
@@ -52,7 +52,7 @@ export interface IAppState {
 }
 
 const AppReducer = combineReducers({
-  answers: answersReducer,
+  answersState: answersReducer,
   menuState: menuReducer,
   storysState: storysReducer,
   storyAState: storyAReducer,

@@ -17,11 +17,17 @@ interface IEndingContainerProps extends IEndingStateProps {
 interface IEndingStateProps {
   isLoading: boolean;
   isShowButtonJ: boolean;
+  answerA: boolean | null;
+  answerB: boolean | null;
+  answerC: boolean | null;
 }
 
 const mapStateToProps = (state: IAppState): IEndingStateProps => ({
   isLoading: state.endingState.isLoading,
-  isShowButtonJ: state.endingState.isShowButtonJ
+  isShowButtonJ: state.endingState.isShowButtonJ,
+  answerA: state.answersState.answerA,
+  answerB: state.answersState.answerB,
+  answerC: state.answersState.answerC
 });
 
 class EndingContainer extends React.Component<IEndingContainerProps> {
@@ -49,7 +55,24 @@ class EndingContainer extends React.Component<IEndingContainerProps> {
   }
 
   public render() {
-    return this.props.isLoading ? <div>loading...</div> : <Ending />;
+    return this.props.isLoading ? (
+      <div>loading...</div>
+    ) : (
+      <Ending finalAnswer={this.getFinalAnswer()} />
+    );
+  }
+
+  private getFinalAnswer(): string {
+    const { answerA, answerB, answerC } = this.props;
+    if (!answerA && !answerC) {
+      return "white";
+    }
+
+    if ((!answerA && answerC) || (answerA && !answerB)) {
+      return "red";
+    }
+
+    return "purple";
   }
 
   private handleImageLoaded() {

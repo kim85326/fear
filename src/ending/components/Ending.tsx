@@ -5,10 +5,14 @@ import Sound from "src/common/sound/components/Sound";
 import soundSrc from "../static/ending.wav";
 import ConnectedButtonJ from "../containers/ButtonJContainer";
 import ConnectedButtonK from "../containers/ButtonKContainer";
-import EndingContent from "./EndingContent";
+import endingContentSrc from "../static/ending_1.png";
 
-class Ending extends React.Component {
-  constructor(props: {}) {
+interface IEndingProps {
+  finalAnswer: string;
+}
+
+class Ending extends React.Component<IEndingProps> {
+  constructor(props: IEndingProps) {
     super(props);
   }
 
@@ -17,11 +21,21 @@ class Ending extends React.Component {
       <div className="ending">
         <ConnectedMenuWrapper />
         <Sound src={soundSrc} />
-        <EndingContent />
+        <div className="ending-content">{this.getEndingContent()}</div>
         <ConnectedButtonJ />
         <ConnectedButtonK />
       </div>
     );
+  }
+
+  private getEndingContent() {
+    if (this.props.finalAnswer === "white") {
+      return <img src={endingContentSrc} alt="" />;
+    } else if (this.props.finalAnswer === "red") {
+      return <img src={endingContentSrc} alt="" />;
+    } else {
+      return <img src={endingContentSrc} alt="" />;
+    }
   }
 }
 
