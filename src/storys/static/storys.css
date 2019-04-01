@@ -31,7 +31,7 @@
 .storyB,
 .t1 {
   position: absolute;
-  transition: left 8s linear;
+  transition: left 3s linear;
 }
 
 .storys.A .storyA {

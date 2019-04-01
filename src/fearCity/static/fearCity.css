@@ -2,7 +2,8 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #2e4874;
+  background: url("./fear_city_background.png") no-repeat center;
+  background-size: cover;
   overflow: hidden;
   min-width: 1440px;
   min-height: 688px;
@@ -25,8 +26,8 @@
 .stairs {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 70.9%;
   z-index: 3;
 }
 
@@ -117,7 +118,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 83%;
+  width: 100%;
   pointer-events: none;
 }
 
@@ -126,7 +127,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 51%;
+  width: 100%;
+  pointer-events: none;
 }
 
 .personA {
