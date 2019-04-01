@@ -3,13 +3,13 @@ import "../static/home.css";
 import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContainer";
 import Sound from "src/common/sound/components/Sound";
 import soundSrc from "../static/home.wav";
-import logoBackgroundSrc from "../static/logo_background.png";
-import logoSrc from "../static/logo.png";
-import sloganSrc from "../static/slogan.png";
 import RabbitCity from "./RabbitCity";
 import Mountains from "./Mountains";
 import FearCity from "./FearCity";
 import Arrow from "./Arrow";
+import Slogan from "./Slogan";
+import Lottie from "react-lottie";
+import * as homeJson from "../static/home_background.json";
 
 interface IHomeState {
   isLoading: boolean;
@@ -24,13 +24,20 @@ class Home extends React.Component<{}, IHomeState> {
   }
 
   public render() {
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: homeJson
+    };
+
     return (
       <div className="home">
+        <div className="home-background">
+          <Lottie options={defaultOptions} />
+        </div>
         <ConnectedMenuWrapper />
         <Sound src={soundSrc} />
-        <img className="logo-background" src={logoBackgroundSrc} alt="" />
-        <img className="logo" src={logoSrc} alt="" />
-        <img className="slogan" src={sloganSrc} alt="" />
+        <Slogan />
         <Arrow />
         <FearCity />
         <RabbitCity />
