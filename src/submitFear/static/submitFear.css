@@ -104,7 +104,7 @@
 }
 
 .answer.active path {
-  animation: answer-active 2s ease-in-out;
+  animation: answer-active 1s ease-in;
   fill: #f0bc29;
 }
 
@@ -157,17 +157,17 @@
 }
 
 .medium-answer .answer-content {
-  width: 75%;
+  width: 65%;
   height: 50%;
 }
 
 .large-answer .answer-content {
-  width: 60%;
-  height: 70%;
+  width: 50%;
+  height: 50%;
 }
 
 .char {
-  flex: 0 0 48px;
+  flex: 0 0 40px;
   display: flex;
   justify-content: center;
   align-items: center;
