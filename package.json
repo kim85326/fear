@@ -1,4 +1,5 @@
 {
+  "homepage": "https://kim85326.github.io/fear",
   "name": "fear",
   "version": "0.1.0",
   "private": true,
@@ -50,8 +51,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "build": "node --max-old-space-size=8142 scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@types/firebase": "^3.2.1",
@@ -63,6 +66,7 @@
     "@types/react-redux": "^6.0.12",
     "@types/react-router-dom": "^4.3.1",
     "@types/redux": "^3.6.0",
+    "gh-pages": "^2.0.1",
     "redux-devtools-extension": "^2.13.7",
     "typescript": "^3.2.2"
   },
