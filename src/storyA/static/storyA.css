@@ -2,40 +2,25 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #f0c7a7;
+  background: url("./storyA_background.png") no-repeat center;
+  background-size: cover;
   overflow: hidden;
   min-width: 1440px;
   min-height: 688px;
+}
+
+.storyA-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .storyA .sound {
   position: absolute;
   bottom: 15%;
   right: 16.86%;
-}
-
-.boy {
-  width: 14%;
-  position: absolute;
-  bottom: 12.4%;
-  right: 75.83%;
-  z-index: 2;
-}
-
-.rabbit {
-  width: 18.76%;
-  position: absolute;
-  bottom: 12.6%;
-  right: 56.3%;
-  z-index: 2;
-}
-
-.grass {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
 }
 
 .dialogG,

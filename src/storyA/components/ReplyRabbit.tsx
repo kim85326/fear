@@ -78,11 +78,41 @@ class ReplyRabbit extends React.Component<
             </g>
           </g>
         </a>
-        <circle className="dot" fill="#F17752" cx="118.6" cy="250" r="5.6" />
-        <circle className="dot" fill="#F17752" cx="144" cy="250" r="5.6" />
-        <circle className="dot" fill="#F17752" cx="169.5" cy="250" r="5.6" />
-        <circle className="dot" fill="#F17752" cx="194.9" cy="250" r="5.6" />
-        <circle className="dot" fill="#F17752" cx="220.3" cy="250" r="5.6" />
+        <circle
+          className="dot"
+          fill={this.state.backgroundColor}
+          cx="118.6"
+          cy="250"
+          r="5.6"
+        />
+        <circle
+          className="dot"
+          fill={this.state.backgroundColor}
+          cx="144"
+          cy="250"
+          r="5.6"
+        />
+        <circle
+          className="dot"
+          fill={this.state.backgroundColor}
+          cx="169.5"
+          cy="250"
+          r="5.6"
+        />
+        <circle
+          className="dot"
+          fill={this.state.backgroundColor}
+          cx="194.9"
+          cy="250"
+          r="5.6"
+        />
+        <circle
+          className="dot"
+          fill={this.state.backgroundColor}
+          cx="220.3"
+          cy="250"
+          r="5.6"
+        />
       </svg>
     );
   }
