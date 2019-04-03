@@ -2,11 +2,29 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url("./storyC_background.png") no-repeat center;
-  background-size: cover;
   overflow: hidden;
   min-width: 1440px;
   min-height: 688px;
+}
+
+.storyC-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.storyC-grass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 4;
+  pointer-events: none;
 }
 
 .storyC .sound {
@@ -25,6 +43,7 @@
   animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  z-index: 5;
 }
 
 .patternI:hover {
@@ -48,8 +67,7 @@
   top: 57%;
   right: 68%;
   width: 2.44%;
-  z-index: 9;
-  pointer-events: none;
+  z-index: 5;
 }
 
 .patternJ.show {
@@ -92,69 +110,13 @@
   z-index: 3;
 }
 
-.rabbitC {
-  position: absolute;
-  top: 43.79%;
-  right: 55.81%;
-  width: 9.76%;
-  z-index: 6;
-}
-
-.rabbitD {
-  position: absolute;
-  top: 35.54%;
-  right: 71.91%;
-  width: 14.33%;
-  z-index: 1;
-}
-
-.hairBallB {
-  position: absolute;
-  top: 55.61%;
-  right: 81.7%;
-  width: 2.38%;
-  z-index: 4;
-}
-
-.hairBallC {
-  position: absolute;
-  top: 49.2%;
-  right: 76.56%;
-  width: 2.27%;
-  z-index: 5;
-}
-
-.hairBallD {
-  position: absolute;
-  top: 42.02%;
-  right: 59.93%;
-  width: 3.1%;
-  z-index: 2;
-}
-
-.hairBallE {
-  position: absolute;
-  top: 41.46%;
-  right: 59.05%;
-  width: 1.57%;
-  z-index: 7;
-}
-
-.well {
-  position: absolute;
-  top: 49.5%;
-  right: 58.48%;
-  width: 23.6%;
-  z-index: 8;
-}
-
 .dialogK {
   display: none;
   position: absolute;
   top: 15.31%;
   right: 50.38%;
   width: 14.96%;
-  z-index: 10;
+  z-index: 6;
 }
 
 .dialogK.show {
@@ -226,9 +188,10 @@
 .buttonE {
   display: none;
   position: absolute;
-  bottom: 7.7%;
-  right: 3.04%;
-  width: 12.77%;
+  bottom: 20%;
+  right: 5.41%;
+  width: 12.74%;
+  z-index: 11;
 }
 
 .buttonE.show {
@@ -275,7 +238,7 @@
 }
 
 .buttonE-text {
-  z-index: 3;
+  z-index: 10;
   display: none;
 }
 

@@ -40,7 +40,7 @@ class ButtonD extends React.Component<IButtonDProps, IButtonDState> {
     return (
       <Link
         to="/storyE"
-        className={`buttonD ${this.state.isShowButton ? "show" : ""}`}
+        className={`buttonE ${this.state.isShowButton ? "show" : ""}`}
       >
         <ButtonDText isShowButtonText={this.state.isShowButtonText} />
         <svg
