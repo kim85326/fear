@@ -19,14 +19,12 @@ interface IStoryBContainerProps extends IStoryBStateProps {
 interface IStoryBStateProps {
   isLoading: boolean;
   isShowDialogJ: boolean;
-  isShowPatternF: boolean;
   isShowButtonD: boolean;
 }
 
 const mapStateToProps = (state: IAppState): IStoryBStateProps => ({
   isLoading: state.storyBState.isLoading,
   isShowDialogJ: state.storyBState.isShowDialogJ,
-  isShowPatternF: state.storyBState.isShowPatternF,
   isShowButtonD: state.storyBState.isShowButtonD
 });
 
@@ -71,7 +69,6 @@ class StoryBContainer extends React.Component<IStoryBContainerProps> {
         <StoryB
           isLoading={this.props.isLoading}
           isShowDialogJ={this.props.isShowDialogJ}
-          isShowPatternF={this.props.isShowPatternF}
           isShowButtonD={this.props.isShowButtonD}
         />
         <ConnectedInfoDialogA />

@@ -9,6 +9,22 @@
   min-height: 688px;
 }
 
+.storyB-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.grass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
 .storyB .sound {
   position: absolute;
   top: 43.8%;
@@ -136,23 +152,13 @@
 
 .hairBallA {
   position: absolute;
-  top: 55.14%;
-  right: 52%;
-  width: 3.1%;
-  animation-name: hairBallA-move;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes hairBallA-move {
-  from {
-    transform: rotate(0deg) translateX(10px) rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg) translateX(10px) rotate(-360deg);
-  }
+  /* top: 55.14%; */
+  /* right: 52%; */
+  /* width: 3.1%; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
 }
 
 .dialogJ {
