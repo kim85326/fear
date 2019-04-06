@@ -9,6 +9,15 @@
   min-height: 688px;
 }
 
+.storyE-background {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .storyE .sound {
   position: absolute;
   bottom: 23.62%;
@@ -47,7 +56,7 @@
   top: 16.8%;
   right: 41.78%;
   width: 14.34%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .patternH {
@@ -56,9 +65,8 @@
   position: absolute;
   top: 11.4%;
   right: 43.39%;
-  /* width: 1.81%; */
   width: 2.8%;
-  z-index: 4;
+  z-index: 5;
 }
 
 .patternH.show {
@@ -98,7 +106,7 @@
   top: 51.44%;
   right: 18.38%;
   width: 59.3%;
-  z-index: 3;
+  z-index: 4;
   pointer-events: none;
 }
 

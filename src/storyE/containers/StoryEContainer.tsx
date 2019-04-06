@@ -19,13 +19,11 @@ interface IStoryEContainerProps extends IStoryEStateProps {
 interface IStoryEStateProps {
   isLoading: boolean;
   isShowStoryDDialog: boolean;
-  isShowPatternF: boolean;
 }
 
 const mapStateToProps = (state: IAppState): IStoryEStateProps => ({
   isLoading: state.storyEState.isLoading,
-  isShowStoryDDialog: state.storyDDialogState.isShow,
-  isShowPatternF: state.storyEState.isShowPatternF
+  isShowStoryDDialog: state.storyDDialogState.isShow
 });
 
 class StoryEContainer extends React.Component<IStoryEContainerProps> {
@@ -59,10 +57,7 @@ class StoryEContainer extends React.Component<IStoryEContainerProps> {
       <div>loading...</div>
     ) : (
       <>
-        <StoryE
-          isLoading={this.props.isLoading}
-          isShowPatternF={this.props.isShowPatternF}
-        />
+        <StoryE isLoading={this.props.isLoading} />
         <ConnectedStoryDDialog />
         <ConnectedInfoDialogC />
       </>
