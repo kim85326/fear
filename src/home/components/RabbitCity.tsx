@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../static/rabbitCity.css";
 import RabbitCityDialog from "./RabbitCityDialog";
 
 interface IRabbitCityState {

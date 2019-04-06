@@ -8,8 +8,15 @@ import Mountains from "./Mountains";
 import FearCity from "./FearCity";
 import Arrow from "./Arrow";
 import Slogan from "./Slogan";
+import Soil from "./Soil";
 import Lottie from "react-lottie";
 import * as homeJson from "../static/home_background.json";
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: homeJson
+};
 
 interface IHomeState {
   isLoading: boolean;
@@ -24,12 +31,6 @@ class Home extends React.Component<{}, IHomeState> {
   }
 
   public render() {
-    const defaultOptions = {
-      loop: true,
-      autoplay: true,
-      animationData: homeJson
-    };
-
     return (
       <div className="home">
         <div className="home-background">
@@ -37,11 +38,12 @@ class Home extends React.Component<{}, IHomeState> {
         </div>
         <ConnectedMenuWrapper />
         <Sound src={soundSrc} />
+        <Soil />
         <Slogan />
-        <Arrow />
         <FearCity />
         <RabbitCity />
         <Mountains />
+        <Arrow />
       </div>
     );
   }

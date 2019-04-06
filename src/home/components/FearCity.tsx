@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../static/fearCity.css";
 import FearCityDialog from "./FearCityDialog";
 import { Link } from "react-router-dom";
 
