@@ -49,7 +49,7 @@ const adventureStoryReducer = (
         isLoading: action.isLoading
       };
 
-      case AdventureStoryActionType.SET_IS_SHOW_EASON_THINK:
+    case AdventureStoryActionType.SET_IS_SHOW_EASON_THINK:
       return {
         ...state,
         isShowEasonThink: action.isShow
@@ -70,13 +70,13 @@ const adventureStoryReducer = (
     case AdventureStoryActionType.MOVE_STORY_LEFT:
       return {
         ...state,
-        imgY: state.imgY + 1
+        imgY: state.imgY + 10
       };
 
     case AdventureStoryActionType.MOVE_STORY_RIGHT:
       return {
         ...state,
-        imgY: state.imgY - 1
+        imgY: state.imgY - 10
       };
 
     default:

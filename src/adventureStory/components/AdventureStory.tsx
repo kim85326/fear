@@ -3,9 +3,18 @@ import "../static/adventureStory.css";
 import CloseAdventureStoryButton from "./CloseAdventureStoryButton";
 import MoveLeftButton from "./MoveLeftButton";
 import MoveRightButton from "./MoveRightButton";
-import storyImg from "../static/adventureStory.png";
 import ConnectedQuestionC from "../containers/QuestionBContainer";
 import ConnectedEasonThink from "../containers/EasonThinkContainer";
+import Lottie from "react-lottie";
+import * as adventureStoryJson from "../static/adventureStory.json";
+import AdventureStoryText from "./AdventureStoryText";
+import AdventureStoryBackground from "./AdventureStoryBackground";
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: adventureStoryJson
+};
 
 interface IAdventureStoryProps {
   isHiding: boolean;
@@ -24,11 +33,20 @@ class AdventureStory extends React.Component<IAdventureStoryProps> {
     return (
       <div className="adventureStory">
         <div className="adventureStory-img-wrapper">
-          <img
+          <div
             className="adventureStory-img"
-            src={storyImg}
             style={{ left: this.props.imgY + "px" }}
-          />
+          >
+            <div className="adventureStory-img-item adventureStory-background">
+              <AdventureStoryBackground />
+            </div>
+            <div className="adventureStory-img-item adventureStory-json">
+              <Lottie options={defaultOptions} />
+            </div>
+            <div className="adventureStory-img-item adventureStory-text">
+              <AdventureStoryText />
+            </div>
+          </div>
         </div>
         <CloseAdventureStoryButton
           isHiding={this.props.isHiding}

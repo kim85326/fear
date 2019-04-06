@@ -5,13 +5,11 @@ import { IAppState } from "src/app/AppReducer";
 import AdventureStory from "../components/AdventureStory";
 import {
   closeAdventureStoryAction,
-  setIsAdventureStoryLoadingAction,
   closingAdventureStoryAction,
   moveAdventureStoryLeftAction,
   moveAdventureStoryRightAction,
   setIsShowEasonThinkAction
 } from "../AdventureStoryActions";
-import adventureStoryImage from "../static/adventureStory.png";
 
 interface IAdventureStoryContainerProps extends IAdventureStoryStateProps {
   dispatch: Dispatch;
@@ -20,33 +18,23 @@ interface IAdventureStoryContainerProps extends IAdventureStoryStateProps {
 interface IAdventureStoryStateProps {
   isShow: boolean;
   isHiding: boolean;
-  isLoading: boolean;
   imgY: number;
 }
 
 const mapStateToProps = (state: IAppState): IAdventureStoryStateProps => ({
   isShow: state.adventureStoryState.isShow,
   isHiding: state.adventureStoryState.isHiding,
-  isLoading: state.adventureStoryState.isLoading,
   imgY: state.adventureStoryState.imgY
 });
 
 class AdventureStoryContainer extends React.Component<
   IAdventureStoryContainerProps
 > {
-  private image = new Image();
-
   constructor(props: IAdventureStoryContainerProps) {
     super(props);
     this.closeAdventureStory = this.closeAdventureStory.bind(this);
     this.moveLeft = this.moveLeft.bind(this);
     this.moveRight = this.moveRight.bind(this);
-  }
-
-  public componentDidMount() {
-    this.handleImageLoaded = this.handleImageLoaded.bind(this);
-    this.image.src = adventureStoryImage;
-    this.image.onload = this.handleImageLoaded;
   }
 
   public componentWillReceiveProps(nextProps: IAdventureStoryContainerProps) {
@@ -61,7 +49,7 @@ class AdventureStoryContainer extends React.Component<
       const width = imgWrapper.getBoundingClientRect().width;
       if (
         nextProps.imgY !== this.props.imgY &&
-        nextProps.imgY === width - 3000
+        nextProps.imgY <= width - 4386
       ) {
         this.props.dispatch(setIsShowEasonThinkAction(true));
       }
@@ -69,7 +57,7 @@ class AdventureStoryContainer extends React.Component<
   }
 
   public render() {
-    if (!this.props.isLoading && this.props.isShow) {
+    if (this.props.isShow) {
       return (
         <AdventureStory
           closeAdventureStory={this.closeAdventureStory}
@@ -81,10 +69,6 @@ class AdventureStoryContainer extends React.Component<
       );
     }
     return null;
-  }
-
-  private handleImageLoaded() {
-    this.props.dispatch(setIsAdventureStoryLoadingAction(false));
   }
 
   private closeAdventureStory() {
@@ -100,7 +84,7 @@ class AdventureStoryContainer extends React.Component<
   private moveRight() {
     const imgWrapper = document.querySelector(".adventureStory-img-wrapper");
     const width = imgWrapper!.getBoundingClientRect().width;
-    if (this.props.imgY > width - 3000) {
+    if (this.props.imgY > width - 4386) {
       this.props.dispatch(moveAdventureStoryRightAction());
     }
   }
