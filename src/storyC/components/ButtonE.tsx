@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import ButtonDText from "./ButtonEText";
 
 interface IButtonDProps {
   isShowButton: boolean;
+  handleClick: () => void;
 }
 
 interface IButtonDState {
@@ -38,8 +38,8 @@ class ButtonD extends React.Component<IButtonDProps, IButtonDState> {
 
   public render() {
     return (
-      <Link
-        to="/storyE"
+      <a
+        onClick={this.props.handleClick}
         className={`buttonE ${this.state.isShowButton ? "show" : ""}`}
       >
         <ButtonDText isShowButtonText={this.state.isShowButtonText} />
@@ -76,7 +76,7 @@ class ButtonD extends React.Component<IButtonDProps, IButtonDState> {
 	C30.066,60.918,40.76,49.864,40.76,49.864z"
           />
         </svg>
-      </Link>
+      </a>
     );
   }
 

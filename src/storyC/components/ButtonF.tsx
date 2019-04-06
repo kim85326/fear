@@ -49,6 +49,8 @@ class ButtonF extends React.Component<IButtonFProps, IButtonFState> {
   }
 
   public render() {
+    console.log(this.props);
+    console.log(this.state);
     return (
       <Link
         to="/storyE"
@@ -80,6 +82,7 @@ class ButtonF extends React.Component<IButtonFProps, IButtonFState> {
   }
 
   private showButtonBackground() {
+    console.log("showButtonBackground");
     this.setState({
       isShowButton: true,
       isShowingButtonBackground: true

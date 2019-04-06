@@ -268,3 +268,88 @@
     opacity: 1;
   }
 }
+
+.questionB {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  min-width: 1440px;
+  min-height: 688px;
+}
+
+.questionB-mask {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0f;
+  opacity: 0.8;
+}
+
+.buttonF,
+.buttonG {
+  display: none;
+  position: absolute;
+  width: 22.55%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 101;
+}
+
+.buttonF.show,
+.buttonG.show {
+  display: block;
+}
+
+.buttonF {
+  top: 32.84%;
+}
+
+.buttonG {
+  top: 53.98%;
+}
+
+.buttonF-text,
+.buttonF-background,
+.buttonG-text,
+.buttonG-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.buttonF-text,
+.buttonG-text {
+  z-index: 102;
+  display: none;
+}
+
+.buttonF-text.show,
+.buttonG-text.show {
+  display: block;
+}
+
+.buttonF-background.isShowing,
+.buttonG-background.isShowing {
+  animation-name: buttonFG-background-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes buttonFG-background-show {
+  0% {
+    transform: scale(0.5);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

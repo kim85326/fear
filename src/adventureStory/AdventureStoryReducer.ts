@@ -6,8 +6,6 @@ export interface IAdventureStoryState {
   isHiding: boolean;
   isLoading: boolean;
   isShowEasonThink: boolean;
-  isShowButtonF: boolean;
-  isShowButtonG: boolean;
   imgY: number;
 }
 
@@ -16,8 +14,6 @@ const defaultAdventureStoryState = {
   isHiding: false,
   isLoading: true,
   isShowEasonThink: false,
-  isShowButtonF: false,
-  isShowButtonG: false,
   imgY: 0
 };
 
@@ -53,18 +49,6 @@ const adventureStoryReducer = (
       return {
         ...state,
         isShowEasonThink: action.isShow
-      };
-
-    case AdventureStoryActionType.SET_IS_SHOW_BUTTON_F:
-      return {
-        ...state,
-        isShowButtonF: action.isShow
-      };
-
-    case AdventureStoryActionType.SET_IS_SHOW_BUTTON_G:
-      return {
-        ...state,
-        isShowButtonG: action.isShow
       };
 
     case AdventureStoryActionType.MOVE_STORY_LEFT:

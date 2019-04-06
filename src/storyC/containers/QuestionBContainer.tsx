@@ -4,28 +4,28 @@ import { Dispatch } from "redux";
 import { IAppState } from "src/app/AppReducer";
 import ButtonF from "../components/ButtonF";
 import ButtonG from "../components/ButtonG";
+import { setAnswerBAction } from "src/answer/AnswersAction";
 import {
   setIsShowButtonFAction,
   setIsShowButtonGAction
-} from "../AdventureStoryActions";
-import { setAnswerBAction } from "src/answer/AnswersAction";
+} from "../StoryCActions";
 
-interface IQuestionCContainerProps extends IQuestionCStateProps {
+interface IQuestionBContainerProps extends IQuestionBStateProps {
   dispatch: Dispatch;
 }
 
-interface IQuestionCStateProps {
+interface IQuestionBStateProps {
   isShowButtonF: boolean;
   isShowButtonG: boolean;
 }
 
-const mapStateToProps = (state: IAppState): IQuestionCStateProps => ({
-  isShowButtonF: state.adventureStoryState.isShowButtonF,
-  isShowButtonG: state.adventureStoryState.isShowButtonG
+const mapStateToProps = (state: IAppState): IQuestionBStateProps => ({
+  isShowButtonF: state.storyCState.isShowButtonF,
+  isShowButtonG: state.storyCState.isShowButtonG
 });
 
-class QuestionCContainer extends React.Component<IQuestionCContainerProps> {
-  constructor(props: IQuestionCContainerProps) {
+class QuestionBContainer extends React.Component<IQuestionBContainerProps> {
+  constructor(props: IQuestionBContainerProps) {
     super(props);
   }
 
@@ -52,6 +52,6 @@ class QuestionCContainer extends React.Component<IQuestionCContainerProps> {
   }
 }
 
-const ConnectedQuestionC = connect(mapStateToProps)(QuestionCContainer);
+const ConnectedQuestionB = connect(mapStateToProps)(QuestionBContainer);
 
-export default ConnectedQuestionC;
+export default ConnectedQuestionB;

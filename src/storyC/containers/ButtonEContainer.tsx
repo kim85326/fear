@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { IAppState } from "src/app/AppReducer";
 import ButtonE from "../components/ButtonE";
+import { setIsShowButtonFAction, setIsShowButtonGAction } from '../StoryCActions';
 
 interface IButtonEContainerProps extends IButtonEStateProps {
   dispatch: Dispatch;
@@ -19,10 +20,21 @@ const mapStateToProps = (state: IAppState): IButtonEStateProps => ({
 class ButtonEContainer extends React.Component<IButtonEContainerProps> {
   constructor(props: IButtonEContainerProps) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   public render() {
-    return <ButtonE isShowButton={this.props.isShowButtonE} />;
+    return (
+      <ButtonE
+        isShowButton={this.props.isShowButtonE}
+        handleClick={this.handleClick}
+      />
+    );
+  }
+
+  private handleClick() {
+    this.props.dispatch(setIsShowButtonFAction(true));
+    this.props.dispatch(setIsShowButtonGAction(true));
   }
 }
 

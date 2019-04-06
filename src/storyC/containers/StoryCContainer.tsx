@@ -11,6 +11,7 @@ import {
 import ConnectedInfoDialogB from "src/infoDialogB/containers/InfoDialogBContainer";
 import ConnectedAdventureStory from "src/adventureStory/containers/AdventureStoryContainer";
 import backgroundImage from "../static/storyC_background.png";
+import ConnectedQuestionB from "./QuestionBContainer";
 
 interface IStoryCContainerProps extends IStoryCStateProps {
   dispatch: Dispatch;
@@ -73,6 +74,7 @@ class StoryCContainer extends React.Component<IStoryCContainerProps> {
         />
         <ConnectedInfoDialogB />
         <ConnectedAdventureStory />
+        <ConnectedQuestionB />
       </>
     );
   }

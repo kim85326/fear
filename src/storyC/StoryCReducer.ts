@@ -6,13 +6,17 @@ export interface IStoryCState {
   isShowDialogK: boolean;
   isShowPatternJ: boolean;
   isShowButtonE: boolean;
+  isShowButtonF: boolean;
+  isShowButtonG: boolean;
 }
 
 const defaultStoryCState = {
   isLoading: true,
   isShowDialogK: false,
   isShowPatternJ: false,
-  isShowButtonE: false
+  isShowButtonE: false,
+  isShowButtonF: false,
+  isShowButtonG: false
 };
 
 const storyCReducer = (
@@ -42,6 +46,18 @@ const storyCReducer = (
       return {
         ...state,
         isShowButtonE: action.isShow
+      };
+
+    case StoryCActionType.SET_IS_SHOW_BUTTON_F:
+      return {
+        ...state,
+        isShowButtonF: action.isShow
+      };
+
+    case StoryCActionType.SET_IS_SHOW_BUTTON_G:
+      return {
+        ...state,
+        isShowButtonG: action.isShow
       };
 
     default:

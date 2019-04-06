@@ -3,7 +3,6 @@ import "../static/adventureStory.css";
 import CloseAdventureStoryButton from "./CloseAdventureStoryButton";
 import MoveLeftButton from "./MoveLeftButton";
 import MoveRightButton from "./MoveRightButton";
-import ConnectedQuestionC from "../containers/QuestionBContainer";
 import ConnectedEasonThink from "../containers/EasonThinkContainer";
 import Lottie from "react-lottie";
 import * as adventureStoryJson from "../static/adventureStory.json";
@@ -55,7 +54,6 @@ class AdventureStory extends React.Component<IAdventureStoryProps> {
         <MoveLeftButton moveLeft={this.props.moveLeft} />
         <MoveRightButton moveRight={this.props.moveRight} />
         <ConnectedEasonThink />
-        <ConnectedQuestionC />
       </div>
     );
   }
