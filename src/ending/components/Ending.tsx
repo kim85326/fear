@@ -5,7 +5,28 @@ import Sound from "src/common/sound/components/Sound";
 import soundSrc from "../static/ending.wav";
 import ConnectedButtonJ from "../containers/ButtonJContainer";
 import ConnectedButtonK from "../containers/ButtonKContainer";
-import endingContentSrc from "../static/ending_1.png";
+import Lottie from "react-lottie";
+import * as endingBackgroundJson from "../static/ending_background.json";
+import * as endingContentWhiteJson from "../static/ending_content_white.json";
+import * as endingTextWhiteJson from "../static/ending_text_white.json";
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: endingBackgroundJson
+};
+
+const endingContentWhiteOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: endingContentWhiteJson
+};
+
+const endingTextWhiteOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: endingTextWhiteJson
+};
 
 interface IEndingProps {
   finalAnswer: string;
@@ -19,9 +40,12 @@ class Ending extends React.Component<IEndingProps> {
   public render() {
     return (
       <div className="ending">
+        <div className="ending-background">
+          <Lottie options={defaultOptions} />
+        </div>
         <ConnectedMenuWrapper />
         <Sound src={soundSrc} />
-        <div className="ending-content">{this.getEndingContent()}</div>
+        {this.getEndingContent()}
         <ConnectedButtonJ />
         <ConnectedButtonK />
       </div>
@@ -30,11 +54,38 @@ class Ending extends React.Component<IEndingProps> {
 
   private getEndingContent() {
     if (this.props.finalAnswer === "white") {
-      return <img src={endingContentSrc} alt="" />;
+      return (
+        <>
+          <div className="ending-content">
+            <Lottie options={endingContentWhiteOptions} />
+          </div>
+          <div className="ending-text">
+            <Lottie options={endingTextWhiteOptions} />
+          </div>
+        </>
+      );
     } else if (this.props.finalAnswer === "red") {
-      return <img src={endingContentSrc} alt="" />;
+      return (
+        <>
+          <div className="ending-content">
+            <Lottie options={endingContentWhiteOptions} />
+          </div>
+          <div className="ending-text">
+            <Lottie options={endingTextWhiteOptions} />
+          </div>
+        </>
+      );
     } else {
-      return <img src={endingContentSrc} alt="" />;
+      return (
+        <>
+          <div className="ending-content">
+            <Lottie options={endingContentWhiteOptions} />
+          </div>
+          <div className="ending-text">
+            <Lottie options={endingTextWhiteOptions} />
+          </div>
+        </>
+      );
     }
   }
 }

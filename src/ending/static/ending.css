@@ -9,37 +9,51 @@
   min-height: 688px;
 }
 
+.ending-background {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 2;
+}
+
+.ending-content {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 3;
+}
+
+.ending-text {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 4;
+}
+
 .ending .sound {
   position: absolute;
   top: 6.74%;
   right: 10.55%;
 }
 
-.ending-content {
-  position: absolute;
-  top: 17.6%;
-  right: 20.27%;
-  width: 69.26%;
-}
-
-.ending-content img {
-  width: 100%;
-}
-
 .buttonJ,
 .buttonK {
   display: none;
   position: absolute;
-  width: 12.74%;
+  width: 11%;
+  z-index: 10;
 }
 
 .buttonJ {
-  bottom: 35%;
+  bottom: 18.7%;
   right: 5.41%;
 }
 
 .buttonK {
-  bottom: 20.27%;
+  bottom: 8.5%;
   right: 5.41%;
 }
 
@@ -65,7 +79,7 @@
 
 .buttonJ-text,
 .buttonK-text {
-  z-index: 3;
+  z-index: 5;
   display: none;
 }
 
