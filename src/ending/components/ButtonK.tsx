@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import ButtonKText from "./ButtonKText";
 
 interface IButtonKProps {
@@ -21,6 +20,8 @@ class ButtonK extends React.Component<IButtonKProps, IButtonKState> {
       isShowingButtonBackground: false,
       isShowButtonText: false
     };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   public componentWillReceiveProps(nextProps: IButtonKProps) {
@@ -38,8 +39,8 @@ class ButtonK extends React.Component<IButtonKProps, IButtonKState> {
 
   public render() {
     return (
-      <Link
-        to="/storyA"
+      <a
+        onClick={this.handleClick}
         className={`buttonK ${this.state.isShowButton ? "show" : ""}`}
       >
         <ButtonKText isShowButtonText={this.state.isShowButtonText} />
@@ -78,7 +79,7 @@ class ButtonK extends React.Component<IButtonKProps, IButtonKState> {
             />
           </g>
         </svg>
-      </Link>
+      </a>
     );
   }
 
@@ -90,6 +91,10 @@ class ButtonK extends React.Component<IButtonKProps, IButtonKState> {
     setTimeout(() => {
       this.setState({ isShowingButtonBackground: false });
     }, 1000);
+  }
+
+  private handleClick(): void {
+    window.location.reload(true);
   }
 }
 
