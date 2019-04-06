@@ -13,6 +13,7 @@ export enum ActionPrefixs {
   virus = "virus",
   storyDDialog = "storyDDialog",
   storyE = "storyE",
+  submitFear = "submitFear",
   infoDialogC = "infoDialogC",
   ending = "ending"
 }

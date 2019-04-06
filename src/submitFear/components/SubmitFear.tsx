@@ -3,41 +3,39 @@ import "../static/submitFear.css";
 import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContainer";
 import Sound from "src/common/sound/components/Sound";
 import soundSrc from "../static/submit_fear.wav";
+import ConnectedSubmitAnimation from "../containers/SubmitAnimationContainer";
 import ResetButton from "./ResetButton";
 import SubmitButton from "./SubmitButton";
 import SmallAnswer from "./SmallAnswer";
 import MediumAnswer from "./MediumAnswer";
 import LargeAnswer from "./LargeAnswer";
 import { convertToGeometricShape } from "../convertToGeometricShape";
+import { ISizeAnswer } from "../containers/SubmitFearContainer";
+import Lottie from "react-lottie";
+import * as submitFearJson from "../static/submit_fear_background.json";
 
-// Initialize Firebase
-import * as firebase from "firebase";
-import { firebaseConfig } from "../../config";
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebaseApp.database().ref();
-const fearAnswersDb = db.child("/fearAnswers");
-
-interface ISizeAnswer {
-  smallAnswer: string;
-  mediumAnswer: string;
-  largeAnswer: string;
-}
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: submitFearJson
+};
 
 type IActiveAnswer = keyof ISizeAnswer | null;
 
-interface ISumbitFearState extends ISizeAnswer {
+interface ISumbitFearProps extends ISizeAnswer {
   tempAnswer: string;
+  changeTempAnswer: (tempAnswer: string) => void;
+  submitAnswer: (sizeAnswer: keyof ISizeAnswer, answer: string) => void;
+}
+
+interface ISumbitFearState {
   isActive: IActiveAnswer;
 }
 
-class SumbitFear extends React.Component<{}, ISumbitFearState> {
-  constructor(props: {}) {
+class SumbitFear extends React.Component<ISumbitFearProps, ISumbitFearState> {
+  constructor(props: ISumbitFearProps) {
     super(props);
     this.state = {
-      tempAnswer: "",
-      smallAnswer: "",
-      mediumAnswer: "",
-      largeAnswer: "",
       isActive: null
     };
     this.handleChangeTempAnswer = this.handleChangeTempAnswer.bind(this);
@@ -45,27 +43,25 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  public componentDidMount() {
-    this.getAnswer("smallAnswer");
-    this.getAnswer("mediumAnswer");
-    this.getAnswer("largeAnswer");
-  }
-
   public render() {
     return (
       <div className="submit-fear">
+        <div className="submit-fear-background">
+          <Lottie options={defaultOptions} />
+        </div>
+        <ConnectedSubmitAnimation />
         <ConnectedMenuWrapper />
         <Sound src={soundSrc} />
         {this.getLabelDom()}
         {this.getInputDom()}
         <SmallAnswer isActive={this.getAnswerIsActive("smallAnswer")}>
-          {this.convertToAnswerCharDoms(this.state.smallAnswer)}
+          {this.convertToAnswerCharDoms(this.props.smallAnswer)}
         </SmallAnswer>
         <MediumAnswer isActive={this.getAnswerIsActive("mediumAnswer")}>
-          {this.convertToAnswerCharDoms(this.state.mediumAnswer)}
+          {this.convertToAnswerCharDoms(this.props.mediumAnswer)}
         </MediumAnswer>
         <LargeAnswer isActive={this.getAnswerIsActive("largeAnswer")}>
-          {this.convertToAnswerCharDoms(this.state.largeAnswer)}
+          {this.convertToAnswerCharDoms(this.props.largeAnswer)}
         </LargeAnswer>
       </div>
     );
@@ -76,25 +72,6 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
       return true;
     }
     return false;
-  }
-
-  private getAnswer(sizeAnswer: keyof ISizeAnswer): void {
-    fearAnswersDb
-      .child(`/${sizeAnswer}`)
-      .once("value")
-      .then(snapshot => {
-        const answers: string[] = [];
-
-        snapshot.forEach(childSnapshot => {
-          answers.push(childSnapshot.val().answer);
-        });
-
-        const randomNumber = Math.floor(Math.random() * answers.length);
-
-        this.setState({
-          [sizeAnswer]: answers[randomNumber]
-        } as Pick<ISumbitFearState, keyof ISumbitFearState>);
-      });
   }
 
   private getLabelDom(): React.ReactNode {
@@ -115,13 +92,13 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
               className="answer-input"
               placeholder="說出來會舒服點，試著寫下你害怕的東西吧。"
               onChange={this.handleChangeTempAnswer}
-              value={this.state.tempAnswer}
+              value={this.props.tempAnswer}
               maxLength={15}
             />
             <div className="answer-count">
               (
-              {this.state.tempAnswer.length < 15
-                ? this.state.tempAnswer.length
+              {this.props.tempAnswer.length < 15
+                ? this.props.tempAnswer.length
                 : 15}
               /15)
             </div>
@@ -138,19 +115,15 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
   private handleChangeTempAnswer(
     event: React.ChangeEvent<HTMLInputElement>
   ): void {
-    this.setState({
-      tempAnswer: event.target.value
-    });
+    this.props.changeTempAnswer(event.target.value);
   }
 
   private handleReset(): void {
-    this.setState({
-      tempAnswer: ""
-    });
+    this.props.changeTempAnswer("");
   }
 
   private handleSubmit(): void {
-    const answer = this.state.tempAnswer;
+    const answer = this.props.tempAnswer;
 
     if (answer.trim() === "") {
       return;
@@ -166,24 +139,14 @@ class SumbitFear extends React.Component<{}, ISumbitFearState> {
   }
 
   private submitAnswer(sizeAnswer: keyof ISizeAnswer): void {
-    const answer = this.state.tempAnswer;
-    const timeStamp = new Date().getTime();
+    const answer = this.props.tempAnswer;
 
-    fearAnswersDb.child(`/${sizeAnswer}`).push({
-      answer,
-      create_time: timeStamp
-    });
+    this.props.submitAnswer(sizeAnswer, answer);
+    this.handleReset();
 
     this.setState({
-      tempAnswer: "",
       isActive: sizeAnswer
     });
-
-    setTimeout(() => {
-      this.setState({
-        [sizeAnswer]: answer
-      } as Pick<ISumbitFearState, keyof ISumbitFearState>);
-    }, 100);
   }
 
   private convertToAnswerCharDoms(answer: string): React.ReactNode {

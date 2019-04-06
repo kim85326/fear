@@ -8,7 +8,7 @@ import ConnectedStoryB from "src/storyB/containers/StoryBContainer";
 import ConnectedFearCity from "src/fearCity/containers/FearCityContainer";
 import ConnectedStoryE from "src/storyE/containers/StoryEContainer";
 import ConnectedEnding from "src/ending/containers/EndingContainer";
-import SumbitFear from "src/submitFear/components/SubmitFear";
+import ConnectedSubmitFear from "src/submitFear/containers/SubmitFearContainer";
 import ConnectedStoryC from "src/storyC/containers/StoryCContainer";
 
 class App extends React.Component {
@@ -23,7 +23,7 @@ class App extends React.Component {
           <Route path="/storyC" component={ConnectedStoryC} />
           <Route path="/storyE" component={ConnectedStoryE} />
           <Route path="/ending" component={ConnectedEnding} />
-          <Route path="/submitFear" component={SumbitFear} />
+          <Route path="/submitFear" component={ConnectedSubmitFear} />
           <Route path="/contact" component={Contact} />
         </div>
       </Router>

@@ -9,6 +9,24 @@
   min-height: 688px;
 }
 
+.submit-fear-background {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.submit-animation {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
 .submit-fear .sound {
   position: absolute;
   top: 69.38%;
@@ -18,12 +36,12 @@
 .answer-label {
   color: #83725f;
   position: absolute;
-  /* 不要用 top */
   bottom: 18.5%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2rem;
   font-weight: bold;
+  z-index: 4;
 }
 
 .answer-input-wrapper {
@@ -31,8 +49,8 @@
   bottom: 11.8%;
   left: 50%;
   transform: translateX(-50%);
-  /* width: 27.49%; */
   width: 26rem;
+  z-index: 5;
 }
 
 .answer-input {
@@ -64,6 +82,7 @@
   position: absolute;
   bottom: 5.29%;
   width: 4.07%;
+  z-index: 6;
 }
 
 .reset-button {
@@ -173,10 +192,6 @@
   align-items: center;
   padding: 4px;
 }
-
-/* .char path {
-  transition: all 0.3s linear;
-} */
 
 .answer-mask {
   width: 100%;

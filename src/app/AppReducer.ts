@@ -29,6 +29,9 @@ import originalPaintingDialogReducer, {
 import adventureStoryReducer, {
   IAdventureStoryState
 } from "src/adventureStory/AdventureStoryReducer";
+import submitFearReducer, {
+  ISubmitFearState
+} from "src/submitFear/SubmitFearReducer";
 
 export interface IAppState {
   answersState: IAnswersState;
@@ -46,6 +49,7 @@ export interface IAppState {
   storyDDialogState: IStoryDDialogState;
   storyEState: IStoryEState;
   infoDialogCState: IInfoDialogCState;
+  submitFearState: ISubmitFearState;
   endingState: IEndingState;
 }
 
@@ -65,6 +69,7 @@ const AppReducer = combineReducers({
   storyDDialogState: storyDDialogReducer,
   storyEState: storyEReducer,
   infoDialogCState: infoDialogCReducer,
+  submitFearState: submitFearReducer,
   endingState: endingReducer
 });
 
