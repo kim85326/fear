@@ -2,6 +2,8 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+  background: url("./storyC_background.png") no-repeat center;
+  background-size: cover;
   overflow: hidden;
   min-width: 1440px;
   min-height: 688px;
@@ -105,8 +107,8 @@
 .rabbitB {
   position: absolute;
   top: 29.09%;
-  right: 64.41%;
-  width: 8.28%;
+  right: 60%;
+  width: 11.3%;
   z-index: 3;
 }
 

@@ -5,49 +5,67 @@ import { IAppState } from "src/app/AppReducer";
 import StoryC from "../components/StoryC";
 import {
   setIsShowPatternJAction,
-  setIsShowDialogKAction
+  setIsShowDialogKAction,
+  setIsStoryCLoadingAction
 } from "../StoryCActions";
 import ConnectedInfoDialogB from "src/infoDialogB/containers/InfoDialogBContainer";
 import ConnectedAdventureStory from "src/adventureStory/containers/AdventureStoryContainer";
+import backgroundImage from "../static/storyC_background.png";
 
 interface IStoryCContainerProps extends IStoryCStateProps {
   dispatch: Dispatch;
 }
 
 interface IStoryCStateProps {
+  isLoading: boolean;
+
   isShowDialogK: boolean;
   isShowButtonE: boolean;
 }
 
 const mapStateToProps = (state: IAppState): IStoryCStateProps => ({
+  isLoading: state.storyCState.isLoading,
   isShowDialogK: state.storyCState.isShowDialogK,
   isShowButtonE: state.storyCState.isShowButtonE
 });
 
 class StoryCContainer extends React.Component<IStoryCContainerProps> {
+  private image = new Image();
+
   constructor(props: IStoryCContainerProps) {
     super(props);
+    this.handleImageLoaded = this.handleImageLoaded.bind(this);
   }
 
   public componentDidMount() {
-    // 顯示對話框 K
-    setTimeout(() => {
-      this.props.dispatch(setIsShowDialogKAction(true));
-    }, 1000);
+    this.image.src = backgroundImage;
+    this.image.onload = this.handleImageLoaded;
+  }
 
-    // 3 秒後不顯示對話框 K
-    setTimeout(() => {
-      this.props.dispatch(setIsShowDialogKAction(false));
-    }, 3000);
+  public componentDidUpdate(prevProps: IStoryCContainerProps) {
+    // 圖片載入後
+    if (!this.props.isLoading && prevProps.isLoading) {
+      // 顯示對話框 K
+      setTimeout(() => {
+        this.props.dispatch(setIsShowDialogKAction(true));
+      }, 1000);
 
-    // 4 秒後顯示圖案 F
-    setTimeout(() => {
-      this.props.dispatch(setIsShowPatternJAction(true));
-    }, 4000);
+      // 3 秒後不顯示對話框 K
+      setTimeout(() => {
+        this.props.dispatch(setIsShowDialogKAction(false));
+      }, 3000);
+
+      // 4 秒後顯示圖案 F
+      setTimeout(() => {
+        this.props.dispatch(setIsShowPatternJAction(true));
+      }, 4000);
+    }
   }
 
   public render() {
-    return (
+    return this.props.isLoading ? (
+      <div>loading...</div>
+    ) : (
       <>
         <StoryC
           isShowDialogK={this.props.isShowDialogK}
@@ -57,6 +75,10 @@ class StoryCContainer extends React.Component<IStoryCContainerProps> {
         <ConnectedAdventureStory />
       </>
     );
+  }
+
+  private handleImageLoaded() {
+    this.props.dispatch(setIsStoryCLoadingAction(false));
   }
 }
 
