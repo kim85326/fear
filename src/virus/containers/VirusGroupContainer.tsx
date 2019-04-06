@@ -12,6 +12,7 @@ import VirusD from "../components/VirusD";
 import VirusE from "../components/VirusE";
 import VirusF from "../components/VirusF";
 import VirusG from "../components/VirusG";
+import VirusH from "../components/VirusH";
 
 interface IVirusGroupContainerProps extends IVirusGroupStateProps {
   dispatch: Dispatch;
@@ -53,6 +54,9 @@ class VirusGroupContainer extends React.Component<IVirusGroupContainerProps> {
         ) : null}
         {this.props.viruses.virusG.isShow ? (
           <VirusG handleClick={this.hideVirus.bind(this, VirusId.virusG)} />
+        ) : null}
+        {this.props.viruses.virusH.isShow ? (
+          <VirusH handleClick={this.hideVirus.bind(this, VirusId.virusH)} />
         ) : null}
       </div>
     );

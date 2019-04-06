@@ -1,6 +1,6 @@
 import { AnyAction } from "redux";
 import { VirusActionType } from "./virusAction";
-import { IViruses } from 'src/virus/constants/Virus';
+import { IViruses } from "src/virus/constants/Virus";
 
 export interface IVirusState {
   viruses: IViruses;
@@ -27,6 +27,9 @@ const defaultVirusState = {
       isShow: true
     },
     virusG: {
+      isShow: true
+    },
+    virusH: {
       isShow: true
     }
   }

@@ -5,7 +5,8 @@ export enum VirusId {
   virusD = "virusD",
   virusE = "virusE",
   virusF = "virusF",
-  virusG = "virusG"
+  virusG = "virusG",
+  virusH = "virusH"
 }
 
 export interface IVirus {
@@ -20,4 +21,5 @@ export interface IViruses {
   virusE: IVirus;
   virusF: IVirus;
   virusG: IVirus;
+  virusH: IVirus;
 }
