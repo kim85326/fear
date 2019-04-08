@@ -3,7 +3,7 @@ import Lottie from "react-lottie";
 import * as submitJson from "../static/submit.json";
 
 const defaultOptions = {
-  loop: true,
+  loop: false,
   autoplay: true,
   animationData: submitJson
 };
