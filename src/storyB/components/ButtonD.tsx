@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import ButtonDText from './ButtonDText';
+import * as React from "react";
+import { Link } from "react-router-dom";
+import ButtonDText from "./ButtonDText";
 
 interface IButtonDProps {
   isShowButton: boolean;
@@ -40,13 +40,13 @@ class ButtonD extends React.Component<IButtonDProps, IButtonDState> {
     return (
       <Link
         to="/storyC"
-        className={`buttonD ${this.state.isShowButton ? 'show' : ''}`}
+        className={`buttonD ${this.state.isShowButton ? "show" : ""}`}
       >
         <ButtonDText isShowButtonText={this.state.isShowButtonText} />
         <svg
           className={`
             buttonD-background 
-            ${this.state.isShowingButtonBackground ? 'isShowing' : ''}
+            ${this.state.isShowingButtonBackground ? "isShowing" : ""}
           `}
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -56,25 +56,32 @@ class ButtonD extends React.Component<IButtonDProps, IButtonDState> {
         >
           <g>
             <path
-              fill="#79A246"
-              d="M49.893,48.144c0,0-8.439-2.619-28.112,3.627C10.579,55.326,4.353,62.355,7.41,68.996
-		c2.668,5.797,12.473,6.137,22.51-0.387C40.689,61.609,49.893,48.144,49.893,48.144z"
+              fill="#70896c"
+              d="M49.61,44s-8.34-2.7-27.93,3.26c-11.14,3.4-17.4,10.3-14.45,16.92,2.58,5.78,12.3,6.23,22.33-.12C40.32,57.22,49.61,44,49.61,44Z"
             />
             <path
-              fill="#79A246"
-              d="M51.985,37.873c0,0-4.226-7.762-22.684-16.997c-10.51-5.259-19.874-4.561-22.312,2.332
-		c-2.127,6.016,4.666,13.095,16.409,15.414C36,41.11,51.985,37.873,51.985,37.873z"
+              fill="#abc46c"
+              d="M49.66,37.91S46.34,29.8,29.15,18.69C19.36,12.37,10.05,12,6.9,18.57c-2.75,5.7,3.18,13.41,14.5,17C33.55,39.37,49.66,37.91,49.66,37.91Z"
             />
             <path
-              fill="#79A246"
-              d="M47.309,44.056c0,0-6.57-5.908-27.052-8.462C8.595,34.141,0,37.921,0,45.232
-		c0,6.381,8.764,10.789,20.608,9.061C33.318,52.437,47.309,44.056,47.309,44.056z"
+              fill="#79a045"
+              d="M46.92,39.68s-6.52-5.86-26.83-8.4C8.52,29.84,0,33.59,0,40.84c0,6.33,8.69,10.7,20.44,9C33,48,46.92,39.68,46.92,39.68Z"
             />
             <path
-              fill="#E77452"
-              d="M40.764,49.865c-8.515-8.094-11.918-19.78-3.684-32.485C48.711-0.567,80.49,0.002,100.83,0.002
-		c54.394,0,143.911,16.913,143.911,47.955c0,28.053-93.072,43.791-160.229,39.592c-20.887-1.305-39.346-6.66-45.8-15.195
-		C30.069,60.921,40.764,49.865,40.764,49.865z"
+              fill="#e57351"
+              d="M41.93,23.49C52.74,4.39,83.37,0,103.55,0c53.94,0,110.51,17,110.51,42.52,0,26.1-63.64,43.6-130.25,39.44-20.71-1.3-28.3-6.24-38.49-17.28C35.68,54.24,34.67,36.32,41.93,23.49Z"
+            />
+            <path
+              fill="#fcc43a"
+              d="M193.38,58.12c-1.4-1.12,4.44-7.26,5.55-4.2S195.88,60.12,193.38,58.12Z"
+            />
+            <path
+              fill="#fcc43a"
+              d="M199.69,49.61c-1.45-2.28,2.75-3.19,2.93-1.42S200.31,50.58,199.69,49.61Z"
+            />
+            <path
+              fill="#fcc43a"
+              d="M206.07,51.2c-.26-1.5,1.68-2,1.33-.71S206.34,52.71,206.07,51.2Z"
             />
           </g>
         </svg>
