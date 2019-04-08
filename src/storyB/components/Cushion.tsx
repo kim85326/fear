@@ -13,7 +13,7 @@ class Cushion extends React.Component {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        viewBox="0 0 182.5 43.8"
+        viewBox="0 0 183 47"
       >
         <image
           width="183"
