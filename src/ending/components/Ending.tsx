@@ -6,26 +6,68 @@ import soundSrc from "../static/ending.wav";
 import ConnectedButtonJ from "../containers/ButtonJContainer";
 import ConnectedButtonK from "../containers/ButtonKContainer";
 import Lottie from "react-lottie";
-import * as endingBackgroundJson from "../static/ending_background.json";
-import * as endingContentWhiteJson from "../static/ending_content_white.json";
-import * as endingTextWhiteJson from "../static/ending_text_white.json";
+import * as endingBackground1Json from "../static/ending_background_1.json";
+import * as endingContent1Json from "../static/ending_content_1.json";
+import * as endingText1Json from "../static/ending_text_1.json";
+import * as endingBackground2Json from "../static/ending_background_2.json";
+import * as endingContent2Json from "../static/ending_content_2.json";
+import * as endingText2Json from "../static/ending_text_2.json";
+import * as endingBackground3Json from "../static/ending_background_3.json";
+import * as endingContent3Json from "../static/ending_content_3.json";
+import * as endingText3Json from "../static/ending_text_3.json";
 
-const defaultOptions = {
+const endingBackground1Options = {
   loop: true,
   autoplay: true,
-  animationData: endingBackgroundJson
+  animationData: endingBackground1Json
 };
 
-const endingContentWhiteOptions = {
+const endingContent1Options = {
   loop: true,
   autoplay: true,
-  animationData: endingContentWhiteJson
+  animationData: endingContent1Json
 };
 
-const endingTextWhiteOptions = {
+const endingText1Options = {
   loop: true,
   autoplay: true,
-  animationData: endingTextWhiteJson
+  animationData: endingText1Json
+};
+
+const endingBackground2Options = {
+  loop: true,
+  autoplay: true,
+  animationData: endingBackground2Json
+};
+
+const endingContent2Options = {
+  loop: true,
+  autoplay: true,
+  animationData: endingContent2Json
+};
+
+const endingText2Options = {
+  loop: true,
+  autoplay: true,
+  animationData: endingText2Json
+};
+
+const endingBackground3Options = {
+  loop: true,
+  autoplay: true,
+  animationData: endingBackground3Json
+};
+
+const endingContent3Options = {
+  loop: true,
+  autoplay: true,
+  animationData: endingContent3Json
+};
+
+const endingText3Options = {
+  loop: true,
+  autoplay: true,
+  animationData: endingText3Json
 };
 
 interface IEndingProps {
@@ -40,9 +82,7 @@ class Ending extends React.Component<IEndingProps> {
   public render() {
     return (
       <div className="ending">
-        <div className="ending-background">
-          <Lottie options={defaultOptions} />
-        </div>
+        {this.getBackground()}
         <ConnectedMenuWrapper />
         <Sound src={soundSrc} />
         {this.getEndingContent()}
@@ -52,15 +92,37 @@ class Ending extends React.Component<IEndingProps> {
     );
   }
 
+  private getBackground() {
+    if (this.props.finalAnswer === "white") {
+      return (
+        <div className="ending-background">
+          <Lottie options={endingBackground1Options} />
+        </div>
+      );
+    } else if (this.props.finalAnswer === "red") {
+      return (
+        <div className="ending-background">
+          <Lottie options={endingBackground2Options} />
+        </div>
+      );
+    } else {
+      return (
+        <div className="ending-background">
+          <Lottie options={endingBackground3Options} />
+        </div>
+      );
+    }
+  }
+
   private getEndingContent() {
     if (this.props.finalAnswer === "white") {
       return (
         <>
           <div className="ending-content">
-            <Lottie options={endingContentWhiteOptions} />
+            <Lottie options={endingContent1Options} />
           </div>
           <div className="ending-text">
-            <Lottie options={endingTextWhiteOptions} />
+            <Lottie options={endingText1Options} />
           </div>
         </>
       );
@@ -68,10 +130,10 @@ class Ending extends React.Component<IEndingProps> {
       return (
         <>
           <div className="ending-content">
-            <Lottie options={endingContentWhiteOptions} />
+            <Lottie options={endingContent2Options} />
           </div>
           <div className="ending-text">
-            <Lottie options={endingTextWhiteOptions} />
+            <Lottie options={endingText2Options} />
           </div>
         </>
       );
@@ -79,10 +141,10 @@ class Ending extends React.Component<IEndingProps> {
       return (
         <>
           <div className="ending-content">
-            <Lottie options={endingContentWhiteOptions} />
+            <Lottie options={endingContent3Options} />
           </div>
           <div className="ending-text">
-            <Lottie options={endingTextWhiteOptions} />
+            <Lottie options={endingText3Options} />
           </div>
         </>
       );
