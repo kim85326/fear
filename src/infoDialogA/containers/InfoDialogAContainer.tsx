@@ -2,12 +2,10 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { IAppState } from "src/app/AppReducer";
-import InfoDialogA from "../components/InfoDialogA";
-import {
-  closeInfoDialogAAction,
-  closingInfoDialogAAction,
-  openingInfoDialogAAction
-} from "../InfoDialogAActions";
+import { closeInfoDialogAAction } from "../InfoDialogAActions";
+import InfoDialog from "src/common/infoDialog/components/InfoDialog";
+import infoDialogABackground from "../static/infoDialogA_background.png";
+import InfoDialogAContent from "../components/InfoDialogAContent";
 
 interface IInfoDialogAContainerProps extends IInfoDialogAStateProps {
   dispatch: Dispatch;
@@ -15,14 +13,10 @@ interface IInfoDialogAContainerProps extends IInfoDialogAStateProps {
 
 interface IInfoDialogAStateProps {
   isShow: boolean;
-  isShowing: boolean;
-  isHiding: boolean;
 }
 
 const mapStateToProps = (state: IAppState): IInfoDialogAStateProps => ({
-  isShow: state.infoDialogAState.isShow,
-  isShowing: state.infoDialogAState.isShowing,
-  isHiding: state.infoDialogAState.isHiding
+  isShow: state.infoDialogAState.isShow
 });
 
 class InfoDialogAContainer extends React.Component<IInfoDialogAContainerProps> {
@@ -31,31 +25,21 @@ class InfoDialogAContainer extends React.Component<IInfoDialogAContainerProps> {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  public componentWillReceiveProps(nextProps: IInfoDialogAContainerProps) {
-    if (nextProps.isShow && !this.props.isShow) {
-      this.props.dispatch(openingInfoDialogAAction());
-    }
-
-    if (nextProps.isHiding && !this.props.isHiding) {
-      setTimeout(() => {
-        this.props.dispatch(closeInfoDialogAAction());
-      }, 1000);
-    }
-  }
-
   public render() {
     return (
-      <InfoDialogA
+      <InfoDialog
         isShow={this.props.isShow}
-        isShowing={this.props.isShowing}
-        isHiding={this.props.isHiding}
         handleClick={this.handleClick}
-      />
+        backgroundColor={"#fbf7ec"}
+        backgroundImage={infoDialogABackground}
+      >
+        <InfoDialogAContent />
+      </InfoDialog>
     );
   }
 
   private handleClick() {
-    this.props.dispatch(closingInfoDialogAAction());
+    this.props.dispatch(closeInfoDialogAAction());
   }
 }
 

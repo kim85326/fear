@@ -1,0 +1,219 @@
+.info-dialog-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  min-width: 1440px;
+  min-height: 688px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.info-dialog-wrapper.show-enter,
+.info-dialog-wrapper.show-enter-active,
+.info-dialog-wrapper.show-enter-done,
+.info-dialog-wrapper.show-exit,
+.info-dialog-wrapper.show-exit-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.info-dialog-wrapper.show-exit-done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.info-dialog-mask {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3c3732;
+  opacity: 0.7;
+}
+
+.info-dialog {
+  position: relative;
+  width: 45%;
+  height: 80%;
+  z-index: 101;
+  background-color: #fcf8ed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 80px 64px 112px;
+  border-radius: 9px;
+}
+
+.info-dialog.slide-enter {
+  animation-name: slide-in;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+}
+
+.info-dialog.slide-exit {
+  animation-name: slide-out;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translate3d(0, 110%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.info-dialog-background {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.close-info-dialog-button {
+  z-index: 102;
+  position: absolute;
+  top: 8.67%;
+  right: 7.1%;
+  width: 3.43%;
+}
+
+.close-info-dialog-button:hover {
+  animation-name: close-info-dialog-button-hover;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.close-info-dialog-button.zoom-exit {
+  animation-name: zoom-out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes zoom-out {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes close-info-dialog-button-hover {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.info-dialog-content {
+  height: 100%;
+  width: 50%;
+  overflow: auto;
+  z-index: 3;
+  padding-right: 32px;
+}
+
+.info-dialog-content.fade-enter {
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-delay: 1000ms;
+}
+
+.info-dialog-content.fade-exit {
+  opacity: 1;
+  animation-name: fade-out;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+  animation-delay: 500ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.info-dialog-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* bar 的樣式 */
+.info-dialog-content::-webkit-scrollbar-thumb {
+  background-color: #e77452;
+  border-radius: 5px;
+}
+
+.info-dialog .title {
+  margin-bottom: 21.6px;
+}
+
+.info-dialog section {
+  margin-bottom: 54px;
+}
+
+.info-dialog h2 {
+  color: #e57351;
+  font-family: Noto Sans TC Black;
+  font-size: 23.6px;
+  padding: 0;
+  margin: 0;
+}
+
+.info-dialog h3 {
+  color: #e57351;
+  font-family: Noto Sans TC Black;
+  font-size: 17.75px;
+  padding: 0;
+  margin: 0;
+}
+
+.info-dialog p {
+  color: #5980b5;
+  font-family: Noto Sans TC Medium;
+  font-size: 13.77px;
+  padding: 0;
+  margin: 0;
+}

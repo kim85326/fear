@@ -1,23 +1,17 @@
 import * as React from "react";
 
-interface ICloseInfoDialogBProps {
-  isHiding: boolean;
+interface ICloseInfoDialogProps {
   handleClick: () => void;
 }
 
-class CloseInfoDialogBButton extends React.Component<ICloseInfoDialogBProps> {
-  public constructor(props: ICloseInfoDialogBProps) {
+class CloseInfoDialogButton extends React.Component<ICloseInfoDialogProps> {
+  public constructor(props: ICloseInfoDialogProps) {
     super(props);
   }
 
   public render() {
     return (
-      <a
-        onClick={this.props.handleClick}
-        className={`close-info-dialog-button ${
-          this.props.isHiding ? "isHiding" : ""
-        }`}
-      >
+      <a onClick={this.props.handleClick} className="close-info-dialog-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
@@ -55,4 +49,4 @@ class CloseInfoDialogBButton extends React.Component<ICloseInfoDialogBProps> {
   }
 }
 
-export default CloseInfoDialogBButton;
+export default CloseInfoDialogButton;

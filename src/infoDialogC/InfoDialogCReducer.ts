@@ -3,14 +3,10 @@ import { InfoDialogCActionType } from "./InfoDialogCActions";
 
 export interface IInfoDialogCState {
   isShow: boolean;
-  isShowing: boolean;
-  isHiding: boolean;
 }
 
 const defaultInfoDialogCState = {
-  isShow: false,
-  isShowing: false,
-  isHiding: false
+  isShow: false
 };
 
 const infoDialogCReducer = (
@@ -18,23 +14,10 @@ const infoDialogCReducer = (
   action: AnyAction
 ): IInfoDialogCState => {
   switch (action.type) {
-    case InfoDialogCActionType.OPENING_DIALOG:
-      return {
-        ...state,
-        isShowing: true
-      };
-
     case InfoDialogCActionType.OPEN_DIALOG:
       return {
         ...state,
-        isShowing: false,
         isShow: true
-      };
-
-    case InfoDialogCActionType.CLOSING_DIALOG:
-      return {
-        ...state,
-        isHiding: true
       };
 
     case InfoDialogCActionType.CLOSE_DIALOG:
