@@ -139,81 +139,6 @@
   width: 10.8%;
 }
 
-.dialogC {
-  z-index: 7;
-  display: none;
-  position: absolute;
-  top: 11.44%;
-  right: 54.34%;
-  width: 11.81%;
-}
-
-.dialogC.show {
-  display: block;
-}
-
-.dialogC-text,
-.dialogC-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.dialogC-text {
-  z-index: 3;
-  display: none;
-}
-
-.dialogC-text.show {
-  display: block;
-}
-
-.dialogC-background {
-  z-index: 2;
-}
-
-.dialogC-background.isShowing {
-  animation-name: dialogC-background-show;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes dialogC-background-show {
-  0% {
-    transform: scale(0);
-  }
-
-  80% {
-    transform: scale(1.05);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.dialogC-background.isHiding {
-  animation-name: dialogC-background-hide;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes dialogC-background-hide {
-  0% {
-    transform: scale(1);
-  }
-
-  20% {
-    transform: scale(1.05);
-  }
-
-  100% {
-    transform: scale(0);
-  }
-}
-
 .personB-wrapper {
   z-index: 7;
   position: absolute;
@@ -328,6 +253,123 @@
 }
 
 @keyframes dialogDEF-background-hide {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.dialogC {
+  z-index: 7;
+  position: absolute;
+  top: 11.44%;
+  right: 54.34%;
+  width: 11.81%;
+  visibility: hidden;
+}
+
+.dialogC.show-enter,
+.dialogC.show-enter-active,
+.dialogC.show-enter-done,
+.dialogC.show-exit,
+.dialogC.show-exit-active {
+  visibility: visible;
+}
+
+.dialogC.show-exit-done {
+  visibility: hidden;
+}
+
+.dialogC-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.dialogC-text.show-enter {
+  animation-name: dialogC-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogC-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.dialogC-text.show-enter-done {
+  visibility: visible;
+}
+
+.dialogC-text.show-exit {
+  visibility: visible;
+  animation-name: dialogC-text-hide;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogC-text-hide {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
+
+.dialogC-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.dialogC-background.zoom-enter {
+  animation-name: dialogC-background-show;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogC-background-show {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dialogC-background.zoom-exit {
+  animation-name: dialogC-background-hide;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogC-background-hide {
   0% {
     transform: scale(1);
   }
