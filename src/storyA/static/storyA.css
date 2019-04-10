@@ -23,123 +23,6 @@
   right: 16.86%;
 }
 
-.dialogG,
-.dialogH,
-.dialogI {
-  display: none;
-  position: absolute;
-}
-
-.dialogG {
-  width: 17.97%;
-  bottom: 90.6%;
-  right: 31.71%;
-}
-
-.dialogH {
-  width: 16.95%;
-  bottom: 71.27%;
-  right: 13.05%;
-}
-
-.dialogI {
-  width: 17.97%;
-  bottom: 56.54%;
-  right: 31.71%;
-}
-
-.dialogG.show,
-.dialogH.show,
-.dialogI.show {
-  display: block;
-}
-
-.dialogG-text,
-.dialogG-background,
-.dialogH-text,
-.dialogH-background,
-.dialogI-text,
-.dialogI-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.dialogG-text,
-.dialogH-text,
-.dialogI-text {
-  z-index: 3;
-  display: none;
-}
-
-.dialogG-text.show,
-.dialogH-text.show,
-.dialogI-text.show {
-  display: block;
-}
-
-.dialogG-background,
-.dialogH-background,
-.dialogI-background {
-  z-index: 2;
-}
-
-.dialogG-background.isShowing,
-.dialogH-background.isShowing,
-.dialogI-background.isShowing {
-  animation-name: dialogGHI-background-show;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes dialogGHI-background-show {
-  0% {
-    transform: scale(0.5);
-  }
-  80% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.dialogG-background.isHiding,
-.dialogH-background.isHiding,
-.dialogI-background.isHiding {
-  animation-name: dialogGHI-background-hide-scale,
-    dialogGHI-background-hide-opacity;
-  animation-duration: 0.8s, 0.3s;
-  animation-delay: 0s, 0.5s;
-  animation-timing-function: ease-in-out, ease-in-out;
-  animation-fill-mode: forwards, forwards;
-}
-
-@keyframes dialogGHI-background-hide-scale {
-  0% {
-    transform: scale(1);
-  }
-  60% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(0.95);
-  }
-}
-
-@keyframes dialogGHI-background-hide-opacity {
-  0% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .reply-rabbit {
   position: absolute;
   top: 0;
@@ -261,5 +144,154 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+.dialogGHI {
+  z-index: 7;
+  visibility: hidden;
+  position: absolute;
+}
+
+.dialogG {
+  width: 17.97%;
+  top: 9.5%;
+  right: 31.71%;
+}
+
+.dialogH {
+  width: 16.95%;
+  top: 29%;
+  right: 13.05%;
+}
+
+.dialogI {
+  width: 17.97%;
+  top: 43.5%;
+  right: 31.71%;
+}
+
+.dialogGHI.show-enter,
+.dialogGHI.show-enter-active,
+.dialogGHI.show-enter-done,
+.dialogGHI.show-exit,
+.dialogGHI.show-exit-active {
+  visibility: visible;
+}
+
+.dialogGHI.show-exit-done {
+  visibility: hidden;
+}
+
+.dialogGHI-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.dialogGHI-text.show-enter {
+  visibility: hidden;
+  animation-name: dialogGHI-text-show;
+  animation-delay: 700ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogGHI-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.dialogGHI-text.show-enter-done {
+  visibility: visible;
+}
+
+.dialogGHI-text.show-exit {
+  visibility: visible;
+  animation-name: dialogGHI-text-hide;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogGHI-text-hide {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
+
+.dialogGHI-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.dialogGHI-background.zoom-enter {
+  animation-name: dialogGHI-background-show;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogGHI-background-show {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dialogGHI-background.zoom-exit {
+  animation-name: dialogGHI-background-hide-scale,
+    dialogGHI-background-hide-opacity;
+  animation-duration: 0.8s, 0.3s;
+  animation-delay: 0s, 0.5s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-fill-mode: forwards, forwards;
+}
+
+@keyframes dialogGHI-background-hide-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes dialogGHI-background-hide-opacity {
+  0% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
