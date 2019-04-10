@@ -1,95 +1,65 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import ButtonJText from "./ButtonJText";
+import { CSSTransition } from "react-transition-group";
 
 interface IButtonJProps {
   isShowButton: boolean;
 }
 
-interface IButtonJState {
-  isShowButton: boolean;
-  isShowingButtonBackground: boolean;
-  isShowButtonText: boolean;
-}
-
-class ButtonJ extends React.Component<IButtonJProps, IButtonJState> {
+class ButtonJ extends React.Component<IButtonJProps> {
   constructor(props: IButtonJProps) {
     super(props);
-
-    this.state = {
-      isShowButton: false,
-      isShowingButtonBackground: false,
-      isShowButtonText: false
-    };
-  }
-
-  public componentWillReceiveProps(nextProps: IButtonJProps) {
-    // 當 props 改變，且顯示按鈕時
-    if (nextProps.isShowButton && !this.props.isShowButton) {
-      // 顯示按鈕背景
-      this.showButtonBackground();
-
-      // 0.5 秒後顯示按鈕的文字
-      setTimeout(() => {
-        this.setState({ isShowButtonText: true });
-      }, 500);
-    } 
   }
 
   public render() {
     return (
       <Link
         to="/submitFear"
-        className={`buttonJ ${this.state.isShowButton ? "show" : ""}`}
+        className={`buttonJ ${this.props.isShowButton ? "show" : ""}`}
       >
-        <ButtonJText isShowButtonText={this.state.isShowButtonText} />
-        <svg
-          className={`
-            buttonJ-background 
-            ${this.state.isShowingButtonBackground ? "isShowing" : ""}
-          `}
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          viewBox="0 0 245.423 88.466"
+        <CSSTransition
+          in={this.props.isShowButton}
+          timeout={{ enter: 1000 }}
+          classNames="zoom"
         >
-          <g>
-            <path
-              fill="#718B6D"
-              d="M50.158,48.529c0,0-8.432-2.726-28.231,3.303C10.652,55.263,4.325,62.238,7.312,68.933
-	c2.606,5.842,12.435,6.301,22.576-0.121C40.77,61.921,50.158,48.529,50.158,48.529z"
-            />
-            <path
-              fill="#ADC56D"
-              d="M51.12,39.953c0,0-4.236-7.783-22.746-17.045c-10.539-5.273-19.929-4.573-22.373,2.339
-	c-2.134,6.032,4.679,13.131,16.454,15.457C35.092,43.199,51.12,39.953,51.12,39.953z"
-            />
-            <path
-              fill="#79A246"
-              d="M47.441,44.178c0,0-6.589-5.925-27.128-8.485C8.619,34.234,0,38.025,0,45.356
-	c0,6.399,8.789,10.821,20.667,9.086C33.412,52.583,47.441,44.178,47.441,44.178z"
-            />
-            <path
-              fill="#E77452"
-              d="M40.878,50.003c-8.538-8.118-11.951-19.835-3.694-32.577C48.847-0.57,80.715,0.002,101.112,0.002
-	c54.543,0,144.311,16.959,144.311,48.087c0,28.131-93.332,43.912-160.675,39.703c-20.945-1.309-39.456-6.68-45.928-15.24
-	C30.153,61.089,40.878,50.003,40.878,50.003z"
-            />
-          </g>
-        </svg>
+          <svg
+            className="buttonJ-background"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            viewBox="0 0 214.06 82.57"
+          >
+            <g>
+              <path
+                fill="#70896c"
+                d="M49.61,44s-8.34-2.7-27.93,3.26c-11.14,3.4-17.4,10.3-14.45,16.92,2.58,5.78,12.3,6.23,22.33-.12C40.32,57.22,49.61,44,49.61,44Z"
+              />
+              <path
+                fill="#abc46c"
+                d="M49.66,37.91S46.34,29.8,29.15,18.69C19.36,12.37,10.05,12,6.9,18.57c-2.75,5.7,3.18,13.41,14.5,17C33.55,39.37,49.66,37.91,49.66,37.91Z"
+              />
+              <path
+                fill="#79a045"
+                d="M46.92,39.68s-6.52-5.86-26.83-8.4C8.52,29.84,0,33.59,0,40.84c0,6.33,8.69,10.7,20.44,9C33,48,46.92,39.68,46.92,39.68Z"
+              />
+              <path
+                fill="#e57351"
+                d="M41.93,23.49C52.74,4.39,83.37,0,103.55,0c53.94,0,110.51,17,110.51,42.52,0,26.1-63.64,43.6-130.25,39.44-20.71-1.3-28.3-6.24-38.49-17.28C35.68,54.24,34.67,36.32,41.93,23.49Z"
+              />
+            </g>
+          </svg>
+        </CSSTransition>
+        <CSSTransition
+          in={this.props.isShowButton}
+          timeout={{ enter: 1000 }}
+          classNames="show"
+        >
+          <ButtonJText />
+        </CSSTransition>
       </Link>
     );
-  }
-
-  private showButtonBackground() {
-    this.setState({
-      isShowButton: true,
-      isShowingButtonBackground: true
-    });
-    setTimeout(() => {
-      this.setState({ isShowingButtonBackground: false });
-    }, 1000);
   }
 }
 

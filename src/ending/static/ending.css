@@ -41,10 +41,10 @@
 
 .buttonJ,
 .buttonK {
-  display: none;
   position: absolute;
   width: 11%;
   z-index: 10;
+  visibility: hidden;
 }
 
 .buttonJ {
@@ -59,44 +59,64 @@
 
 .buttonJ.show,
 .buttonK.show {
-  display: block;
+  visibility: visible;
 }
 
-.buttonJ.show:hover,
-.buttonK.show:hover {
+.buttonJ:hover,
+.buttonK:hover {
   opacity: 0.7;
 }
 
 .buttonJ-text,
+.buttonK-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.buttonJ-text.show-enter,
+.buttonK-text.show-enter {
+  animation-name: buttonJK-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonJK-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.buttonJ-text.show-enter-done,
+.buttonK-text.show-enter-done {
+  visibility: visible;
+}
+
 .buttonJ-background,
-.buttonK-text,
 .buttonK-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
-.buttonJ-text,
-.buttonK-text {
-  z-index: 5;
-  display: none;
+.buttonJ-background.zoom-enter,
+.buttonK-background.zoom-enter {
+  animation-name: buttonJK-background-show-opacity,
+    buttonJK-background-show-scale;
+  animation-duration: 1000ms, 1000ms;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-fill-mode: forwards, forwards;
 }
 
-.buttonJ-text.show,
-.buttonK-text.show {
-  display: block;
-}
-
-.buttonJ-background.isShowing,
-.buttonK-background.isShowing {
-  animation-name: buttonJK-background-show;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes buttonJK-background-show {
+@keyframes buttonJK-background-show-opacity {
   0% {
     opacity: 0;
   }
@@ -107,5 +127,23 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes buttonJK-background-show-scale {
+  0% {
+    transform: scale(0.5);
+  }
+
+  40% {
+    transform: scale(0.7);
+  }
+
+  80% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
