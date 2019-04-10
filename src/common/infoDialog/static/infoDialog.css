@@ -50,6 +50,7 @@
   align-items: center;
   padding: 80px 64px 112px;
   border-radius: 9px;
+  overflow: hidden;
 }
 
 .info-dialog.slide-enter {
