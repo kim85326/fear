@@ -86,67 +86,6 @@
   }
 }
 
-.buttonB,
-.buttonC {
-  display: none;
-  position: absolute;
-  width: 22.55%;
-  right: 26.71%;
-}
-
-.buttonB.show,
-.buttonC.show {
-  display: block;
-}
-
-.buttonB {
-  bottom: 90.6%;
-}
-
-.buttonC {
-  bottom: 56.54%;
-}
-
-.buttonB-text,
-.buttonB-background,
-.buttonC-text,
-.buttonC-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.buttonB-text,
-.buttonC-text {
-  z-index: 3;
-  display: none;
-}
-
-.buttonB-text.show,
-.buttonC-text.show {
-  display: block;
-}
-
-.buttonB-background.isShowing,
-.buttonC-background.isShowing {
-  animation-name: buttonBC-background-show;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes buttonBC-background-show {
-  0% {
-    transform: scale(0.5);
-  }
-  80% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .dialogGHI {
   z-index: 7;
   visibility: hidden;
@@ -293,5 +232,90 @@
 
   100% {
     opacity: 0;
+  }
+}
+
+.buttonBC {
+  z-index: 7;
+  position: absolute;
+  width: 22.55%;
+  right: 21%;
+  visibility: hidden;
+}
+
+.buttonB {
+  top: 27.32%;
+}
+
+.buttonC {
+  top: 49%;
+}
+
+.buttonBC.show-enter,
+.buttonBC.show-enter-active,
+.buttonBC.show-enter-done,
+.buttonBC.show-exit,
+.buttonBC.show-exit-active {
+  visibility: visible;
+}
+
+.buttonBC.show-exit-done {
+  visibility: hidden;
+}
+
+.buttonBC-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.buttonBC-text.show-enter {
+  animation-name: buttonBC-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonBC-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.buttonBC-text.show-enter-done {
+  visibility: visible;
+}
+
+.buttonBC-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.buttonBC-background.zoom-enter {
+  animation-name: buttonBC-background-show;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonBC-background-show {
+  0% {
+    transform: scale(0.5);
+  }
+
+  80% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
