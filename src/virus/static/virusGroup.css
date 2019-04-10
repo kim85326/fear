@@ -62,61 +62,47 @@
   bottom: -6%;
   left: 5.5%;
   width: 25%;
-  animation-name: virusB-move-rotate, virusB-move-scale;
-  animation-duration: 10s, 10s;
-  animation-iteration-count: infinite, infinite;
-  animation-timing-function: ease, ease;
+  animation-name: virusB-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
 }
 
-@keyframes virusB-move-rotate {
+@keyframes virusB-move {
   0% {
-    transform: rotate(0deg);
-  }
-
-  20% {
-    transform: rotate(3deg);
-  }
-
-  48% {
-    transform: rotate(-2deg);
-  }
-
-  79% {
-    transform: rotate(3deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes virusB-move-scale {
-  0% {
-    transform: scale(1.05);
+    transform: rotate(0deg) scale(1.05);
   }
 
   12.5% {
-    transform: scale(1);
+    transform: rotate(2.1deg) scale(1);
+  }
+
+  20% {
+    transform: rotate(3deg) scale(1.027);
   }
 
   26.7% {
-    transform: scale(1.05);
+    transform: rotate(2.4deg) scale(1.05);
   }
 
   43.7% {
-    transform: scale(0.99);
+    transform: rotate(-1.8deg) scale(0.99);
+  }
+
+  48% {
+    transform: rotate(-2deg) scale(1.017);
   }
 
   57.5% {
-    transform: scale(1.09);
+    transform: rotate(-1deg) scale(1.09);
   }
 
   80% {
-    transform: scale(1.01);
+    transform: rotate(3deg) scale(1.01);
   }
 
   100% {
-    transform: scale(1.05);
+    transform: rotate(0deg) scale(1.05);
   }
 }
 
@@ -125,34 +111,294 @@
   /* top 有點怪*/
   left: -0.3%;
   width: 20%;
+  animation-name: virusC-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes virusC-move {
+  0% {
+    transform: rotate(0deg) scale(1.09);
+  }
+
+  14.6% {
+    transform: rotate(-1.7deg) scale(1);
+  }
+
+  20% {
+    transform: rotate(-2deg) scale(1.019);
+  }
+
+  34% {
+    transform: rotate(-0.3deg) scale(1.08);
+  }
+
+  46.7% {
+    transform: rotate(1deg) scale(1.02);
+  }
+
+  67.5% {
+    transform: rotate(-2.4deg) scale(1.05);
+  }
+
+  75.4% {
+    transform: rotate(-3deg) scale(1.023);
+  }
+
+  82.5% {
+    transform: rotate(-2.5deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.09);
+  }
 }
 
 .virusD {
   top: 6%;
   left: 19.4%;
   width: 11%;
+  animation-name: virusD-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes virusD-move {
+  0% {
+    transform: rotate(0deg) scale(1.05);
+  }
+
+  12.5% {
+    transform: rotate(3.5deg) scale(1);
+  }
+
+  16.6% {
+    transform: rotate(4deg) scale(1.007);
+  }
+
+  28% {
+    transform: rotate(1.6deg) scale(1.03);
+  }
+
+  44% {
+    transform: rotate(-3deg) scale(1.008);
+  }
+
+  51.2% {
+    transform: rotate(-2.4deg) scale(1);
+  }
+
+  62% {
+    transform: rotate(0.7deg) scale(1.04);
+  }
+
+  75.8% {
+    transform: rotate(3deg) scale(1.016);
+  }
+
+  80% {
+    transform: rotate(2.8deg) scale(1.01);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.05);
+  }
 }
 
 .virusE {
   top: -6%;
   right: 8%;
   width: 19.5%;
+  animation-name: virusE-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes virusE-move {
+  0% {
+    transform: rotate(0deg) scale(1.05);
+  }
+
+  11.3% {
+    transform: rotate(-2.9deg) scale(0.98);
+  }
+
+  17.5% {
+    transform: rotate(-4deg) scale(1.015);
+  }
+
+  28% {
+    transform: rotate(-0.2deg) scale(1.08);
+  }
+
+  37.5% {
+    transform: rotate(3deg) scale(1.045);
+  }
+
+  49% {
+    transform: rotate(0.9deg) scale(1);
+  }
+
+  63% {
+    transform: rotate(-2deg) scale(1.055);
+  }
+
+  65% {
+    transform: rotate(-1.9deg) scale(1.05);
+  }
+
+  81% {
+    transform: rotate(1.7deg) scale(1.01);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.05);
+  }
 }
 
 .virusF {
   top: 35%;
   right: 0.6%;
   width: 12.5%;
+  animation-name: virusF-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes virusF-move {
+  0% {
+    transform: rotate(0deg) scale(1.08);
+  }
+
+  14.5% {
+    transform: rotate(2.3deg) scale(0.99);
+  }
+
+  22% {
+    transform: rotate(3deg) scale(1.024);
+  }
+
+  30% {
+    transform: rotate(2deg) scale(1.06);
+  }
+
+  44% {
+    transform: rotate(-1.8deg) scale(1.02);
+  }
+
+  48% {
+    transform: rotate(-2deg) scale(1.032);
+  }
+
+  58% {
+    transform: rotate(-1deg) scale(1.07);
+  }
+
+  80% {
+    transform: rotate(3deg) scale(1.012);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.08);
+  }
 }
 
 .virusG {
   bottom: -17.4%;
   right: -8.2%;
   width: 26.6%;
+  animation-name: virusG-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes virusG-move {
+  0% {
+    transform: rotate(0deg) scale(1.05);
+  }
+
+  11% {
+    transform: rotate(2.6deg) scale(1);
+  }
+
+  20% {
+    transform: rotate(4deg) scale(1.033);
+  }
+
+  27.5% {
+    transform: rotate(3deg) scale(1.06);
+  }
+
+  45% {
+    transform: rotate(-2.8deg) scale(0.99);
+  }
+
+  48% {
+    transform: rotate(-3deg) scale(1);
+  }
+
+  63% {
+    transform: rotate(0.5deg) scale(1.03);
+  }
+
+  76% {
+    transform: rotate(3deg) scale(1.007);
+  }
+
+  81% {
+    transform: rotate(2.7deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.05);
+  }
 }
 
 .virusH {
   top: 60%;
   right: 24.6%;
   width: 8.2%;
+  animation-name: virusH-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes virusH-move {
+  0% {
+    transform: rotate(0deg) scale(1.1);
+  }
+
+  20% {
+    transform: rotate(-2deg) scale(1.001);
+  }
+
+  22% {
+    transform: rotate(-2deg) scale(1);
+  }
+
+  45% {
+    transform: rotate(4.6deg) scale(1.06);
+  }
+
+  50% {
+    transform: rotate(5deg) scale(1.054);
+  }
+
+  73% {
+    transform: rotate(-1.2deg) scale(1.02);
+  }
+
+  80% {
+    transform: rotate(-2deg) scale(1.038);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.1);
+  }
 }
