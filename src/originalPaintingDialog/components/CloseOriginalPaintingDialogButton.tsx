@@ -1,11 +1,12 @@
 import * as React from "react";
 
 interface ICloseOriginalPaintingDialogButtonProps {
-  isHiding: boolean;
   handleClick: () => void;
 }
 
-class CloseOriginalPaintingDialogButton extends React.Component<ICloseOriginalPaintingDialogButtonProps> {
+class CloseOriginalPaintingDialogButton extends React.Component<
+  ICloseOriginalPaintingDialogButtonProps
+> {
   public constructor(props: ICloseOriginalPaintingDialogButtonProps) {
     super(props);
   }
@@ -14,9 +15,7 @@ class CloseOriginalPaintingDialogButton extends React.Component<ICloseOriginalPa
     return (
       <a
         onClick={this.props.handleClick}
-        className={`close-original-painting-dialog-button ${
-          this.props.isHiding ? "isHiding" : ""
-        }`}
+        className="close-original-painting-dialog-button"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
