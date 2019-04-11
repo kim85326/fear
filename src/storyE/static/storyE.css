@@ -130,19 +130,13 @@
   opacity: 0.8;
 }
 
-.buttonH,
-.buttonI {
-  display: none;
+.buttonHI {
+  z-index: 101;
   position: absolute;
   width: 22.55%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 101;
-}
-
-.buttonH.show,
-.buttonI.show {
-  display: block;
+  visibility: hidden;
 }
 
 .buttonH {
@@ -153,41 +147,70 @@
   top: 53.98%;
 }
 
-.buttonH-text,
-.buttonH-background,
-.buttonI-text,
-.buttonI-background {
+.buttonHI.show-enter,
+.buttonHI.show-enter-active,
+.buttonHI.show-enter-done,
+.buttonHI.show-exit,
+.buttonHI.show-exit-active {
+  visibility: visible;
+}
+
+.buttonHI.show-exit-done {
+  visibility: hidden;
+}
+
+.buttonHI-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.buttonHI-text.show-enter {
+  animation-name: buttonHI-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonHI-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.buttonHI-text.show-enter-done {
+  visibility: visible;
+}
+
+.buttonHI-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
-.buttonH-text,
-.buttonI-text {
-  z-index: 102;
-  display: none;
-}
-
-.buttonH-text.show,
-.buttonI-text.show {
-  display: block;
-}
-
-.buttonH-background.isShowing,
-.buttonI-background.isShowing {
+.buttonHI-background.zoom-enter {
   animation-name: buttonHI-background-show;
-  animation-duration: 1s;
+  animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes buttonHI-background-show {
   0% {
     transform: scale(0.5);
   }
+
   80% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
