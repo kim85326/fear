@@ -1,18 +1,14 @@
 import * as React from "react";
 
-interface IButtonGTextProps {
-  isShowButtonText: boolean;
-}
-
-class ButtonGText extends React.Component<IButtonGTextProps> {
-  constructor(props: IButtonGTextProps) {
+class ButtonGText extends React.Component {
+  constructor(props: {}) {
     super(props);
   }
 
   public render() {
     return (
       <svg
-        className={`buttonG-text ${this.props.isShowButtonText ? "show" : ""}`}
+        className="buttonG-text buttonFG-text"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         x="0px"

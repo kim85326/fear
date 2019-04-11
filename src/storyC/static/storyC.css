@@ -362,19 +362,13 @@
   opacity: 0.8;
 }
 
-.buttonF,
-.buttonG {
-  display: none;
+.buttonFG {
+  z-index: 101;
   position: absolute;
   width: 22.55%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 101;
-}
-
-.buttonF.show,
-.buttonG.show {
-  display: block;
+  visibility: hidden;
 }
 
 .buttonF {
@@ -385,41 +379,70 @@
   top: 53.98%;
 }
 
-.buttonF-text,
-.buttonF-background,
-.buttonG-text,
-.buttonG-background {
+.buttonFG.show-enter,
+.buttonFG.show-enter-active,
+.buttonFG.show-enter-done,
+.buttonFG.show-exit,
+.buttonFG.show-exit-active {
+  visibility: visible;
+}
+
+.buttonFG.show-exit-done {
+  visibility: hidden;
+}
+
+.buttonFG-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.buttonFG-text.show-enter {
+  animation-name: buttonFG-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonFG-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.buttonFG-text.show-enter-done {
+  visibility: visible;
+}
+
+.buttonFG-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
-.buttonF-text,
-.buttonG-text {
-  z-index: 102;
-  display: none;
-}
-
-.buttonF-text.show,
-.buttonG-text.show {
-  display: block;
-}
-
-.buttonF-background.isShowing,
-.buttonG-background.isShowing {
+.buttonFG-background.zoom-enter {
   animation-name: buttonFG-background-show;
-  animation-duration: 1s;
+  animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes buttonFG-background-show {
   0% {
     transform: scale(0.5);
   }
+
   80% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
