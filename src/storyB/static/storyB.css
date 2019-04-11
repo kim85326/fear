@@ -236,24 +236,24 @@
 }
 
 .buttonD {
-  display: none;
+  visibility: hidden;
   position: absolute;
-  bottom: 20%;
+  bottom: 12%;
   right: 5.41%;
   width: 12.74%;
 }
 
-.buttonD.show {
-  display: block;
+.buttonD.show-enter,
+.buttonD.show-enter-active,
+.buttonD.show-enter-done,
+.buttonD.show-exit,
+.buttonD.show-exit-active {
+  visibility: visible;
   animation-name: buttonD-shake;
   animation-delay: 1s;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   transform-origin: center center;
-}
-
-.buttonD.show:hover {
-  animation-play-state: paused;
 }
 
 @keyframes buttonD-shake {
@@ -278,26 +278,53 @@
   }
 }
 
-.buttonD-text,
+.buttonD:hover {
+  animation-play-state: paused;
+}
+
+.buttonD.show-exit-done {
+  visibility: hidden;
+}
+
+.buttonD-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.buttonD-text.show-enter {
+  animation-name: buttonD-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonD-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.buttonD-text.show-enter-done {
+  visibility: visible;
+}
+
 .buttonD-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
-.buttonD-text {
-  z-index: 3;
-  display: none;
-}
-
-.buttonD-text.show {
-  display: block;
-}
-
-.buttonD-background.isShowing {
+.buttonD-background.fade-enter {
   animation-name: buttonD-background-show;
-  animation-duration: 1s;
+  animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }

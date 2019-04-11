@@ -24,7 +24,6 @@ const defaultOptions = {
 interface IStoryBProps {
   isLoading: boolean;
   isShowDialogJ: boolean;
-  isShowButtonD: boolean;
 }
 
 class StoryB extends React.Component<IStoryBProps> {
