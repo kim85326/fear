@@ -232,25 +232,25 @@
 }
 
 .buttonE {
-  display: none;
+  visibility: hidden;
   position: absolute;
-  bottom: 20%;
+  bottom: 12%;
   right: 5.41%;
   width: 12.74%;
   z-index: 11;
 }
 
-.buttonE.show {
-  display: block;
+.buttonE.show-enter,
+.buttonE.show-enter-active,
+.buttonE.show-enter-done,
+.buttonE.show-exit,
+.buttonE.show-exit-active {
+  visibility: visible;
   animation-name: buttonE-shake;
   animation-delay: 1s;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   transform-origin: center center;
-}
-
-.buttonE.show:hover {
-  animation-play-state: paused;
 }
 
 @keyframes buttonE-shake {
@@ -275,26 +275,53 @@
   }
 }
 
-.buttonE-text,
+.buttonE:hover {
+  animation-play-state: paused;
+}
+
+.buttonE.show-exit-done {
+  visibility: hidden;
+}
+
+.buttonE-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.buttonE-text.show-enter {
+  animation-name: buttonE-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonE-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.buttonE-text.show-enter-done {
+  visibility: visible;
+}
+
 .buttonE-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
-.buttonE-text {
-  z-index: 10;
-  display: none;
-}
-
-.buttonE-text.show {
-  display: block;
-}
-
-.buttonE-background.isShowing {
+.buttonE-background.fade-enter {
   animation-name: buttonE-background-show;
-  animation-duration: 1s;
+  animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
