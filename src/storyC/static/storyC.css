@@ -113,43 +113,87 @@
 }
 
 .dialogK {
-  display: none;
   position: absolute;
   top: 15.31%;
   right: 50.38%;
   width: 14.96%;
   z-index: 6;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.dialogK.show {
-  display: block;
+.dialogK.show-enter,
+.dialogK.show-enter-active,
+.dialogK.show-enter-done,
+.dialogK.show-exit,
+.dialogK.show-exit-active {
+  visibility: visible;
 }
 
-.dialogK-text,
+.dialogK.show-exit-done {
+  visibility: hidden;
+}
+
+.dialogK-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.dialogK-text.show-enter {
+  visibility: hidden;
+  animation-name: dialogK-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogK-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.dialogK-text.show-enter-done {
+  visibility: visible;
+}
+
+.dialogK-text.show-exit {
+  visibility: visible;
+  animation-name: dialogK-text-hide;
+  animation-delay: 400ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogK-text-hide {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
+
 .dialogK-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-}
-
-.dialogK-text {
-  z-index: 3;
-  display: none;
-}
-
-.dialogK-text.show {
-  display: block;
-}
-
-.dialogK-background {
   z-index: 2;
 }
 
-.dialogK-background.isShowing {
+.dialogK-background.zoom-enter {
   animation-name: dialogK-background-show;
-  animation-duration: 1s;
+  animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes dialogK-background-show {
@@ -166,7 +210,7 @@
   }
 }
 
-.dialogK-background.isHiding {
+.dialogK-background.zoom-exit {
   animation-name: dialogK-background-hide;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;

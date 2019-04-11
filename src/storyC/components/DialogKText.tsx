@@ -1,18 +1,14 @@
 import * as React from "react";
 
-interface IDialogKTextProps {
-  isShowDialogText: boolean;
-}
-
-class DialogKText extends React.Component<IDialogKTextProps> {
-  constructor(props: IDialogKTextProps) {
+class DialogKText extends React.Component {
+  constructor(props: {}) {
     super(props);
   }
 
   public render() {
     return (
       <svg
-        className={`dialogK-text ${this.props.isShowDialogText ? "show" : ""}`}
+        className="dialogK-text"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
