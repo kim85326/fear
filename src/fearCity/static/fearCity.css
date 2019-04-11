@@ -32,25 +32,25 @@
 }
 
 .buttonA {
-  display: none;
+  visibility: hidden;
   position: absolute;
-  bottom: 15.7%;
+  bottom: 10%;
   right: 5.41%;
   width: 11%;
   z-index: 10;
 }
 
-.buttonA.show {
-  display: block;
-  animation-name: buttonD-shake;
+.buttonA.show-enter,
+.buttonA.show-enter-active,
+.buttonA.show-enter-done,
+.buttonA.show-exit,
+.buttonA.show-exit-active {
+  visibility: visible;
+  animation-name: buttonA-shake;
   animation-delay: 1s;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   transform-origin: center center;
-}
-
-.buttonA.show:hover {
-  animation-play-state: paused;
 }
 
 @keyframes buttonA-shake {
@@ -75,26 +75,53 @@
   }
 }
 
-.buttonA-text,
+.buttonA:hover {
+  animation-play-state: paused;
+}
+
+.buttonA.show-exit-done {
+  visibility: hidden;
+}
+
+.buttonA-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.buttonA-text.show-enter {
+  animation-name: buttonA-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonA-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.buttonA-text.show-enter-done {
+  visibility: visible;
+}
+
 .buttonA-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
-.buttonA-text {
-  z-index: 5;
-  display: none;
-}
-
-.buttonA-text.show {
-  display: block;
-}
-
-.buttonA-background.isShowing {
+.buttonA-background.fade-enter {
   animation-name: buttonA-background-show;
-  animation-duration: 1s;
+  animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
