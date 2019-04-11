@@ -152,9 +152,6 @@
 
 .hairBallA {
   position: absolute;
-  /* top: 55.14%; */
-  /* right: 52%; */
-  /* width: 3.1%; */
   top: 0;
   left: 0;
   width: 100%;
@@ -162,42 +159,86 @@
 }
 
 .dialogJ {
-  display: none;
   position: absolute;
   top: 22.42%;
   right: 66.39%;
   width: 14.97%;
+  z-index: 7;
+  visibility: hidden;
 }
 
-.dialogJ.show {
-  display: block;
+.dialogJ.show-enter,
+.dialogJ.show-enter-active,
+.dialogJ.show-enter-done,
+.dialogJ.show-exit,
+.dialogJ.show-exit-active {
+  visibility: visible;
 }
 
-.dialogJ-text,
+.dialogJ.show-exit-done {
+  visibility: hidden;
+}
+
+.dialogJ-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.dialogJ-text.show-enter {
+  visibility: hidden;
+  animation-name: dialogJ-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogJ-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.dialogJ-text.show-enter-done {
+  visibility: visible;
+}
+
+.dialogJ-text.show-exit {
+  visibility: visible;
+  animation-name: dialogJ-text-hide;
+  animation-delay: 400ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogJ-text-hide {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
+
 .dialogJ-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-}
-
-.dialogJ-text {
-  z-index: 3;
-  display: none;
-}
-
-.dialogJ-text.show {
-  display: block;
-}
-
-.dialogJ-background {
   z-index: 2;
 }
 
-.dialogJ-background.isShowing {
+.dialogJ-background.zoom-enter {
   animation-name: dialogJ-background-show;
-  animation-duration: 1s;
+  animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes dialogJ-background-show {
@@ -214,7 +255,7 @@
   }
 }
 
-.dialogJ-background.isHiding {
+.dialogJ-background.zoom-exit {
   animation-name: dialogJ-background-hide;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;

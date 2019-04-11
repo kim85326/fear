@@ -1,18 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 
-interface IDialogJTextProps {
-  isShowDialogText: boolean;
-}
-
-class DialogJText extends React.Component<IDialogJTextProps> {
-  constructor(props: IDialogJTextProps) {
+class DialogJText extends React.Component {
+  constructor(props: {}) {
     super(props);
   }
 
   public render() {
     return (
       <svg
-        className={`dialogJ-text ${this.props.isShowDialogText ? 'show' : ''}`}
+        className="dialogJ-text"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
