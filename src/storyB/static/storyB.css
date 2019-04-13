@@ -34,8 +34,8 @@
 .patternE {
   position: absolute;
   top: 44.49%;
-  right: 81.29%;
-  width: 2.38%;
+  left: 19%;
+  width: 3%;
   animation-name: patternE-move;
   animation-delay: 1s;
   animation-duration: 2s;
@@ -69,8 +69,8 @@
   opacity: 0;
   position: absolute;
   top: 43.08%;
-  right: 30.38%;
-  width: 1.8%;
+  right: 29%;
+  width: 2.8%;
 }
 
 .patternF.show {
