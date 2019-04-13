@@ -110,6 +110,37 @@
   right: 60%;
   width: 11.3%;
   z-index: 3;
+  transform-origin: 50% bottom;
+  animation-name: rabbitB-shake;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.48, 0.04, 0.52, 0.96);
+}
+
+.rabbitB:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rabbitB-shake {
+  0% {
+    transform: rotate(-2deg);
+  }
+
+  25% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(-4deg);
+  }
+
+  75.5% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(-2deg);
+  }
 }
 
 .dialogK {
