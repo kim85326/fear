@@ -16,7 +16,7 @@
 
 .home .sound {
   position: absolute;
-  bottom: 45%;
+  bottom: 40%;
   right: 4%;
 }
 
@@ -75,7 +75,7 @@
 
 .city-wrapper {
   position: absolute;
-  width: 25%;
+  width: 24%;
   z-index: 9;
 }
 
@@ -133,8 +133,8 @@
 }
 
 .rabbit-city-wrapper {
-  top: 40%;
-  right: 10%;
+  bottom: 17%;
+  right: 15%;
 }
 
 .fear-city-dialog {
