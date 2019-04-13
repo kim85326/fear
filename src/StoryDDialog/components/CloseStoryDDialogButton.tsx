@@ -24,7 +24,7 @@ class CloseStoryDDialogButton extends React.Component<
       <a
         onClick={this.props.handleClick}
         className="close-storyD-dialog-button"
-        onMouseEnter={this.changeColor.bind(this, "#F17752")}
+        onMouseEnter={this.changeColor.bind(this, "#5980b5")}
         onMouseLeave={this.changeColor.bind(this, "#E77452")}
       >
         <svg
