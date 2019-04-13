@@ -105,21 +105,10 @@
 .answer {
   position: absolute;
   display: inline-block;
-  animation: answer-move 2s linear infinite;
 }
 
 .answer:hover {
   animation-play-state: paused;
-}
-
-@keyframes answer-move {
-  from {
-    transform: rotate(0deg) translateX(10px) rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg) translateX(10px) rotate(-360deg);
-  }
 }
 
 .answer.active path {
@@ -141,18 +130,71 @@
   width: 10.7%;
   top: 14.58%;
   right: 60.27%;
+  animation: small-answer-move 4s ease infinite;
+}
+
+@keyframes small-answer-move {
+  32% {
+    transform: rotate(-2deg);
+  }
+
+  67.7% {
+    transform: rotate(1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .medium-answer {
   width: 23.62%;
   top: 27.21%;
   right: 71.68%;
+  animation: medium-answer-move 4s ease infinite;
+}
+
+@keyframes medium-answer-move {
+  20% {
+    transform: rotate(2deg);
+  }
+
+  48% {
+    transform: rotate(0deg);
+  }
+
+  71.8% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .large-answer {
   width: 28.99%;
   top: 18.53%;
   right: 6.37%;
+  animation: large-answer-move 4s ease infinite;
+}
+
+@keyframes large-answer-move {
+  26% {
+    transform: rotate(1.5deg);
+  }
+
+  50% {
+    transform: rotate(-2deg);
+  }
+
+  70.8% {
+    transform: rotate(1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .answer-background {
