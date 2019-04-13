@@ -9,7 +9,8 @@ import {
   setLargeAnswerAction,
   setMediumAnswerAction,
   setIsSubmitFearLoadingAction,
-  setIsShowSubmitAnimationAction
+  hasSubmitedAnswerAction,
+  setIsShowButtonLAction
 } from "../SubmitFearAction";
 import backgroundImage from "../static/submit_fear_background.png";
 
@@ -33,6 +34,7 @@ interface ISumbitFearContainerProps extends ISumbitFearStateProps {
 interface ISumbitFearStateProps extends ISizeAnswer {
   isLoading: boolean;
   tempAnswer: string;
+  isSubmitted: boolean;
 }
 
 const mapStateToProps = (state: IAppState): ISumbitFearStateProps => ({
@@ -40,7 +42,8 @@ const mapStateToProps = (state: IAppState): ISumbitFearStateProps => ({
   smallAnswer: state.submitFearState.smallAnswer,
   mediumAnswer: state.submitFearState.mediumAnswer,
   largeAnswer: state.submitFearState.largeAnswer,
-  tempAnswer: state.submitFearState.tempAnswer
+  tempAnswer: state.submitFearState.tempAnswer,
+  isSubmitted: state.submitFearState.isSubmitted
 });
 
 class SumbitFearContainer extends React.Component<ISumbitFearContainerProps> {
@@ -74,6 +77,7 @@ class SumbitFearContainer extends React.Component<ISumbitFearContainerProps> {
           tempAnswer={this.props.tempAnswer}
           changeTempAnswer={this.changeTempAnswer}
           submitAnswer={this.submitAnswer}
+          isSubmitted={this.props.isSubmitted}
         />
       );
     }
@@ -137,11 +141,16 @@ class SumbitFearContainer extends React.Component<ISumbitFearContainerProps> {
       create_time: timeStamp
     });
 
-    this.props.dispatch(setIsShowSubmitAnimationAction(true));
+    this.props.dispatch(hasSubmitedAnswerAction());
+
+    // 8 秒後顯示按鈕 L
+    setTimeout(() => {
+      this.props.dispatch(setIsShowButtonLAction(true));
+    }, 8000);
 
     setTimeout(() => {
       this.changeAnswer(sizeAnswer, answer);
-    }, 150);
+    }, 5000);
   }
 }
 

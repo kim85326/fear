@@ -1,14 +1,14 @@
 import * as React from "react";
-import ButtonEText from "./ButtonEText";
+import ButtonLText from "./ButtonLText";
 import { CSSTransition } from "react-transition-group";
 
-interface IButtonEProps {
+interface IButtonLProps {
   isShowButton: boolean;
   handleClick: () => void;
 }
 
-class ButtonE extends React.Component<IButtonEProps> {
-  constructor(props: IButtonEProps) {
+class ButtonL extends React.Component<IButtonLProps> {
+  constructor(props: IButtonLProps) {
     super(props);
   }
 
@@ -19,19 +19,19 @@ class ButtonE extends React.Component<IButtonEProps> {
         timeout={{ enter: 1000 }}
         classNames="show"
       >
-        <a onClick={this.props.handleClick} className="buttonE">
+        <a onClick={this.props.handleClick} className="buttonL">
           <CSSTransition
             in={this.props.isShowButton}
             timeout={{ enter: 1000 }}
             classNames="fade"
           >
             <svg
-              className="buttonE-background"
+              className="buttonL-background"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"
-              viewBox="0 0 244.741 88.204"
+              viewBox="0 0 214.06 82.57"
             >
               <g>
                 <path
@@ -50,19 +50,19 @@ class ButtonE extends React.Component<IButtonEProps> {
                   fill="#e57351"
                   d="M41.93,23.49C52.74,4.39,83.37,0,103.55,0c53.94,0,110.51,17,110.51,42.52,0,26.1-63.64,43.6-130.25,39.44-20.71-1.3-28.3-6.24-38.49-17.28C35.68,54.24,34.67,36.32,41.93,23.49Z"
                 />
-                <path
-                  fill="#fcc43a"
-                  d="M193.38,58.12c-1.4-1.12,4.44-7.26,5.55-4.2S195.88,60.12,193.38,58.12Z"
-                />
-                <path
-                  fill="#fcc43a"
-                  d="M199.69,49.61c-1.45-2.28,2.75-3.19,2.93-1.42S200.31,50.58,199.69,49.61Z"
-                />
-                <path
-                  fill="#fcc43a"
-                  d="M206.07,51.2c-.26-1.5,1.68-2,1.33-.71S206.34,52.71,206.07,51.2Z"
-                />
               </g>
+              <path
+                fill="#fcc43a"
+                d="M193.38,58.12c-1.4-1.12,4.44-7.26,5.55-4.2S195.88,60.12,193.38,58.12Z"
+              />
+              <path
+                fill="#fcc43a"
+                d="M199.69,49.61c-1.45-2.28,2.75-3.19,2.93-1.42S200.31,50.58,199.69,49.61Z"
+              />
+              <path
+                fill="#fcc43a"
+                d="M206.07,51.2c-.26-1.5,1.68-2,1.33-.71S206.34,52.71,206.07,51.2Z"
+              />
             </svg>
           </CSSTransition>
           <CSSTransition
@@ -70,7 +70,7 @@ class ButtonE extends React.Component<IButtonEProps> {
             timeout={{ enter: 1000 }}
             classNames="show"
           >
-            <ButtonEText />
+            <ButtonLText />
           </CSSTransition>
         </a>
       </CSSTransition>
@@ -78,4 +78,4 @@ class ButtonE extends React.Component<IButtonEProps> {
   }
 }
 
-export default ButtonE;
+export default ButtonL;

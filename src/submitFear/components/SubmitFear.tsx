@@ -4,6 +4,7 @@ import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContaine
 import Sound from "src/common/sound/components/Sound";
 import soundSrc from "../static/submit_fear.wav";
 import ConnectedSubmitAnimation from "../containers/SubmitAnimationContainer";
+import ConnectedButtonL from "../containers/ButtonLContainer";
 import ResetButton from "./ResetButton";
 import SubmitButton from "./SubmitButton";
 import SmallAnswer from "./SmallAnswer";
@@ -26,6 +27,7 @@ interface ISumbitFearProps extends ISizeAnswer {
   tempAnswer: string;
   changeTempAnswer: (tempAnswer: string) => void;
   submitAnswer: (sizeAnswer: keyof ISizeAnswer, answer: string) => void;
+  isSubmitted: boolean;
 }
 
 interface ISumbitFearState {
@@ -63,6 +65,7 @@ class SumbitFear extends React.Component<ISumbitFearProps, ISumbitFearState> {
         <LargeAnswer isActive={this.getAnswerIsActive("largeAnswer")}>
           {this.convertToAnswerCharDoms(this.props.largeAnswer)}
         </LargeAnswer>
+        <ConnectedButtonL />
       </div>
     );
   }
@@ -75,15 +78,19 @@ class SumbitFear extends React.Component<ISumbitFearProps, ISumbitFearState> {
   }
 
   private getLabelDom(): React.ReactNode {
-    return (
-      <label className="answer-label">
-        你身上也有怕怕病毒嗎？把你的病毒交給我吧！
-      </label>
-    );
+    if (!this.props.isSubmitted) {
+      return (
+        <label className="answer-label">
+          你身上也有怕怕病毒嗎？把你的病毒交給我吧！
+        </label>
+      );
+    } else {
+      return null;
+    }
   }
 
   private getInputDom(): React.ReactNode {
-    if (!this.state.isActive) {
+    if (!this.props.isSubmitted) {
       return (
         <>
           <div className="answer-input-wrapper">
@@ -108,7 +115,7 @@ class SumbitFear extends React.Component<ISumbitFearProps, ISumbitFearState> {
         </>
       );
     } else {
-      return <div>紅蘿蔔</div>;
+      return null;
     }
   }
 
@@ -144,9 +151,11 @@ class SumbitFear extends React.Component<ISumbitFearProps, ISumbitFearState> {
     this.props.submitAnswer(sizeAnswer, answer);
     this.handleReset();
 
-    this.setState({
-      isActive: sizeAnswer
-    });
+    setTimeout(() => {
+      this.setState({
+        isActive: sizeAnswer
+      });
+    }, 5000);
   }
 
   private convertToAnswerCharDoms(answer: string): React.ReactNode {

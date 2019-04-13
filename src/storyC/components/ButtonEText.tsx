@@ -1,6 +1,6 @@
 import * as React from "react";
 
-class ButtonDText extends React.Component {
+class ButtonEText extends React.Component {
   constructor(props: {}) {
     super(props);
   }
@@ -36,4 +36,4 @@ class ButtonDText extends React.Component {
   }
 }
 
-export default ButtonDText;
+export default ButtonEText;

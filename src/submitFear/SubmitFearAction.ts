@@ -7,7 +7,8 @@ export const SubmitFearActionType = {
   SET_MEDIUM_ANSWER: `${prefix}_SET_MEDIUM_ANSWER`,
   SET_LARGE_ANSWER: `${prefix}_SET_LARGE_ANSWER`,
   SET_TEMP_ANSWER: `${prefix}_SET_TEMP_ANSWER`,
-  SET_IS_SHOW_SUBMIT_ANIMATION: `${prefix}_SET_IS_SHOW_SUBMIT_ANIMATION`
+  HAS_SUBMIT_ANSWER: `${prefix}_HAS_SUBMIT_ANSWER`,
+  SET_IS_SHOW_BUTTON_L: `${prefix}_SET_IS_SHOW_BUTTON_L`
 };
 
 export const setIsSubmitFearLoadingAction = (isLoading: boolean) => ({
@@ -35,7 +36,11 @@ export const setTempAnswerAction = (answer: string) => ({
   answer
 });
 
-export const setIsShowSubmitAnimationAction = (isShow: boolean) => ({
-  type: SubmitFearActionType.SET_IS_SHOW_SUBMIT_ANIMATION,
+export const hasSubmitedAnswerAction = () => ({
+  type: SubmitFearActionType.HAS_SUBMIT_ANSWER
+});
+
+export const setIsShowButtonLAction = (isShow: boolean) => ({
+  type: SubmitFearActionType.SET_IS_SHOW_BUTTON_L,
   isShow
 });

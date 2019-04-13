@@ -200,3 +200,112 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.buttonL {
+  visibility: hidden;
+  position: absolute;
+  bottom: 5%;
+  left: 42%;
+  width: 12.74%;
+  z-index: 11;
+}
+
+.buttonL.show-enter,
+.buttonL.show-enter-active,
+.buttonL.show-enter-done,
+.buttonL.show-exit,
+.buttonL.show-exit-active {
+  visibility: visible;
+  animation-name: buttonL-shake;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: center center;
+}
+
+@keyframes buttonL-shake {
+  20% {
+    transform: rotate3d(0, 0, 1, 10deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.buttonL:hover {
+  animation-play-state: paused;
+}
+
+.buttonL.show-exit-done {
+  visibility: hidden;
+}
+
+.buttonL-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.buttonL-text.show-enter {
+  animation-name: buttonL-text-show;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonL-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.buttonL-text.show-enter-done {
+  visibility: visible;
+}
+
+.buttonL-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.buttonL-background.fade-enter {
+  animation-name: buttonL-background-show;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonL-background-show {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

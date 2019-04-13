@@ -9,11 +9,11 @@ interface ISubmitAnimationContainerProps extends ISubmitAnimationStateProps {
 }
 
 interface ISubmitAnimationStateProps {
-  isShowSubmitAnimation: boolean;
+  isSubmitted: boolean;
 }
 
 const mapStateToProps = (state: IAppState): ISubmitAnimationStateProps => ({
-  isShowSubmitAnimation: state.submitFearState.isShowSubmitAnimation
+  isSubmitted: state.submitFearState.isSubmitted
 });
 
 class SubmitAnimationContainer extends React.Component<
@@ -24,7 +24,7 @@ class SubmitAnimationContainer extends React.Component<
   }
 
   public render() {
-    return <SubmitAnimation isShow={this.props.isShowSubmitAnimation} />;
+    return <SubmitAnimation isShow={this.props.isSubmitted} />;
   }
 }
 

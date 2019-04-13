@@ -5,7 +5,8 @@ import { ISizeAnswer } from "./containers/SubmitFearContainer";
 export interface ISubmitFearState extends ISizeAnswer {
   isLoading: boolean;
   tempAnswer: string;
-  isShowSubmitAnimation: boolean;
+  isSubmitted: boolean;
+  isShowButtonL: boolean;
 }
 
 const defaultSubmitFearState = {
@@ -14,7 +15,8 @@ const defaultSubmitFearState = {
   mediumAnswer: "",
   largeAnswer: "",
   tempAnswer: "",
-  isShowSubmitAnimation: false
+  isSubmitted: false,
+  isShowButtonL: false
 };
 
 const submitFearReducer = (
@@ -52,10 +54,16 @@ const submitFearReducer = (
         tempAnswer: action.answer
       };
 
-    case SubmitFearActionType.SET_IS_SHOW_SUBMIT_ANIMATION:
+    case SubmitFearActionType.HAS_SUBMIT_ANSWER:
       return {
         ...state,
-        isShowSubmitAnimation: action.isShow
+        isSubmitted: true
+      };
+
+    case SubmitFearActionType.SET_IS_SHOW_BUTTON_L:
+      return {
+        ...state,
+        isShowButtonL: action.isShow
       };
 
     default:
