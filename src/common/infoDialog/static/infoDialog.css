@@ -215,7 +215,8 @@
   margin: 0 0 10px;
 }
 
-.info-dialogA-content .title {
+.info-dialogA-content .h2,
+.info-dialogA-content .h3 {
   color: #e57351;
 }
 
@@ -227,7 +228,8 @@
   color: #5980b5;
 }
 
-.info-dialogB-content .title,
+.info-dialogB-content h2,
+.info-dialogB-content h3,
 .info-dialogB-content .ps {
   color: #e99679;
 }
@@ -241,9 +243,13 @@
   color: #fbf5ea;
 }
 
-.info-dialogC-content .title,
-.info-dialogC-content .ps {
-  color: #7da4c2;
+.info-dialogC-content h2,
+.info-dialogC-content h3 {
+  color: #fffef5;
+}
+
+.info-dialogC-content h3 {
+  margin: 16px 0 10px;
 }
 
 .info-dialogC-content::-webkit-scrollbar-thumb {
@@ -251,5 +257,5 @@
 }
 
 .info-dialogC-content p {
-  color: #fffef5;
+  color: #7da4c2;
 }
