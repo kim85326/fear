@@ -54,13 +54,13 @@ const adventureStoryReducer = (
     case AdventureStoryActionType.MOVE_STORY_LEFT:
       return {
         ...state,
-        imgY: state.imgY + 10
+        imgY: state.imgY + 5
       };
 
     case AdventureStoryActionType.MOVE_STORY_RIGHT:
       return {
         ...state,
-        imgY: state.imgY - 10
+        imgY: state.imgY - 5
       };
 
     default:

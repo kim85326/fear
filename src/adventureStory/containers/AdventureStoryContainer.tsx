@@ -45,11 +45,13 @@ class AdventureStoryContainer extends React.Component<
     }
 
     const imgWrapper = document.querySelector(".adventureStory-img-wrapper");
-    if (imgWrapper) {
-      const width = imgWrapper.getBoundingClientRect().width;
+    const img = document.querySelector(".adventureStory-img");
+    if (imgWrapper && img) {
+      const wrapperWidth = imgWrapper.getBoundingClientRect().width;
+      const imgWidth = img.getBoundingClientRect().width;
       if (
         nextProps.imgY !== this.props.imgY &&
-        nextProps.imgY <= width - 4386
+        nextProps.imgY <= wrapperWidth - imgWidth
       ) {
         this.props.dispatch(setIsShowEasonThinkAction(true));
       }
@@ -83,8 +85,10 @@ class AdventureStoryContainer extends React.Component<
 
   private moveRight() {
     const imgWrapper = document.querySelector(".adventureStory-img-wrapper");
-    const width = imgWrapper!.getBoundingClientRect().width;
-    if (this.props.imgY > width - 4386) {
+    const img = document.querySelector(".adventureStory-img");
+    const wrapperWidth = imgWrapper!.getBoundingClientRect().width;
+    const imgWidth = img!.getBoundingClientRect().width;
+    if (this.props.imgY > wrapperWidth - imgWidth) {
       this.props.dispatch(moveAdventureStoryRightAction());
     }
   }
