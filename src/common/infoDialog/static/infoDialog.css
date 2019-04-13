@@ -177,44 +177,79 @@
   }
 }
 
+/* bar 的樣式 */
 .info-dialog-content::-webkit-scrollbar {
   width: 8px;
 }
 
-/* bar 的樣式 */
 .info-dialog-content::-webkit-scrollbar-thumb {
-  background-color: #e77452;
   border-radius: 5px;
 }
 
-.info-dialog .title {
+.info-dialog-content .title {
   margin-bottom: 18px;
 }
 
-.info-dialog section {
+.info-dialog-content section {
   margin-bottom: 45px;
 }
 
-.info-dialog h2 {
-  color: #e57351;
+.info-dialog-content h2 {
   font-family: Noto Sans TC Black;
   font-size: 20px;
   padding: 0;
   margin: 0;
 }
 
-.info-dialog h3 {
-  color: #e57351;
+.info-dialog-content h3 {
   font-family: Noto Sans TC Black;
   font-size: 16px;
   padding: 0;
   margin: 0;
 }
 
-.info-dialog p {
-  color: #5980b5;
+.info-dialog-content p {
   font-family: Noto Sans TC Medium;
   font-size: 14px;
   padding: 0;
   margin: 0 0 10px;
+}
+
+.info-dialogA-content .title {
+  color: #e57351;
+}
+
+.info-dialogA-content::-webkit-scrollbar-thumb {
+  background-color: #e77452;
+}
+
+.info-dialogA-content p {
+  color: #5980b5;
+}
+
+.info-dialogB-content .title,
+.info-dialogB-content .ps {
+  color: #e99679;
+}
+
+.info-dialogB-content::-webkit-scrollbar-thumb {
+  background-color: #e99679;
+}
+
+.info-dialogB-content p,
+.info-dialogB-content a {
+  color: #fbf5ea;
+}
+
+.info-dialogC-content .title,
+.info-dialogC-content .ps {
+  color: #7da4c2;
+}
+
+.info-dialogC-content::-webkit-scrollbar-thumb {
+  background-color: #7da4c2;
+}
+
+.info-dialogC-content p {
+  color: #fffef5;
 }

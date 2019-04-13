@@ -4,6 +4,7 @@ import CloseInfoDialogButton from "./CloseInfoDialogButton";
 import { CSSTransition } from "react-transition-group";
 
 interface IInfoDialogProps {
+  contentClassName: string;
   backgroundColor: string;
   backgroundImage: string;
   isShow: boolean;
@@ -42,7 +43,13 @@ class InfoDialog extends React.Component<IInfoDialogProps> {
                 timeout={{ enter: 2000, exit: 1000 }}
                 classNames="fade"
               >
-                <div className="info-dialog-content">{this.props.children}</div>
+                <div
+                  className={`info-dialog-content ${
+                    this.props.contentClassName
+                  }`}
+                >
+                  {this.props.children}
+                </div>
               </CSSTransition>
             </div>
           </CSSTransition>

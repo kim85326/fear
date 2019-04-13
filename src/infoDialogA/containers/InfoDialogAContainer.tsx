@@ -28,6 +28,7 @@ class InfoDialogAContainer extends React.Component<IInfoDialogAContainerProps> {
   public render() {
     return (
       <InfoDialog
+        contentClassName={"info-dialogA-content"}
         isShow={this.props.isShow}
         handleClick={this.handleClick}
         backgroundColor={"#fbf7ec"}
