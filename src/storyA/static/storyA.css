@@ -207,6 +207,10 @@
   animation-fill-mode: forwards, forwards;
 }
 
+.dialogGHI-background.zoom-exit-done {
+  visibility: hidden;
+}
+
 @keyframes dialogGHI-background-hide-scale {
   0% {
     transform: scale(1);
