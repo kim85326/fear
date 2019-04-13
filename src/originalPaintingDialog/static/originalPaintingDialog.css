@@ -70,10 +70,12 @@
 @keyframes close-original-painting-dialog-button-hide {
   0% {
     transform: scale(1);
+    opacity: 1;
   }
 
   100% {
-    transform: scale(0);
+    transform: scale(0.8);
+    opacity: 0;
   }
 }
 
@@ -95,11 +97,13 @@
 
 @keyframes original-painting-dialog-show {
   0% {
-    transform: translateX(-50%) translateY(-50%) scale(0.5);
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+    opacity: 0;
   }
 
   100% {
     transform: translateX(-50%) translateY(-50%) scale(1);
+    opacity: 1;
   }
 }
 
@@ -113,10 +117,12 @@
 @keyframes original-painting-dialog-hide {
   0% {
     transform: translateX(-50%) translateY(-50%) scale(1);
+    opacity: 1;
   }
 
   100% {
-    transform: translateX(-50%) translateY(-50%) scale(0.5);
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+    opacity: 0;
   }
 }
 
