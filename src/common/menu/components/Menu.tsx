@@ -2,6 +2,7 @@ import * as React from "react";
 import HomeButton from "./HomeButton";
 import ContactButton from "./ContactButton";
 import { Link } from "react-router-dom";
+import MenuBackground from "./MenuBackground";
 
 interface IMenuProps {
   isOpening: boolean;
@@ -23,6 +24,7 @@ class Menu extends React.Component<IMenuProps> {
         ${this.props.isOpen ? "show" : ""} 
         ${this.props.isClosing ? "isClosing" : ""}`}
       >
+        <MenuBackground />
         <div className="menu-top">
           <div className="menu-top-item">
             <HomeButton closeMenu={this.props.closeMenu} />

@@ -84,6 +84,13 @@
   right: -19.12%;
 }
 
+.menu-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 .menu.show {
   visibility: visible;
   right: 0;
