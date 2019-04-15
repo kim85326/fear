@@ -217,8 +217,8 @@
   margin: 0 0 10px;
 }
 
-.info-dialogA-content .h2,
-.info-dialogA-content .h3 {
+.info-dialogA-content h2,
+.info-dialogA-content h3 {
   color: #e57351;
 }
 
