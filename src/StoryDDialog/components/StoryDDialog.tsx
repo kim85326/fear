@@ -42,7 +42,7 @@ class StoryDDialog extends React.Component<
           y="0px"
           viewBox="0 0 856.25 856.25"
         >
-          <circle fill="#E7E3E3" cx="428.125" cy="428.125" r="428.125" />
+          <circle fill="#fcf8ed" cx="428.125" cy="428.125" r="428.125" />
           {this.state.isShowText ? <StoryDDialogText /> : null}
         </svg>
         <CloseStoryDDialogButton handleClick={this.props.handleClick} />
