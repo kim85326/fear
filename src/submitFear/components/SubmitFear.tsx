@@ -97,7 +97,7 @@ class SumbitFear extends React.Component<ISumbitFearProps, ISumbitFearState> {
             <input
               type="text"
               className="answer-input"
-              placeholder="說出來會舒服點，試著寫下你害怕的東西吧。"
+              placeholder="說出來會舒服一點，輸入之文字將不會公開"
               onChange={this.handleChangeTempAnswer}
               value={this.props.tempAnswer}
               maxLength={15}
