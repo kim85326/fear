@@ -20,6 +20,7 @@ class RabbitCity extends React.Component<{}, IRabbitCityState> {
     this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
     this.onMouseMoveHandler = this.onMouseMoveHandler.bind(this);
     this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   public render() {
@@ -34,6 +35,7 @@ class RabbitCity extends React.Component<{}, IRabbitCityState> {
           viewBox="0 0 514 404"
         >
           <a
+            onClick={this.handleClick}
             onMouseMove={this.onMouseMoveHandler}
             onMouseEnter={this.onMouseEnterHandler}
             onMouseLeave={this.onMouseLeaveHandler}
@@ -75,6 +77,10 @@ class RabbitCity extends React.Component<{}, IRabbitCityState> {
       isShowingDialog: false,
       isHidingDialog: true
     });
+  }
+
+  private handleClick() {
+    alert("兔子村目前正在裝修中");
   }
 }
 
