@@ -27,12 +27,15 @@ const mapStateToProps = (state: IAppState): IQuestionCStateProps => ({
 class QuestionCContainer extends React.Component<IQuestionCContainerProps> {
   constructor(props: IQuestionCContainerProps) {
     super(props);
+    this.closeQuestionC = this.closeQuestionC.bind(this);
   }
 
   public render() {
     return (
       <div className="questionC">
-        {this.props.isShowButtonH ? <div className="questionC-mask" /> : null}
+        {this.props.isShowButtonH ? (
+          <div className="questionC-mask" onClick={this.closeQuestionC} />
+        ) : null}
         <ButtonH
           handleClick={this.handleClick.bind(this, true)}
           isShowButton={this.props.isShowButtonH}
@@ -43,6 +46,11 @@ class QuestionCContainer extends React.Component<IQuestionCContainerProps> {
         />
       </div>
     );
+  }
+
+  private closeQuestionC() {
+    this.props.dispatch(setIsShowButtonHAction(false));
+    this.props.dispatch(setIsShowButtonIAction(false));
   }
 
   private handleClick(answer: boolean) {
