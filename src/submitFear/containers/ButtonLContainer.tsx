@@ -32,7 +32,7 @@ class ButtonLContainer extends React.Component<IButtonLContainerProps> {
   }
 
   private handleClick() {
-    alert("功能尚未開放！");
+    alert("兔子村目前正在裝修中");
   }
 }
 
