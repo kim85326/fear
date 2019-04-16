@@ -1,8 +1,5 @@
 import * as React from "react";
 import "../static/storyA.css";
-import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContainer";
-import Sound from "src/common/sound/components/Sound";
-import soundSrc from "../static/storyA.wav";
 import DialogG from "./DialogG";
 import DialogH from "./DialogH";
 import DialogI from "./DialogI";
@@ -30,17 +27,15 @@ class StoryA extends React.Component<IStoryAProps> {
     };
 
     return (
-      <div className="storyA">
+      <>
         <div className="storyA-background">
           <Lottie options={defaultOptions} />
         </div>
-        <ConnectedMenuWrapper />
-        <Sound src={soundSrc} />
         <DialogG isShowDialog={this.props.isShowDialogG} />
         <DialogH isShowDialog={this.props.isShowDialogH} />
         <DialogI isShowDialog={this.props.isShowDialogI} />
         <ConnectedQuestionA />
-      </div>
+      </>
     );
   }
 }

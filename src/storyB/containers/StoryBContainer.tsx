@@ -11,6 +11,7 @@ import {
 import backgroundImage from "../static/storyB_background.png";
 import ConnectedInfoDialogA from "src/infoDialogA/containers/InfoDialogAContainer";
 import ConnectedOriginalPaintingDialog from "src/originalPaintingDialog/containers/OriginalPaintingDialogContainer";
+import Loading from "src/common/loading/components/Loading";
 
 interface IStoryBContainerProps extends IStoryBStateProps {
   dispatch: Dispatch;
@@ -61,7 +62,7 @@ class StoryBContainer extends React.Component<IStoryBContainerProps> {
 
   public render() {
     return this.props.isLoading ? (
-      <div>loading...</div>
+      <Loading />
     ) : (
       <>
         <StoryB

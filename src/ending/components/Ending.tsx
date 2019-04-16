@@ -1,8 +1,5 @@
 import * as React from "react";
 import "../static/ending.css";
-import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContainer";
-import Sound from "src/common/sound/components/Sound";
-import soundSrc from "../static/ending.wav";
 import ConnectedButtonJ from "../containers/ButtonJContainer";
 import ConnectedButtonK from "../containers/ButtonKContainer";
 import Lottie from "react-lottie";
@@ -81,14 +78,12 @@ class Ending extends React.Component<IEndingProps> {
 
   public render() {
     return (
-      <div className="ending">
+      <>
         {this.getBackground()}
-        <ConnectedMenuWrapper />
-        <Sound src={soundSrc} />
         {this.getEndingContent()}
         <ConnectedButtonJ />
         <ConnectedButtonK />
-      </div>
+      </>
     );
   }
 

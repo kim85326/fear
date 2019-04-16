@@ -31,6 +31,7 @@ class MenuWrapperContainer extends React.Component<IMenuWrapperContainerProps> {
     super(props);
     this.openMenu = this.openMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+    this.setPage = this.setPage.bind(this);
   }
   public render() {
     return (
@@ -40,6 +41,7 @@ class MenuWrapperContainer extends React.Component<IMenuWrapperContainerProps> {
         isClosing={this.props.isClosing}
         openMenu={this.openMenu}
         closeMenu={this.closeMenu}
+        setPage={this.setPage}
       />
     );
   }
@@ -56,6 +58,10 @@ class MenuWrapperContainer extends React.Component<IMenuWrapperContainerProps> {
     setTimeout(() => {
       this.props.dispatch(closeMenuAction());
     }, 500);
+  }
+
+  private setPage(): void {
+    alert("兔子村目前正在裝修中");
   }
 }
 

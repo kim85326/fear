@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import ButtonDText from "./ButtonAText";
 import { CSSTransition } from "react-transition-group";
 
 interface IButtonAProps {
   isShowButton: boolean;
+  handleClick: () => void;
 }
 
 class ButtonA extends React.Component<IButtonAProps> {
@@ -19,7 +19,7 @@ class ButtonA extends React.Component<IButtonAProps> {
         timeout={{ enter: 1000 }}
         classNames="show"
       >
-        <Link to="/storyA" className="buttonA">
+        <a className="buttonA" onClick={this.props.handleClick}>
           <CSSTransition
             in={this.props.isShowButton}
             timeout={{ enter: 1000 }}
@@ -72,7 +72,7 @@ class ButtonA extends React.Component<IButtonAProps> {
           >
             <ButtonDText />
           </CSSTransition>
-        </Link>
+        </a>
       </CSSTransition>
     );
   }

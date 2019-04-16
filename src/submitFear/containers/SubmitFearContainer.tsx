@@ -17,6 +17,7 @@ import backgroundImage from "../static/submit_fear_background.png";
 // Initialize Firebase
 import * as firebase from "firebase";
 import { firebaseConfig } from "../../config";
+import Loading from "src/common/loading/components/Loading";
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.database().ref();
 const fearAnswersDb = db.child("/fearAnswers");
@@ -81,7 +82,7 @@ class SumbitFearContainer extends React.Component<ISumbitFearContainerProps> {
         />
       );
     }
-    return "loading...";
+    return <Loading />;
   }
 
   private handleImageLoaded() {

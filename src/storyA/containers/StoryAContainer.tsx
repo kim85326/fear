@@ -11,6 +11,7 @@ import {
   setIsShowReplyRabbitAction
 } from "../StoryAAction";
 import backgroundImage from "../static/storyA_background.png";
+import Loading from "src/common/loading/components/Loading";
 
 interface IStoryAContainerProps extends IStoryAStateProps {
   dispatch: Dispatch;
@@ -70,7 +71,7 @@ class StoryAContainer extends React.Component<IStoryAContainerProps> {
 
   public render() {
     return this.props.isLoading ? (
-      <div>loading...</div>
+      <Loading />
     ) : (
       <StoryA
         isLoading={this.props.isLoading}

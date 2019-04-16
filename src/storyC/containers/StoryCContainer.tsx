@@ -12,6 +12,7 @@ import ConnectedInfoDialogB from "src/infoDialogB/containers/InfoDialogBContaine
 import ConnectedAdventureStory from "src/adventureStory/containers/AdventureStoryContainer";
 import backgroundImage from "../static/storyC_background.png";
 import ConnectedQuestionB from "./QuestionBContainer";
+import Loading from "src/common/loading/components/Loading";
 
 interface IStoryCContainerProps extends IStoryCStateProps {
   dispatch: Dispatch;
@@ -65,7 +66,7 @@ class StoryCContainer extends React.Component<IStoryCContainerProps> {
 
   public render() {
     return this.props.isLoading ? (
-      <div>loading...</div>
+      <Loading />
     ) : (
       <>
         <StoryC

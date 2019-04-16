@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { IAppState } from "src/app/AppReducer";
 import ButtonD from "../components/ButtonD";
+import { setPageAction } from "src/page/PageManagementAction";
+import { Page } from "src/page/constants/Page";
 
 interface IButtonDContainerProps extends IButtonDStateProps {
   dispatch: Dispatch;
@@ -19,10 +21,20 @@ const mapStateToProps = (state: IAppState): IButtonDStateProps => ({
 class ButtonDContainer extends React.Component<IButtonDContainerProps> {
   constructor(props: IButtonDContainerProps) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   public render() {
-    return <ButtonD isShowButton={this.props.isShowButtonD} />;
+    return (
+      <ButtonD
+        isShowButton={this.props.isShowButtonD}
+        handleClick={this.handleClick}
+      />
+    );
+  }
+
+  private handleClick() {
+    this.props.dispatch(setPageAction(Page.storyC));
   }
 }
 

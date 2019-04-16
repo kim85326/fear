@@ -4,18 +4,18 @@ import { CSSTransition } from "react-transition-group";
 
 interface IButtonKProps {
   isShowButton: boolean;
+  handleClick: () => void;
 }
 
 class ButtonK extends React.Component<IButtonKProps> {
   constructor(props: IButtonKProps) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   public render() {
     return (
       <a
-        onClick={this.handleClick}
+        onClick={this.props.handleClick}
         className={`buttonK ${this.props.isShowButton ? "show" : ""}`}
       >
         <CSSTransition
@@ -60,10 +60,6 @@ class ButtonK extends React.Component<IButtonKProps> {
         </CSSTransition>
       </a>
     );
-  }
-
-  private handleClick(): void {
-    window.location.reload(true);
   }
 }
 

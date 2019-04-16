@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import ButtonJText from "./ButtonJText";
 import { CSSTransition } from "react-transition-group";
 
 interface IButtonJProps {
   isShowButton: boolean;
+  handleClick: () => void;
 }
 
 class ButtonJ extends React.Component<IButtonJProps> {
@@ -14,9 +14,9 @@ class ButtonJ extends React.Component<IButtonJProps> {
 
   public render() {
     return (
-      <Link
-        to="/submitFear"
+      <a
         className={`buttonJ ${this.props.isShowButton ? "show" : ""}`}
+        onClick={this.props.handleClick}
       >
         <CSSTransition
           in={this.props.isShowButton}
@@ -58,7 +58,7 @@ class ButtonJ extends React.Component<IButtonJProps> {
         >
           <ButtonJText />
         </CSSTransition>
-      </Link>
+      </a>
     );
   }
 }

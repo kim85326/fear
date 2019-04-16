@@ -1,8 +1,5 @@
 import * as React from "react";
 import "../static/storyB.css";
-import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContainer";
-import Sound from "src/common/sound/components/Sound";
-import soundSrc from "../static/storyB.wav";
 import HairBallA from "./HairBallA";
 import DialogJ from "./DialogJ";
 import ConnectedRabbitA from "../containers/RabbitAContainer";
@@ -33,13 +30,11 @@ class StoryB extends React.Component<IStoryBProps> {
 
   public render() {
     return (
-      <div className="storyB">
+      <>
         <div className="storyB-background">
           <Lottie options={defaultOptions} />
         </div>
         <Grass />
-        <ConnectedMenuWrapper />
-        <Sound src={soundSrc} />
         <ConnectedPatternE />
         <DialogJ isShowDialog={this.props.isShowDialogJ} />
         <Cushion />
@@ -48,7 +43,7 @@ class StoryB extends React.Component<IStoryBProps> {
         <ConnectedBoyE />
         <ConnectedPatternF />
         <ConnectedButtonD />
-      </div>
+      </>
     );
   }
 }

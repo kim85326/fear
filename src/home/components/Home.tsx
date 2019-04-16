@@ -1,8 +1,5 @@
 import * as React from "react";
 import "../static/home.css";
-import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContainer";
-import Sound from "src/common/sound/components/Sound";
-import soundSrc from "../static/home.wav";
 import RabbitCity from "./RabbitCity";
 import Mountains from "./Mountains";
 import FearCity from "./FearCity";
@@ -18,12 +15,16 @@ const defaultOptions = {
   animationData: homeJson
 };
 
+interface IHomeProps {
+  showFearCity: () => void;
+}
+
 interface IHomeState {
   isLoading: boolean;
 }
 
-class Home extends React.Component<{}, IHomeState> {
-  constructor(props: {}) {
+class Home extends React.Component<IHomeProps, IHomeState> {
+  constructor(props: IHomeProps) {
     super(props);
     this.state = {
       isLoading: false
@@ -32,19 +33,17 @@ class Home extends React.Component<{}, IHomeState> {
 
   public render() {
     return (
-      <div className="home">
+      <>
         <div className="home-background">
           <Lottie options={defaultOptions} />
         </div>
-        <ConnectedMenuWrapper />
-        <Sound src={soundSrc} />
         <Soil />
         <Slogan />
-        <FearCity />
+        <FearCity showFearCity={this.props.showFearCity} />
         <RabbitCity />
         <Mountains />
         <Arrow />
-      </div>
+      </>
     );
   }
 }

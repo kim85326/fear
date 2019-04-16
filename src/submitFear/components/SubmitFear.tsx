@@ -1,8 +1,5 @@
 import * as React from "react";
 import "../static/submitFear.css";
-import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContainer";
-import Sound from "src/common/sound/components/Sound";
-import soundSrc from "../static/submit_fear.wav";
 import ConnectedSubmitAnimation from "../containers/SubmitAnimationContainer";
 import ConnectedButtonL from "../containers/ButtonLContainer";
 import ResetButton from "./ResetButton";
@@ -47,13 +44,11 @@ class SumbitFear extends React.Component<ISumbitFearProps, ISumbitFearState> {
 
   public render() {
     return (
-      <div className="submit-fear">
-        <div className="submit-fear-background">
+      <>
+        <div className="submitFear-background">
           <Lottie options={defaultOptions} />
         </div>
         <ConnectedSubmitAnimation />
-        <ConnectedMenuWrapper />
-        <Sound src={soundSrc} />
         {this.getLabelDom()}
         {this.getInputDom()}
         <SmallAnswer isActive={this.getAnswerIsActive("smallAnswer")}>
@@ -66,7 +61,7 @@ class SumbitFear extends React.Component<ISumbitFearProps, ISumbitFearState> {
           {this.convertToAnswerCharDoms(this.props.largeAnswer)}
         </LargeAnswer>
         <ConnectedButtonL />
-      </div>
+      </>
     );
   }
 

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import ButtonBText from "./ButtonBText";
 import { CSSTransition } from "react-transition-group";
 
@@ -28,8 +27,7 @@ class ButtonB extends React.Component<IButtonBProps, IButtonBState> {
         timeout={{ enter: 1000 }}
         classNames="show"
       >
-        <Link
-          to="/storyB"
+        <a
           className="buttonB buttonBC"
           onClick={this.props.handleClick}
           onMouseEnter={this.changeBackgroundColor.bind(this, "#8A8077")}
@@ -62,7 +60,7 @@ class ButtonB extends React.Component<IButtonBProps, IButtonBState> {
           >
             <ButtonBText />
           </CSSTransition>
-        </Link>
+        </a>
       </CSSTransition>
     );
   }

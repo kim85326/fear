@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers, AnyAction } from "redux";
 import answersReducer, { IAnswersState } from "src/answer/AnswersReducer";
 import menuReducer, { IMenuState } from "src/common/menu/MenuReducer";
 import storyAReducer, { IStoryAState } from "src/storyA/StoryAReducer";
@@ -32,8 +32,12 @@ import adventureStoryReducer, {
 import submitFearReducer, {
   ISubmitFearState
 } from "src/submitFear/SubmitFearReducer";
+import pageManagementReducer, {
+  IPageManagementState
+} from "src/page/PageManagementReducer";
 
 export interface IAppState {
+  pageManagementState: IPageManagementState;
   answersState: IAnswersState;
   menuState: IMenuState;
   storyAState: IStoryAState;
@@ -53,7 +57,8 @@ export interface IAppState {
   endingState: IEndingState;
 }
 
-const AppReducer = combineReducers({
+const rootReducer = combineReducers({
+  pageManagementState: pageManagementReducer,
   answersState: answersReducer,
   menuState: menuReducer,
   storyAState: storyAReducer,
@@ -72,5 +77,13 @@ const AppReducer = combineReducers({
   submitFearState: submitFearReducer,
   endingState: endingReducer
 });
+
+const AppReducer = (state: any, action: AnyAction) => {
+  if (action.type === "RESET_APP") {
+    state = undefined;
+  }
+
+  return rootReducer(state, action);
+};
 
 export default AppReducer;

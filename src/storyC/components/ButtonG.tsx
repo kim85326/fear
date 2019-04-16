@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import ButtonGText from "./ButtonGText";
 import { CSSTransition } from "react-transition-group";
 
@@ -28,8 +27,7 @@ class ButtonG extends React.Component<IButtonGProps, IButtonGState> {
         timeout={{ enter: 1000 }}
         classNames="show"
       >
-        <Link
-          to="/storyE"
+        <a
           className="buttonG buttonFG"
           onClick={this.props.handleClick}
           onMouseEnter={this.changeBackgroundColor.bind(this, "#8A8077")}
@@ -62,7 +60,7 @@ class ButtonG extends React.Component<IButtonGProps, IButtonGState> {
           >
             <ButtonGText />
           </CSSTransition>
-        </Link>
+        </a>
       </CSSTransition>
     );
   }

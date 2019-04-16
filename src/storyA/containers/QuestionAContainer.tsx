@@ -9,6 +9,8 @@ import {
   setIsShowButtonCAction
 } from "../StoryAAction";
 import { setAnswerAAction } from "src/answer/AnswersAction";
+import { setPageAction } from "src/page/PageManagementAction";
+import { Page } from "src/page/constants/Page";
 
 interface IQuestionAContainerProps extends IQuestionAStateProps {
   dispatch: Dispatch;
@@ -48,6 +50,7 @@ class QuestionAContainer extends React.Component<IQuestionAContainerProps> {
     this.props.dispatch(setIsShowButtonBAction(false));
     this.props.dispatch(setIsShowButtonCAction(false));
     this.props.dispatch(setAnswerAAction(answer));
+    this.props.dispatch(setPageAction(Page.storyB));
   }
 }
 

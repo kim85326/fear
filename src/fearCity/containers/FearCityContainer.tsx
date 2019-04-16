@@ -10,6 +10,7 @@ import {
   setIsShowButtonAAction
 } from "../FearCityAction";
 import ConnectedLeadingStoryDialog from "src/leadingStoryDialog/containers/LeadingStoryDialogContainer";
+import Loading from "src/common/loading/components/Loading";
 
 interface IFearCityContainerProps extends IFearCityStateProps {
   dispatch: Dispatch;
@@ -66,7 +67,7 @@ class FearCityContainer extends React.Component<IFearCityContainerProps> {
 
   public render() {
     return this.props.isLoading ? (
-      <div>loading...</div>
+      <Loading />
     ) : (
       <>
         <ConnectedLeadingStoryDialog />

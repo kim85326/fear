@@ -1,25 +1,22 @@
 import * as React from "react";
-import "../style/sound.css";
-
-interface ISoundProps {
-  src: string;
-}
+import "../static/sound.css";
+import soundSrc from "../static/sound.mp3";
 
 interface ISoundState {
   isPlay: boolean;
 }
 
-class Sound extends React.Component<ISoundProps, ISoundState> {
+class Sound extends React.Component<{}, ISoundState> {
   private audio = new Audio();
 
-  constructor(props: ISoundProps) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       isPlay: true
     };
     this.togglePlay = this.togglePlay.bind(this);
-    this.audio.src = this.props.src;
-    // this.audio.autoplay = true;
+    this.audio.src = soundSrc;
+    this.audio.autoplay = true;
     this.audio.loop = true;
   }
 
@@ -198,7 +195,7 @@ class Sound extends React.Component<ISoundProps, ISoundState> {
             </g>
           )}
         </a>
-        <audio src={this.props.src} />
+        <audio src={soundSrc} />
       </svg>
     );
   }

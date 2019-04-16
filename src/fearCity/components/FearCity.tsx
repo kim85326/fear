@@ -1,8 +1,5 @@
 import * as React from "react";
 import "../static/fearCity.css";
-import ConnectedMenuWrapper from "src/common/menu/containers/MenuWrapperContainer";
-import Sound from "src/common/sound/components/Sound";
-import soundSrc from "../static/fearCity.wav";
 import ConnectedButtonA from "../containers/ButtonAContainer";
 import LeftWall from "./LeftWall";
 import RightWall from "./RightWall";
@@ -27,11 +24,9 @@ class FearCity extends React.Component<IFearCityProps> {
 
   public render() {
     return (
-      <div className="fearCity">
+      <>
         <Windows />
         <Stairs />
-        <ConnectedMenuWrapper />
-        <Sound src={soundSrc} />
         <ConnectedButtonA />
         <LeftWall />
         <RightWall />
@@ -43,7 +38,7 @@ class FearCity extends React.Component<IFearCityProps> {
         <PersonB />
         <PersonC />
         <PersonD />
-      </div>
+      </>
     );
   }
 }

@@ -1,8 +1,7 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 
 interface IHomeButtonProps {
-  closeMenu: () => void;
+  handleClick: () => void;
 }
 
 class HomeButton extends React.Component<IHomeButtonProps> {
@@ -12,7 +11,7 @@ class HomeButton extends React.Component<IHomeButtonProps> {
 
   public render() {
     return (
-      <Link to="/" onClick={this.props.closeMenu}>
+      <a onClick={this.props.handleClick}>
         <svg
           className="home-button"
           xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +30,7 @@ class HomeButton extends React.Component<IHomeButtonProps> {
 	L48,23.4c0.9-0.9,2.5-0.9,3.4,0L77,49C77.8,49.8,77.8,51,77,51.8z"
           />
         </svg>
-      </Link>
+      </a>
     );
   }
 }

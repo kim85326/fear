@@ -11,6 +11,7 @@ import backgroundImage from "../static/storyE_background.png";
 import { showAllVirusAction } from "src/virus/virusAction";
 import ConnectedStoryDDialog from "src/StoryDDialog/containers/StoryDDialogContainer";
 import ConnectedInfoDialogC from "src/infoDialogC/containers/InfoDialogCContainer";
+import Loading from "src/common/loading/components/Loading";
 
 interface IStoryEContainerProps extends IStoryEStateProps {
   dispatch: Dispatch;
@@ -54,7 +55,7 @@ class StoryEContainer extends React.Component<IStoryEContainerProps> {
 
   public render() {
     return this.props.isLoading ? (
-      <div>loading...</div>
+      <Loading />
     ) : (
       <>
         <StoryE isLoading={this.props.isLoading} />

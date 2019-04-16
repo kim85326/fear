@@ -1,4 +1,4 @@
-.submit-fear {
+.submitFear {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -9,7 +9,7 @@
   min-height: 688px;
 }
 
-.submit-fear-background {
+.submitFear-background {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -27,7 +27,7 @@
   pointer-events: none;
 }
 
-.submit-fear .sound {
+.submitFear .sound {
   position: absolute;
   top: 6.74%;
   right: 10.55%;

@@ -1,4 +1,5 @@
 export enum ActionPrefixs {
+  page = "page",
   answer = "answer",
   menu = "menu",
   storyA = "storyA",

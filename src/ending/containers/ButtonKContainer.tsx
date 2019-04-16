@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { IAppState } from "src/app/AppReducer";
 import ButtonK from "../components/ButtonK";
+import { resetAppAction, setPageAction } from "src/page/PageManagementAction";
+import { Page } from "src/page/constants/Page";
 
 interface IButtonKContainerProps extends IButtonKStateProps {
   dispatch: Dispatch;
@@ -19,10 +21,21 @@ const mapStateToProps = (state: IAppState): IButtonKStateProps => ({
 class ButtonKContainer extends React.Component<IButtonKContainerProps> {
   constructor(props: IButtonKContainerProps) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   public render() {
-    return <ButtonK isShowButton={this.props.isShowButtonK} />;
+    return (
+      <ButtonK
+        isShowButton={this.props.isShowButtonK}
+        handleClick={this.handleClick}
+      />
+    );
+  }
+
+  private handleClick() {
+    this.props.dispatch(resetAppAction());
+    this.props.dispatch(setPageAction(Page.fearCity));
   }
 }
 

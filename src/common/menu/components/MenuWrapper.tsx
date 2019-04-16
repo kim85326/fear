@@ -10,6 +10,7 @@ interface IMenuWrapperProps {
   isClosing: boolean;
   openMenu: () => void;
   closeMenu: () => void;
+  setPage: () => void;
 }
 
 class MenuWrapper extends React.Component<IMenuWrapperProps> {
@@ -35,7 +36,7 @@ class MenuWrapper extends React.Component<IMenuWrapperProps> {
           isOpening={this.props.isOpening}
           isOpen={this.props.isOpen}
           isClosing={this.props.isClosing}
-          closeMenu={this.props.closeMenu}
+          handleClick={this.props.setPage}
         />
       </div>
     );
