@@ -35,11 +35,11 @@ class QuestionAContainer extends React.Component<IQuestionAContainerProps> {
     return (
       <>
         <ButtonB
-          handleClick={this.handleClick.bind(this, true)}
+          handleClick={this.handleClick.bind(this, false)}
           isShowButton={this.props.isShowButtonB}
         />
         <ButtonC
-          handleClick={this.handleClick.bind(this, false)}
+          handleClick={this.handleClick.bind(this, true)}
           isShowButton={this.props.isShowButtonC}
         />
       </>

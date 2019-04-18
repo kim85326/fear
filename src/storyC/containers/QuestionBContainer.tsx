@@ -39,11 +39,11 @@ class QuestionBContainer extends React.Component<IQuestionBContainerProps> {
           <div className="questionB-mask" onClick={this.closeQuestionB} />
         ) : null}
         <ButtonF
-          handleClick={this.handleClick.bind(this, true)}
+          handleClick={this.handleClick.bind(this, false)}
           isShowButton={this.props.isShowButtonF}
         />
         <ButtonG
-          handleClick={this.handleClick.bind(this, false)}
+          handleClick={this.handleClick.bind(this, true)}
           isShowButton={this.props.isShowButtonG}
         />
       </div>
