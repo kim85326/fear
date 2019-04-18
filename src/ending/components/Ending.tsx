@@ -3,69 +3,21 @@ import "../static/ending.css";
 import ConnectedButtonJ from "../containers/ButtonJContainer";
 import ConnectedButtonK from "../containers/ButtonKContainer";
 import Lottie from "react-lottie";
-import * as endingBackground1Json from "../static/ending_background_1.json";
-import * as endingContent1Json from "../static/ending_content_1.json";
-import * as endingText1Json from "../static/ending_text_1.json";
-import * as endingBackground2Json from "../static/ending_background_2.json";
-import * as endingContent2Json from "../static/ending_content_2.json";
-import * as endingText2Json from "../static/ending_text_2.json";
-import * as endingBackground3Json from "../static/ending_background_3.json";
-import * as endingContent3Json from "../static/ending_content_3.json";
-import * as endingText3Json from "../static/ending_text_3.json";
+import * as hopeBackgroundJson from "../static/hope_background.json";
+import * as hopeContentJson from "../static/hope_content.json";
+import * as hopeTextJson from "../static/hope_text.json";
+import * as friendBackgroundJson from "../static/friend_background.json";
+import * as friendContentJson from "../static/friend_content.json";
+import * as friendTextJson from "../static/friend_text.json";
+import * as blueBackgroundJson from "../static/blue_background.json";
+import * as blueContentJson from "../static/blue_content.json";
+import * as blueTextJson from "../static/blue_text.json";
 
-const endingBackground1Options = {
+const getAnimationOptions = (src: any) => ({
   loop: true,
   autoplay: true,
-  animationData: endingBackground1Json
-};
-
-const endingContent1Options = {
-  loop: true,
-  autoplay: true,
-  animationData: endingContent1Json
-};
-
-const endingText1Options = {
-  loop: true,
-  autoplay: true,
-  animationData: endingText1Json
-};
-
-const endingBackground2Options = {
-  loop: true,
-  autoplay: true,
-  animationData: endingBackground2Json
-};
-
-const endingContent2Options = {
-  loop: true,
-  autoplay: true,
-  animationData: endingContent2Json
-};
-
-const endingText2Options = {
-  loop: true,
-  autoplay: true,
-  animationData: endingText2Json
-};
-
-const endingBackground3Options = {
-  loop: true,
-  autoplay: true,
-  animationData: endingBackground3Json
-};
-
-const endingContent3Options = {
-  loop: true,
-  autoplay: true,
-  animationData: endingContent3Json
-};
-
-const endingText3Options = {
-  loop: true,
-  autoplay: true,
-  animationData: endingText3Json
-};
+  animationData: src
+});
 
 interface IEndingProps {
   finalAnswer: string;
@@ -88,47 +40,47 @@ class Ending extends React.Component<IEndingProps> {
   }
 
   private getBackground() {
-    if (this.props.finalAnswer === "white") {
+    if (this.props.finalAnswer === "hope") {
       return (
         <div className="ending-background">
-          <Lottie options={endingBackground1Options} />
+          <Lottie options={getAnimationOptions(hopeBackgroundJson)} />
         </div>
       );
-    } else if (this.props.finalAnswer === "red") {
+    } else if (this.props.finalAnswer === "friend") {
       return (
         <div className="ending-background">
-          <Lottie options={endingBackground2Options} />
+          <Lottie options={getAnimationOptions(friendBackgroundJson)} />
         </div>
       );
     } else {
       return (
         <div className="ending-background">
-          <Lottie options={endingBackground3Options} />
+          <Lottie options={getAnimationOptions(blueBackgroundJson)} />
         </div>
       );
     }
   }
 
   private getEndingContent() {
-    if (this.props.finalAnswer === "white") {
+    if (this.props.finalAnswer === "hope") {
       return (
         <>
           <div className="ending-content">
-            <Lottie options={endingContent1Options} />
+            <Lottie options={getAnimationOptions(hopeContentJson)} />
           </div>
           <div className="ending-text">
-            <Lottie options={endingText1Options} />
+            <Lottie options={getAnimationOptions(hopeTextJson)} />
           </div>
         </>
       );
-    } else if (this.props.finalAnswer === "red") {
+    } else if (this.props.finalAnswer === "friend") {
       return (
         <>
           <div className="ending-content">
-            <Lottie options={endingContent2Options} />
+            <Lottie options={getAnimationOptions(friendContentJson)} />
           </div>
           <div className="ending-text">
-            <Lottie options={endingText2Options} />
+            <Lottie options={getAnimationOptions(friendTextJson)} />
           </div>
         </>
       );
@@ -136,10 +88,10 @@ class Ending extends React.Component<IEndingProps> {
       return (
         <>
           <div className="ending-content">
-            <Lottie options={endingContent3Options} />
+            <Lottie options={getAnimationOptions(blueContentJson)} />
           </div>
           <div className="ending-text">
-            <Lottie options={endingText3Options} />
+            <Lottie options={getAnimationOptions(blueTextJson)} />
           </div>
         </>
       );

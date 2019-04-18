@@ -46,14 +46,15 @@ class EndingContainer extends React.Component<IEndingContainerProps> {
   private getFinalAnswer(): string {
     const { answerA, answerB, answerC } = this.props;
     if (!answerA && !answerC) {
-      return "white";
+      return "hope";
     }
 
     if ((!answerA && answerC) || (answerA && !answerB)) {
-      return "red";
+      return "friend";
     }
 
-    return "purple";
+    
+    return "blue";
   }
 }
 
