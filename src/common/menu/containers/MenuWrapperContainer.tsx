@@ -1,12 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import {
-  openingMenuAction,
-  openMenuAction,
-  closeMenuAction,
-  closingMenuAction
-} from "../MenuActions";
+import { openMenuAction, closeMenuAction } from "../MenuActions";
 import MenuWrapper from "../components/MenuWrapper";
 import { IAppState } from "src/app/AppReducer";
 import { setPageAction } from "src/page/PageManagementAction";
@@ -17,15 +12,11 @@ interface IMenuWrapperContainerProps extends IMenuWrapperStateProps {
 }
 
 interface IMenuWrapperStateProps {
-  isOpening: boolean;
   isOpen: boolean;
-  isClosing: boolean;
 }
 
 const mapStateToProps = (state: IAppState): IMenuWrapperStateProps => ({
-  isOpening: state.menuState.isOpening,
-  isOpen: state.menuState.isOpen,
-  isClosing: state.menuState.isClosing
+  isOpen: state.menuState.isOpen
 });
 
 class MenuWrapperContainer extends React.Component<IMenuWrapperContainerProps> {
@@ -38,9 +29,7 @@ class MenuWrapperContainer extends React.Component<IMenuWrapperContainerProps> {
   public render() {
     return (
       <MenuWrapper
-        isOpening={this.props.isOpening}
         isOpen={this.props.isOpen}
-        isClosing={this.props.isClosing}
         openMenu={this.openMenu}
         closeMenu={this.closeMenu}
         setPage={this.setPage}
@@ -49,17 +38,11 @@ class MenuWrapperContainer extends React.Component<IMenuWrapperContainerProps> {
   }
 
   private openMenu(): void {
-    this.props.dispatch(openingMenuAction());
-    setTimeout(() => {
-      this.props.dispatch(openMenuAction());
-    }, 500);
+    this.props.dispatch(openMenuAction());
   }
 
   private closeMenu(): void {
-    this.props.dispatch(closingMenuAction());
-    setTimeout(() => {
-      this.props.dispatch(closeMenuAction());
-    }, 500);
+    this.props.dispatch(closeMenuAction());
   }
 
   private setPage(): void {

@@ -1,13 +1,12 @@
 import * as React from "react";
-import Menu from "./Menu";
+import { CSSTransition } from "react-transition-group";
 import "../static/menu.css";
 import OpenMenuButton from "./OpenMenuButton";
 import CloseMenuButton from "./CloseMenuButton";
+import Menu from "./Menu";
 
 interface IMenuWrapperProps {
-  isOpening: boolean;
   isOpen: boolean;
-  isClosing: boolean;
   openMenu: () => void;
   closeMenu: () => void;
   setPage: () => void;
@@ -22,22 +21,21 @@ class MenuWrapper extends React.Component<IMenuWrapperProps> {
     return (
       <div className="menu-wrapper">
         <OpenMenuButton
-          isOpening={this.props.isOpening}
           isOpen={this.props.isOpen}
           openMenu={this.props.openMenu}
         />
-        {this.props.isOpen ? <div className="menu-mask" /> : null}
+        <CSSTransition
+          in={this.props.isOpen}
+          timeout={{ enter: 500, exit: 500 }}
+          classNames="show"
+        >
+          <div className="menu-mask" />
+        </CSSTransition>
         <CloseMenuButton
           isOpen={this.props.isOpen}
-          isClosing={this.props.isClosing}
           closeMenu={this.props.closeMenu}
         />
-        <Menu
-          isOpening={this.props.isOpening}
-          isOpen={this.props.isOpen}
-          isClosing={this.props.isClosing}
-          handleClick={this.props.setPage}
-        />
+        <Menu isOpen={this.props.isOpen} handleClick={this.props.setPage} />
       </div>
     );
   }

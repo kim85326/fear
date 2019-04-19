@@ -12,10 +12,15 @@
   height: 100%;
   background-color: #0a0a0f;
   opacity: 0.8;
+  visibility: hidden;
+}
+
+.menu-mask.show-enter-done,
+.menu-mask.show-exit {
+  visibility: visible;
 }
 
 .menu-button {
-  display: none;
   position: absolute;
   width: 5.14%;
 }
@@ -35,9 +40,9 @@
   }
 }
 
-.menu-button.isOpening,
-.menu-button.isClosing {
-  transform: scale(0);
+.open-menu-button.show-exit,
+.close-menu-button.show-exit {
+  visibility: visible;
   animation-name: menu-button-active;
   animation-duration: 0.3s;
   animation-timing-function: ease-out;
@@ -62,14 +67,14 @@
 }
 
 .close-menu-button {
-  height: 9.25%;
   z-index: 102;
   top: 4.37%;
   right: 22.8%;
+  visibility: hidden;
 }
 
-.menu-button.show {
-  display: block;
+.close-menu-button.show-enter-done {
+  visibility: visible;
 }
 
 .menu {
@@ -81,28 +86,15 @@
   background-color: #fcfaee;
   opacity: 1;
   top: 0;
-  right: -19.12%;
-}
-
-.menu-background {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.menu.show {
-  visibility: visible;
   right: 0;
-  animation-name: menu-show;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
 }
 
-.menu.isClosing {
-  animation-name: menu-hide;
-  animation-duration: 0.5s;
+.menu.show-enter {
+  visibility: visible;
+  right: -19.12%;
+  animation-name: menu-show;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
@@ -118,6 +110,17 @@
   }
 }
 
+.menu.show-enter-done {
+  visibility: visible;
+}
+
+.menu.show-exit {
+  animation-name: menu-hide;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
 @keyframes menu-hide {
   0% {
     visibility: visible;
@@ -127,6 +130,13 @@
     visibility: visible;
     right: -19.12%;
   }
+}
+
+.menu-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .menu-top {

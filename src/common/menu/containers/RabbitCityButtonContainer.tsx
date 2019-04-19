@@ -16,6 +16,7 @@ class RabbitCityButtonContainer extends React.Component<
   constructor(props: IRabbitCityButtonContainerProps) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.showRabbitCityPage = this.showRabbitCityPage.bind(this);
   }
   public render() {
     return <RabbitCityButton handleClick={this.handleClick} />;
@@ -23,6 +24,10 @@ class RabbitCityButtonContainer extends React.Component<
 
   private handleClick(): void {
     this.props.dispatch(closeMenuAction());
+    setTimeout(this.showRabbitCityPage, 900);
+  }
+
+  private showRabbitCityPage(): void {
     this.props.dispatch(setPageAction(Page.rabbitCity));
   }
 }
