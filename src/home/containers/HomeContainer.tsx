@@ -13,14 +13,24 @@ class HomeContainer extends React.Component<IHomeContainerProps> {
   constructor(props: IHomeContainerProps) {
     super(props);
     this.showFearCity = this.showFearCity.bind(this);
+    this.showRabbitCity = this.showRabbitCity.bind(this);
   }
 
   public render() {
-    return <Home showFearCity={this.showFearCity} />;
+    return (
+      <Home
+        showFearCity={this.showFearCity}
+        showRabbitCity={this.showRabbitCity}
+      />
+    );
   }
 
   private showFearCity() {
     this.props.dispatch(setPageAction(Page.fearCity));
+  }
+
+  private showRabbitCity() {
+    this.props.dispatch(setPageAction(Page.rabbitCity));
   }
 }
 

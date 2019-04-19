@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { IAppState } from "src/app/AppReducer";
 import ButtonL from "../components/ButtonL";
+import { setPageAction } from 'src/page/PageManagementAction';
+import { Page } from 'src/page/constants/Page';
 
 interface IButtonLContainerProps extends IButtonLStateProps {
   dispatch: Dispatch;
@@ -32,7 +34,7 @@ class ButtonLContainer extends React.Component<IButtonLContainerProps> {
   }
 
   private handleClick() {
-    alert("兔子村目前正在裝修中");
+    this.props.dispatch(setPageAction(Page.rabbitCity));
   }
 }
 

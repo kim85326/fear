@@ -9,6 +9,8 @@ import {
 } from "../MenuActions";
 import MenuWrapper from "../components/MenuWrapper";
 import { IAppState } from "src/app/AppReducer";
+import { setPageAction } from "src/page/PageManagementAction";
+import { Page } from "src/page/constants/Page";
 
 interface IMenuWrapperContainerProps extends IMenuWrapperStateProps {
   dispatch: Dispatch;
@@ -61,7 +63,8 @@ class MenuWrapperContainer extends React.Component<IMenuWrapperContainerProps> {
   }
 
   private setPage(): void {
-    alert("兔子村目前正在裝修中");
+    this.props.dispatch(closeMenuAction());
+    this.props.dispatch(setPageAction(Page.rabbitCity));
   }
 }
 

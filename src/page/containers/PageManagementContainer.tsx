@@ -12,6 +12,7 @@ import ConnectedStoryC from "src/storyC/containers/StoryCContainer";
 import ConnectedStoryE from "src/storyE/containers/StoryEContainer";
 import ConnectedEnding from "src/ending/containers/EndingContainer";
 import ConnectedSubmitFear from "src/submitFear/containers/SubmitFearContainer";
+import ConnectedRabbitCity from "src/rabbitCity/containers/RabbitCityContainer";
 import ConnectedHome from "src/home/containers/HomeContainer";
 
 interface IPageManagementContainerProps extends IPageManagementStateProps {
@@ -59,6 +60,8 @@ class PageManagementContainer extends React.Component<
         return <ConnectedEnding />;
       case Page.submitFear:
         return <ConnectedSubmitFear />;
+      case Page.rabbitCity:
+        return <ConnectedRabbitCity />;
       default:
         return <ConnectedHome />;
     }

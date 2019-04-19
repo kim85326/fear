@@ -1,6 +1,10 @@
 import * as React from "react";
 import RabbitCityDialog from "./RabbitCityDialog";
 
+interface IRabbitCityProps {
+  showRabbitCity: () => void;
+}
+
 interface IRabbitCityState {
   isShowingDialog: boolean;
   isHidingDialog: boolean;
@@ -8,8 +12,8 @@ interface IRabbitCityState {
   dialogY: number;
 }
 
-class RabbitCity extends React.Component<{}, IRabbitCityState> {
-  constructor(props: {}) {
+class RabbitCity extends React.Component<IRabbitCityProps, IRabbitCityState> {
+  constructor(props: IRabbitCityProps) {
     super(props);
     this.state = {
       isShowingDialog: false,
@@ -80,7 +84,7 @@ class RabbitCity extends React.Component<{}, IRabbitCityState> {
   }
 
   private handleClick() {
-    alert("兔子村目前正在裝修中");
+    this.props.showRabbitCity();
   }
 }
 

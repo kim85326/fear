@@ -6,5 +6,6 @@ export enum Page {
   storyC = "storyC",
   storyE = "storyE",
   ending = "ending",
-  submitFear = "submitFear"
+  submitFear = "submitFear",
+  rabbitCity = "rabbitCity"
 }

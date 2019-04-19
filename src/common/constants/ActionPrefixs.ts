@@ -16,5 +16,6 @@ export enum ActionPrefixs {
   storyE = "storyE",
   submitFear = "submitFear",
   infoDialogC = "infoDialogC",
-  ending = "ending"
+  ending = "ending",
+  rabbitCity = "rabbitCity"
 }

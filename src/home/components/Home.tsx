@@ -17,6 +17,7 @@ const defaultOptions = {
 
 interface IHomeProps {
   showFearCity: () => void;
+  showRabbitCity: () => void;
 }
 
 interface IHomeState {
@@ -40,7 +41,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
         <Soil />
         <Slogan />
         <FearCity showFearCity={this.props.showFearCity} />
-        <RabbitCity />
+        <RabbitCity showRabbitCity={this.props.showRabbitCity} />
         <Mountains />
         <Arrow />
       </>

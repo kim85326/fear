@@ -1,0 +1,40 @@
+.rabbitCity {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: url("./rabbit_city_background.png") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+  min-width: 1440px;
+  min-height: 688px;
+}
+
+.rabbitCity .sound {
+  position: absolute;
+  bottom: 34%;
+  right: 5.36%;
+}
+
+.rabbitCity-background {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 2;
+}
+
+.rabbitCity-mid {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 3;
+}
+
+.rabbitCity-front {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 4;
+}

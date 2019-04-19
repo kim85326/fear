@@ -35,6 +35,9 @@ import submitFearReducer, {
 import pageManagementReducer, {
   IPageManagementState
 } from "src/page/PageManagementReducer";
+import rabbitCityReducer, {
+  IRabbitCityState
+} from "src/rabbitCity/RabbitCityReducer";
 
 export interface IAppState {
   pageManagementState: IPageManagementState;
@@ -55,6 +58,7 @@ export interface IAppState {
   infoDialogCState: IInfoDialogCState;
   submitFearState: ISubmitFearState;
   endingState: IEndingState;
+  rabbitCityState: IRabbitCityState;
 }
 
 const rootReducer = combineReducers({
@@ -75,7 +79,8 @@ const rootReducer = combineReducers({
   storyEState: storyEReducer,
   infoDialogCState: infoDialogCReducer,
   submitFearState: submitFearReducer,
-  endingState: endingReducer
+  endingState: endingReducer,
+  rabbitCityState: rabbitCityReducer
 });
 
 const AppReducer = (state: any, action: AnyAction) => {
