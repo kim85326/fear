@@ -4,7 +4,13 @@ import { Dispatch } from "redux";
 import { IAppState } from "src/app/AppReducer";
 import RabbitCity from "../components/RabbitCity";
 import backgroundImage from "../static/rabbit_city_background.png";
-import { setIsRabbitCityLoadingAction } from "../RabbitCityAction";
+import {
+  setIsRabbitCityLoadingAction,
+  setIsShowDialogLAction,
+  setIsShowDialogMAction,
+  setIsShowDialogNAction,
+  setIsShowDialogOAction
+} from "../RabbitCityAction";
 import Loading from "src/common/loading/components/Loading";
 
 interface IRabbitCityContainerProps extends IRabbitCityStateProps {
@@ -35,7 +41,10 @@ class RabbitCityContainer extends React.Component<IRabbitCityContainerProps> {
   public componentDidUpdate(prevProps: IRabbitCityContainerProps) {
     // 圖片載入後
     if (!this.props.isLoading && prevProps.isLoading) {
-      this.handleImageLoaded();
+      this.props.dispatch(setIsShowDialogLAction(true));
+      this.props.dispatch(setIsShowDialogMAction(true));
+      this.props.dispatch(setIsShowDialogNAction(true));
+      this.props.dispatch(setIsShowDialogOAction(true));
     }
   }
 

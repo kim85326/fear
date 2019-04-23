@@ -3,16 +3,18 @@ import { RabbitCityActionType } from "./RabbitCityAction";
 
 export interface IRabbitCityState {
   isLoading: boolean;
-  isShowDialogQ: boolean;
-  isShowDialogP: boolean;
   isShowDialogL: boolean;
+  isShowDialogM: boolean;
+  isShowDialogN: boolean;
+  isShowDialogO: boolean;
 }
 
 const defaultRabbitCityState = {
   isLoading: true,
-  isShowDialogQ: false,
-  isShowDialogP: false,
-  isShowDialogL: false
+  isShowDialogL: false,
+  isShowDialogM: false,
+  isShowDialogN: false,
+  isShowDialogO: false
 };
 
 const rabbitCityReducer = (
@@ -26,22 +28,28 @@ const rabbitCityReducer = (
         isLoading: action.isLoading
       };
 
-    case RabbitCityActionType.SET_IS_SHOW_DIALOG_Q:
-      return {
-        ...state,
-        isShowDialogQ: action.isShow
-      };
-
-    case RabbitCityActionType.SET_IS_SHOW_DIALOG_P:
-      return {
-        ...state,
-        isShowDialogQ: action.isShow
-      };
-
     case RabbitCityActionType.SET_IS_SHOW_DIALOG_L:
       return {
         ...state,
-        isShowDialogQ: action.isShow
+        isShowDialogL: action.isShow
+      };
+
+    case RabbitCityActionType.SET_IS_SHOW_DIALOG_M:
+      return {
+        ...state,
+        isShowDialogM: action.isShow
+      };
+
+    case RabbitCityActionType.SET_IS_SHOW_DIALOG_N:
+      return {
+        ...state,
+        isShowDialogN: action.isShow
+      };
+
+    case RabbitCityActionType.SET_IS_SHOW_DIALOG_O:
+      return {
+        ...state,
+        isShowDialogO: action.isShow
       };
 
     default:

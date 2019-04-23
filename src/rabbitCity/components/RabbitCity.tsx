@@ -4,6 +4,10 @@ import "../static/rabbitCity.css";
 import * as rabbitBackgroundJson from "../static/rabbit_city_background.json";
 import * as midJson from "../static/rabbit_city_mid.json";
 import * as frontJson from "../static/rabbit_city_front.json";
+import ConnectedDialogL from "../containers/DialogLContainer";
+import ConnectedDialogM from "../containers/DialogMContainer";
+import ConnectedDialogN from "../containers/DialogNContainer";
+import ConnectedDialogO from "../containers/DialogOContainer";
 
 const getAnimationOptions = (src: any) => ({
   loop: true,
@@ -28,6 +32,10 @@ class RabbitCity extends React.Component {
         <div className="rabbitCity-front">
           <Lottie options={getAnimationOptions(frontJson)} />
         </div>
+        <ConnectedDialogL />
+        <ConnectedDialogM />
+        <ConnectedDialogN />
+        <ConnectedDialogO />
       </>
     );
   }

@@ -38,3 +38,159 @@
   width: 100%;
   z-index: 4;
 }
+
+.dialogLMNO {
+  z-index: 7;
+  visibility: hidden;
+  position: absolute;
+  width: 7.2%;
+}
+
+.dialogL {
+  bottom: 69.8%;
+  right: 29.6%;
+}
+
+.dialogM {
+  bottom: 45.8%;
+  right: 44.9%;
+}
+
+.dialogN {
+  bottom: 56%;
+  left: 35%;
+}
+
+.dialogO {
+  bottom: 15.9%;
+  left: 15.3%;
+}
+
+.dialogLMNO.show-enter,
+.dialogLMNO.show-enter-active,
+.dialogLMNO.show-enter-done,
+.dialogLMNO.show-exit,
+.dialogLMNO.show-exit-active {
+  visibility: visible;
+}
+
+.dialogLMNO.show-exit-done {
+  visibility: hidden;
+}
+
+.dialogLMNO-text {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.dialogLMNO-text.show-enter {
+  visibility: hidden;
+  animation-name: dialogLMNO-text-show;
+  animation-delay: 700ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogLMNO-text-show {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+.dialogLMNO-text.show-enter-done {
+  visibility: visible;
+}
+
+.dialogLMNO-text.show-exit {
+  visibility: visible;
+  animation-name: dialogLMNO-text-hide;
+  animation-delay: 500ms;
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogLMNO-text-hide {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
+
+.dialogLMNO-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.dialogLMNO-background.zoom-enter {
+  animation-name: dialogLMNO-background-show;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dialogLMNO-background-show {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dialogLMNO-background.zoom-exit {
+  animation-name: dialogLMNO-background-hide-scale,
+    dialogLMNO-background-hide-opacity;
+  animation-duration: 0.8s, 0.3s;
+  animation-delay: 0s, 0.5s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-fill-mode: forwards, forwards;
+}
+
+.dialogLMNO-background.zoom-exit-done {
+  visibility: hidden;
+}
+
+@keyframes dialogLMNO-background-hide-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes dialogLMNO-background-hide-opacity {
+  0% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
